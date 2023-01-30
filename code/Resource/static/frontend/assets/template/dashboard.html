@@ -1,0 +1,66 @@
+
+<div>
+    <div class="row idya-block-section">         
+      
+    <div class="col-md-8 col-12 p-0 m-0" ng-controller="dashboardIdyaBlockController">
+
+     <div class="filter-bar  d-flex align-items-center" >
+       <h6 class="m-0">loaded [[idyas.length]] idyas</h6>
+
+        <div class="filter-block ml-auto">
+          <p class="m-0">Filter by</p>
+
+          <select ng-model="idyaFilter" ng-options="option.value as option.display for option in filterOptions">
+          </select>
+
+          </div>
+        </div>
+
+
+        <!------
+                IDYA BLOCKS SECTION
+        ------->
+
+
+        <div id="idya-display-box" ng-repeat="idya in idyas | filter:{idyatype:idyaFilter}">
+          
+              <idya-block></idya-block>
+            </div>
+
+   
+      </div>
+
+<div ng-controller="fullscreenSideNavController" class="fullscreenSideNavSection d-none">
+
+    <div class="col-md-4 side-panels d-md-block d-none fullscreen-side-nav" id="fullscreen-side-nav" ng-class="{'nav-minimized': fullscreenSideNavShow == false }">
+
+      <div class="navigations d-flex justify-content-space-between">
+
+      <button type="button" class="simple-btn minimize-btn p-0" ng-click="navToggle()">>></button>
+
+      <div class=" box">
+      <button type="button" class="simple-btn"><i class="icomoon i-dashboard" aria-hidden="true"></i></button>
+      <small style="line-height: 0px;">Home</small>
+      </div>
+
+      <div class="box">
+      <button type="button" class="simple-btn"><i class="icomoon i-idya-hub" aria-hidden="true" style="font-size: 30px"></i>
+      <small style="line-height: 0px;">idyaHub</small>
+      </div>
+
+      <div class="box">
+      <button type="button" class="simple-btn"><i class="icomoon i-user" aria-hidden="true"></i></button>
+      <small style="line-height: 0px;">Profile</small>
+      </div>
+
+        
+      </div>
+ 
+    </div>
+
+</div>
+            <!--End of Trending topics tool bar-->
+    </div>
+    </div>
+
+

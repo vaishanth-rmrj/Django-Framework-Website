@@ -1,0 +1,82 @@
+{% load staticfiles %} 
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- this html page is only rendered for mobile devices -->
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'frontend/mobile_assets/node_modules/bootstrap/dist/css/bootstrap.min.css' %}" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'frontend/mobile_assets/fonts/font.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'frontend/mobile_assets/css/animations.css' %}">
+    
+    <script src="{% static 'frontend/assets/node_modules/jquery/dist/jquery.min.js' %}" ></script>
+    <script type="text/javascript" src="{% static 'frontend/assets/node_modules/angular/angular.min.js' %}"></script>
+
+    <script type="text/javascript" src="{% static 'frontend/assets/node_modules/angular-ui-router/release/angular-ui-router.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'frontend/assets/node_modules/angular-ui-router/release/stateEvents.js' %}"></script>
+    
+
+    <!--
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.3/angular-sanitize.js"></script>-->
+
+    {% block AdittionalScripts %}{% endblock %}
+
+    <title>idyaWeb</title>
+    <!--basic styles-->
+    <link rel="stylesheet" type="text/css" href="{% static 'frontend/mobile_assets/css/iStyle.css' %}">
+    {% block style %}   
+    {% endblock style %}
+</head>
+
+<body>
+    <div class="enclosed">
+    {% block content %}
+
+    {% endblock %}
+    </div>
+
+    <!-- 
+        custom fonts
+
+        font-family: 'Milonga', cursive;
+        font-family: 'Montserrat', sans-serif;
+     -->
+   <link href="https://fonts.googleapis.com/css?family=Montserrat|Milonga&display=swap" rel="stylesheet">
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+    <!--<script 
+    src="https://code.jquery.com/jquery-3.2.1.slim.min.js" 
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" 
+    crossorigin="anonymous"></script>-->
+    <script 
+    src="{% static 'frontend/assets/node_modules/popper.js/dist/popper.min.js' %}"></script>
+    <script 
+    src="{% static 'frontend/assets/node_modules/bootstrap/dist/js/bootstrap.min.js' %}" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="{% static 'frontend/mobile_assets/plugin-js/anguvideo.js' %}"></script>
+    <script type="text/javascript" src="{% static 'frontend/mobile_assets/plugin-js/simpleSanitizer.js' %}"></script>
+
+    
+    {% block scripts %}
+    {% endblock scripts %} 
+    
+
+    <!-- loading additional css for pages -->
+    <link rel="stylesheet" type="text/css" href="{% static 'frontend/mobile_assets/css/hubDashboardStyle.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'frontend/mobile_assets/css/profilePage.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'frontend/mobile_assets/css/idyaDetailStyle.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'frontend/mobile_assets/css/idyaEditorStyle.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'frontend/mobile_assets/css/channelPage.css' %}">
+    
+    
+    <!-- google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
+</body>
+
+</html>

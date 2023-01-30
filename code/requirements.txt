@@ -1,0 +1,9 @@
+Django==2.0.5
+djangorestframework==3.9.0
+jsonfield==2.0.2
+Markdown==3.0.1
+numpy==1.14.3
+python-dateutil==2.7.5
+pytz==2018.4
+six==1.11.0
+virtualenv==16.0.0

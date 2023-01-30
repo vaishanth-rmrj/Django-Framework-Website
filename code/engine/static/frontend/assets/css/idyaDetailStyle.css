@@ -1,0 +1,278 @@
+{
+	border: 3px solid black;
+}
+
+body{
+	margin: 0;
+	padding: 0;
+	background-color: rgb(255,255,255);
+	
+}
+
+h6{
+	padding: 0;
+	margin: 0;
+}
+img
+{
+	-webkit-shape-outside:circle();
+  	shape-outside:circle();
+}
+
+
+.ilog-title
+{
+	padding: 6px 2px;
+	border: 0px;
+	font-weight: bold;
+}
+
+.idya-content
+{
+	padding: 10px 2px;
+	margin: 3px 0;
+	border:0;
+	text-align: justify;
+}
+
+.ilog-view-btn-bar
+{
+	width: 100%;
+	height: 40px;
+	margin: 3px 0 ;
+	overflow: hidden;
+}
+.ilog-view-btn-bar a
+{	
+	width: 20%;
+	height: 100%;
+	margin-left: 5px;
+	color: rgba(0,0,0,0.8);
+	background-color: rgba(224,224,224 ,0.5);
+	padding: 3px 10px;
+	border: 1px solid rgba(224,224,224 ,0.5);
+	border-radius: 20px; 
+	font-size: 20px;
+	font-weight: bolder;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content:center;
+	text-decoration:none;
+	transition-duration: 300ms;
+	transition-property: color,background-color;
+}
+
+.ilog-view-btn-bar a:hover
+{
+	background-color:rgba(232,17,35 ,0.9);
+	color: rgba(251,233,231 ,1);
+
+}
+
+.ilog-view-btn-bar a:hover
+{
+	border:thin solid rgba(255,61,0 ,0.9);
+}
+.comments-section 
+{
+	
+	padding: 10px;
+	border:1px solid rgba(0,0,0,0.125);
+	border-radius: 4px;
+}
+
+.active-user-comment
+{
+	padding: 8px;
+	margin: 6px 0;
+	border-radius: 4px;
+}
+
+.active-user-comment h6
+{
+	font-size: 12px;
+	font-weight:bold;
+}
+
+.active-user-comment input[type='text'] ,.active-user-comment .btn
+{
+	border-radius: 18px;
+}
+
+.active-user-comment input[type='text']
+{
+	border-radius: 18px;
+	transition-duration: 300ms;
+	transition-property:border-radius;
+}
+
+.active-user-comment input[type='text']:focus
+{
+	border-radius: 0px;
+}
+
+.comment-form
+{	
+	width: 100%;
+	border-radius: 4px;
+	border:1px solid rgba(0,0,0,0.125);
+	background-color:rgb(255,255,255);
+}
+
+.comment-form textarea
+{
+	border-radius: 0;
+	border:0;
+	width: 100%;
+	height: 60px;
+	overflow-y:scroll;
+}
+
+.comment-form button
+{	
+	width: 50px;
+	background-color:#f2f2f2;
+	padding:4px;
+	margin:5px;
+
+	border-left:1px solid rgba(0,0,0,0.125);
+}
+
+.user-comments
+{
+	padding: 8px;
+	margin: 6px 0;
+}
+
+.user-comments h6
+{
+	font-size: 12px;
+	font-weight:bold;
+}
+
+.user-comments p
+{
+	font-size: 12px;
+	padding-left: 55px;
+}
+
+.comment-section-btn
+{
+	border-radius: 0px;
+	background-color: rgb(243, 74, 87);
+	color: rgb(255,250,250);
+	transition-duration: 300ms;
+    transition-property :transform,box-shadow,background-color;
+}
+
+.comment-section-btn:hover
+{
+	box-shadow: 5px 3px 9px 0 rgba(0, 0, 0,0.4);
+	background-color:rgb(232, 17, 33);
+    transform: scale(1.01, 1.01);
+}
+
+.profile-card
+{	
+	background-color: rgba(224,224,224 ,0.5);
+	border-radius: 20px;
+
+
+}
+
+.profile-card .profile-card-image 
+{
+	width: 25%;
+	margin: auto;
+	border:1.5px solid inherit;
+	box-shadow: 7px 7px 6px 0 #aaa;
+}
+
+.related-content 
+{
+	border-radius: 4px;
+	border:1px solid rgba(0,0,0,0.125);
+}
+.related-content .header
+{
+	padding:10px;
+	margin:5px;
+	color: rgba(0,0,0,0.5);
+	border-bottom: 1px solid rgba(0,0,0,0.125);
+}
+
+.similar-idya-pills a
+{
+    text-decoration: none;
+    border: 1px solid rgba(0,0,0,0.5);
+    border-radius: 20px;
+    color: rgba(0,0,0,0.5);
+    padding: 2px 8px;
+    margin: 4px;
+}
+
+
+.similar-idya
+{
+    width: 100%;
+    margin-top:20px;
+   	border-radius: 4px;
+	border:1px solid rgba(0,0,0,0.125);
+
+}
+.similar-idya .header
+{
+	padding:10px;
+	margin:5px;
+	color: rgba(0,0,0,0.5);
+	border-bottom: 1px solid rgba(0,0,0,0.125);
+
+}
+
+.scroll-content
+{
+	display: flex;
+	overflow-x: scroll;
+	padding: 10px;
+}
+
+.idya-user-info
+{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.idya-user-info .profile-img
+{
+	margin:2px 5px;
+}
+
+.idya-boxes
+{
+	margin-right: 16px;
+	background-color: rgba(224,224,224,0.2);
+	border:1px solid rgba(0,0,0,0.125);
+	padding: 5px;
+	margin: 16px;
+	border-radius: 4px;
+
+}
+
+
+.idya-title
+{
+	
+	padding: 8px;
+	margin: 4px;
+	width:200px;
+}
+.idya-data i
+{
+	border-radius: 20px;
+	border:1px solid rgba(0,0,0,0.125);
+	padding: 6px;
+	margin: 4px;
+	font-size:8px;
+}

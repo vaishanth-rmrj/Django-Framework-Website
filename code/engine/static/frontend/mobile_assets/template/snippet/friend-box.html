@@ -1,0 +1,38 @@
+    
+    <div class="friendBox"> 
+    
+    <div class="section1 vCenter">
+
+      <!--USER PROFILE IMAGE-->
+    <div class="preLoader" style="width: 100%!important;height: 100%!important;max-width: 80px!important;max-height: 80px!important;">
+      <img ng-src="[[friendProfile.image]]" style="width: 100%!important;height: 100%!important;max-width: 85px!important;max-height: 85px!important;">
+    </div>
+
+    <a class="text-anchor" href="#profile/[[friendProfile.username]]" style="color:blue;">[[friendProfile.username]]</a>
+
+    </div>
+
+    <div class="section2" style="flex: 1">
+      <div class="profile-numbers hCenter">
+
+      <div  class="vCenter m-2">
+        <h6 style="font-size: 28px;margin: 0;font-family: 'Orbitron', sans-serif;font-weight:bold;">[[friendProfile.friendCount]]</h6>
+        <strong>Friends</strong>
+        
+      </div>
+
+      <div class="vCenter m-2">
+        <h6 style="font-size: 28px;margin: 0;font-family: 'Orbitron', sans-serif;font-weight:bold;">[[friendProfile.idyaCount]]</h6>
+        <strong>idyas</strong>
+      </div>
+
+    </div>
+
+    <div class="d-flex justify-content-center" style="width: 100%">
+      <button type="button" class="nullBtn followBtn ripple">+ Follow</button>
+    </div>
+
+    </div>  
+
+    </div>
+

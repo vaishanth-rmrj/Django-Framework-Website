@@ -1,0 +1,31 @@
+<div class="channel">
+	<div class="container-fluid info-display fade-in">
+		<div class="section1">
+			<div class="channel-img-holder">
+				<div class="channel-img">
+					<img ng-src="[[channelInfo.picture]]" style="max-width: 100%;max-height: 100%;">
+				</div>				
+			</div>
+		</div>
+		<div class="section2">
+			<h4>[[channelInfo.name]]</h4>
+
+			<div class="pl-3">
+				<li>[[channelInfo.subscribers_count ]] subscribed</li>
+				<li>[[channelInfo.idyasCount]] idyas</li>
+				<li>Description</li>
+				<li>[[channelInfo.description]]</li>
+			</div>
+
+			<div class="channel-action-bar">
+				<button type="button" class="nullBtn iBtn ripple " ng-click="">edit</button>
+				<button type="button" class="nullBtn iBtn ripple " ng-click="toggleIdyaSelectPanel()">Add idya</button>
+			</div>
+			
+		</div>
+	</div>
+
+<!-- directive to load channel idyas -->
+<load-channel-content></load-channel-content>
+
+</div>

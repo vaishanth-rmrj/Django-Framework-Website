@@ -1,0 +1,39 @@
+<div class="friend-box vertical-centering">
+
+  <!--USER PROFILE IMAGE-->
+<div class="round-img-preloader" style="width: 100%!important;height: 100%!important;max-width: 80px!important;max-height: 80px!important;">
+  <img ng-src="[[friendProfile.image]]" style="width: 100%!important;height: 100%!important;max-width: 85px!important;max-height: 85px!important;">
+</div>
+
+<h6><a class="text-anchor" href="#profile/[[frnd.Name]]" style="color:blue;">[[frnd.Name]]</a></h6>
+
+
+<div class="d-flex">
+  
+<small class="p-2">[[friendProfile.career]] </small>
+<small class="p-2"><i class="icomoon i-location" aria-hidden="true" ></i> [[friendProfile.location]] </small>
+<small class="p-2">pts: [[friendProfile.exp_points]]</small>
+
+</div>
+
+
+<div class="profile-numbers d-flex">
+
+  <div  class="vertical-centering text-center m-2">
+    <h6 style="font-size: 20px;margin: 0">[[friendProfile.friends.length]]</h6>
+    <strong>Friends</strong>
+    
+  </div>
+
+  <div class="vertical-centering text-center m-2">
+    <h6 style="font-size: 20px;margin: 0">[[friendProfile.no_of_ilog]]</h6>
+    <strong>idyas</strong>
+  </div>
+
+</div>
+<hr class="w-100">
+
+<button type="button" class="simple-btn follow-btn">+ Follow</button>
+
+</div>
+

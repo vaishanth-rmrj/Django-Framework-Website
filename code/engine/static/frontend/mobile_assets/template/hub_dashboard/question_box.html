@@ -1,0 +1,28 @@
+<div class="question-box">	
+	<div class="question-box-header">
+		<div class="d-flex">
+			<div class="question-box-profile-pic">
+			<!-- user profile image -->
+			<load-profile-pic username="[[content.user]]"></load-profile-pic>
+			</div>
+
+			<div>
+			<h6 style="font-size: 20px;">[[content.user]]</h6>
+			<small>asked on [[content.created_at | date]]</small>
+			</div>
+		</div>
+		<div class="ml-auto h-center">
+			<small>[[content.curiosity.length]] Curious</small>
+			<button type="button" class="bttn ripple ">
+				<i class="icomoon i-star"></i>
+			</button>
+		</div>
+	</div>
+	<div class="question-box-content">
+		<p ng-click="openQuestionDetailView(content)">[[content.question]]</p>
+	</div>
+	<div class="question-box-footer">
+		<p class="ml-auto">[[content.answer_count]] Answers</p>
+	</div>
+	
+</div>

@@ -1,0 +1,189 @@
+{% extends "base.html" %} 
+{% block title %}{% endblock title %} 
+{% block style %}
+<style>
+	body{
+		margin: 0;
+		padding: 0;
+		background-color: blue;
+		font-family: 'Montserrat', sans-serif;
+	}
+	.banner-text
+	{
+		display:block;
+		margin:auto 0;
+		color:rgb(250,250,250);
+	}
+
+	.login_context{
+		margin:auto;		
+		box-shadow: 5px 8px 20px -2px #000;
+
+	}
+	.form-group input{
+
+		min-width: 80vw;
+		max-width: 380px;
+		padding: 4px 12px!important;
+		margin: 5px;
+		border: none;
+		border-radius: 18px;
+		padding:10px;
+		background-color: rgba(224,224,224 ,0.5);
+	}
+
+	.form-group input:focus {
+		border: none;
+		outline: none;
+		border-radius: 0;
+		border-bottom: 2px solid #F13030;
+		transition-duration:300ms;
+		transition-property:border-radius;
+	}
+	.login_context .btn{
+		border-radius: 18px;
+	}
+
+	.login-btn
+	{
+		padding: 8px 12px;
+		margin: 10px;
+		background-color: transparent;
+		border-radius: 18px;
+		border:none;
+		outline: none;
+		cursor: pointer;
+		box-shadow: 0 4px 5px 2px rgba(0,0,0,0.125);
+		background-color: #F13030;
+  		color: #FFFFFF;
+  		transition-duration: 300ms;
+	    transition-property :transform,box-shadow,background-color;
+	}
+
+	.login-btn:hover
+	{
+	    background-color:rgb(232, 17, 33);
+	    box-shadow: 5px 3px 9px 0 rgba(0, 0, 0,0.4);
+	    color: rgb(255,250,250);
+	    transform: scale(1.01, 1.01);
+
+	}
+	.h-center
+	{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.v-center
+	{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+	}
+	/* Ripple effect */
+	.ripple {
+		 position:relative;
+		 overflow:hidden;
+		 transform:translate3d(0,0,0);
+	}
+	.ripple:after {
+		 content:"";
+		 display:block;
+		 position:absolute;
+		 width:100%;
+		 height:100%;
+		 top:0;
+		 left:0;
+		 pointer-events:none;
+		 background-image:radial-gradient(circle,#FFFF 10%,transparent 10.1%);
+		 background-repeat:no-repeat;
+		 background-position:50%;
+		 transform:scale(10,10);
+		 opacity:0;
+		 transition:transform .5s,opacity 1s;
+	}
+	.ripple:active:after {
+		 transform:scale(0,0);
+		 opacity:.6;
+		 transition:0s;
+		 outline: 1px solid #FFFF;
+	}
+
+	.wrap-fit
+	{
+		width: 100vw;
+		height: 100vh;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.login-form
+	{	
+		max-width: 400px;
+		width: 90%;
+		height: auto;
+		padding: 30px 10px;
+		margin: 5px;
+
+		border-radius: 8px;
+		border: 1px solid rgba(0,0,0,0.125);
+		box-shadow: 0 4px 5px 2px rgba(0, 0, 0, 0.125);
+	}
+	.login-banner
+	{
+		text-align: center;
+		margin-bottom: 20px; 
+	}
+	.input-fields
+	{
+		width: 95%;
+	}
+	.support-sect
+	{
+		width: 100%;
+		text-align: center;
+	}
+</style>
+{% endblock style %} 
+{% block content %}
+
+<div class="wrap-fit">
+	<div class="login-form">
+		<div class="login-banner">
+			<h2 style="font-size:40px;">idyaWeb</h2>
+			<p style="font-size: 18px;">connect to explore</p>
+		</div>
+		
+		<form method="POST" action="{% url 'mobile-login' %}" class="v-center input-fields">
+			{% csrf_token %}
+
+			<div class="form-group m-0">
+				{{ form.username }}
+				{% if form.username.errors %}
+				<small class="form-text text-danger p-1" id="emailHelp">Username does not exists!</small>
+				{% endif %}
+			</div>
+			<div class="form-group d-flex flex-column">
+				{{ form.password }}
+				{% if form.password.errors %}
+				<small class="form-text text-danger p-1" id="emailHelp">oops! incorrect password</small>
+				{% endif %}
+				<small class="ml-auto mr-2">Awww!!<a href=""> forgot password ?</a></small>
+			</div>
+			
+
+			<div class="support-sect">
+				<small class="">Not yet signed-in?<a href=""> SIGN-UP</a></small>
+			</div>
+
+			<div class="h-center">
+				<button type="submit" class="login-btn ripple" >Connect</button>
+			</div>
+			
+		</form>
+	
+	</div>
+</div>
+
+{% endblock content %}

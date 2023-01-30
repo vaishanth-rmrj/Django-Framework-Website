@@ -1,0 +1,16 @@
+<div class="editor-holder">
+
+<nav class="container-fluid editor-nav">
+	<button type="button" class="bttn ripple mr-auto" ng-click="emitCloseEditorSignal()">Close</button>
+
+	<button type="button" class="bttn ripple" ng-click="prevStage()"> << back </button> 
+
+	<button type="button" class="bttn ripple" ng-click="nextStage()" ng-hide="showStage3"> next >> </button>
+
+	<button type="button" class="bttn ripple" ng-click="nextStage()" ng-if="showStage3"> done </button>
+</nav>
+<div class="edit-section" style="flex-grow: 1;position: relative;">
+	<i-log-editor ng-if="loadIBogEditor"></i-log-editor>
+</div>
+
+</div>

@@ -1,0 +1,117 @@
+<div class="holder container-fluid m-0 p-0">
+
+<!-- navigation section -->
+<nav class="container-fluid navbarContainer">
+  
+  <div class="row justify-content-center">
+  <div class="col-md-10 col-lg-8 navbar">
+  <!-- navigation buttons -->
+
+  <div class="dropdown vCenter" ng-if="activeProfile.username != 'Anonymous'">
+ <!--  for displaying the profile with the name -->
+  <div class="profileButton ripple" data-toggle="dropdown">
+    <div class="profilePicDisplay" style="overflow: hidden;">
+      <img ng-src="[[activeProfile.image]]" style="width: 44px;height: 44px;">
+    </div>
+    <div class="profileName">
+      <h2>[[activeProfile.username]]'s idyaweb</h2>
+    </div>   
+  </div>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+    <a class="dropdown-item" href="#/profile/[[activeProfile.username]]">My Profile</a>
+    <hr>
+    <a class="dropdown-item" href="/logout/">Log-Out</a>
+  </div>
+  </div>
+
+    <div class="hCenter" ng-if="activeProfile.username == 'Anonymous'">    
+      <a class="btn text-white ripple" style="border:2px solid rgb(250,250,250);border-radius:20px;background-color:inherit;padding: 4px 12px;font-size: 16px" href="/login/">Connect</a>
+    </div>
+  <!-- navigation buttons -->
+  <div class="navBarBtns d-flex">
+    <button type="button" class="nullBtn ripple d-md-block d-none">
+      <strong class="text-white">idyahub</strong>
+    </button>
+
+    <button type="button" class="nullBtn ripple d-md-block d-none">
+      <strong class="text-white">Notifications</strong>
+    </button>
+
+    <button type="button" class="nullBtn ripple d-md-block d-none">
+      <strong class="text-white">xplore</strong>
+    </button>
+
+    <button type="button" class="nullBtn ripple d-md-block d-none">
+      <strong class="text-white">About Us</strong>
+    </button>
+
+    <button type="button" class="nullBtn ripple d-md-none" ng-click="toggleDashboardPageSideNav()">
+      <i class="icomoon i-menu-bars" style="font-size: 20px"></i>
+    </button>
+  </div>
+  
+  </div>
+  </div>
+</nav>
+
+<!-- dashboard side navigation -->
+<div class="bg-blur fitContainer d-md-none" style="position: absolute;z-index: 5;" ng-if="showDashboardSideNav">  
+
+<div class="sideBar text-center page-slide-left" style="position: absolute;top: 0;bottom: 0;right: 0">
+
+<div class="d-flex flex-column align-items-center">
+</div>
+  <strong style="font-size: 24px">idyaWeb</strong>
+  <p class="mb-3">Built for people with the sole purpose of sharing their idyas</p>
+  <hr>
+  <ul>
+    <li>Xplore</li>
+    <li>About Us</li>
+  </ul>
+</div>
+</div>
+
+
+<div class="bodyHolder">
+    <div class="row idya-block-section justify-content-center">         
+      
+    <div class="col-lg-6 col-md-6 col-12 p-0" style="margin-bottom: 80px;display: flex;flex-direction: column;align-items: center;"> 
+
+
+<!-- IDYA BLOCKS SECTION -->
+<fetch-idya-for-dashboard username="[[activeProfile.username]]"></fetch-idya-for-dashboard>
+     
+
+
+   
+      </div>
+
+      <div class="col-md-4 d-sm-block d-none"> 
+        <!-- to display the top charts -->
+        <div class="iCard">
+          <div class="header">
+            <h6>Top chart</h6>
+          </div>
+          <div class="body vCenter" style="height: 200px;">
+<!--             <div class="profileInfos">
+              <div class="preLoader sizeTwo">
+                <user-image-loader username=""></user-image-loader>
+              </div>
+              <div class="profileDetails">
+                <h6>Username</h6>
+              </div>
+            </div> -->
+            <strong>Under Construction</strong>
+            
+          </div>
+        </div>
+      </div>
+
+        
+      </div>
+ 
+    </div>
+
+</div>
+
+

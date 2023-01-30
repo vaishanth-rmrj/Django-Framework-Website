@@ -1,0 +1,48 @@
+  <div class="info-display fade-in">
+    <div class="section1 d-flex justify-content-center">
+      <div class="profile-img-holder">
+        <div class="profile-img fade-in">
+          <img ng-src="[[details.image]]" style="max-width: 100%;max-height: 100%;">        
+        </div>
+      </div>
+    </div>
+    <div class="section2 fade-in">
+      <div class="d-flex align-items-center">
+        
+        <strong style="font-size: 22px;padding-right: 5px">[[details.username]]</strong>
+
+        <button type="button" class="bttn ripple" ng-click="toggleProfileEditPanel()">
+          <small class="text-mute">edit</small>
+        </button>
+
+      </div>   
+      <div class="pl-3">
+
+      <p style="font-size: 18px;">[[details.friendCount]] friends | [[details.idyaCount]] idyas</p>  
+
+      <p>lives in <strong>[[details.location]]</strong> <i class="icomoon i-location" aria-hidden="true" style="font-weight:800;"></i></p>
+
+      <p ng-if="[[details.career]] == 'Studying'">is studying in <strong>[[details.institution]]</strong></p>
+
+      <p ng-if="[[details.career]] == 'Working'">is working as [[details.job]] in <strong>[[details.company]]</strong></p>
+
+      <p ng-if="[[details.career]] == 'Business'">is a business person running <strong>[[details.company]]</strong></p>
+
+      <p ng-if="[[details.career]] == 'Entrepreneur'">is as entrepreneur running <strong>[[details.company]]</strong></p>
+
+    <div class="detailsBioSection" ng-if="details.bio != '' " style="margin-top: 10px;">
+      <strong>About Myself</strong>
+      <p style="font-size:14px;">[[details.bio]]</p>
+    </div>
+    </div>
+
+    <!-- perform action on other user profiles -->
+    <profile-action-bar ng-if="blackBox.activeProfile.username != details.username"></profile-action-bar>
+
+    </div>
+  </div>
+
+
+
+
+     

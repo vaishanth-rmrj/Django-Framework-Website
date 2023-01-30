@@ -1,0 +1,26 @@
+{% extends "core.html" %}
+{% load staticfiles %} 
+{% block title %}{% endblock title %} 
+{% block style %}
+<style>
+</style>
+{% endblock style %} 
+{% block content %}
+<div class="welcome-banner container-fluid d-fle flex-column align-items-center d-none" style="margin-top: 200px">
+	<h6 style="font-size: 60px;">Hey!Username</h6>
+	<p style="font-size:20px;">idyaWeb awaits you to xplore the unknown</p>
+	<button class="btn btn-success">Continue</button>
+</div>
+
+<div class="profile-setup container-fluid d-flex flex-column align-items-center" style="margin-top: 160px">
+	<h6 style="font-size: 36px">Setting up your profile</h6>
+	<p>Make your profile more unique with your picture</p>
+	<div class="profile-img-upload">
+		<img  src="{% static 'images/profile-dummys/man-1.png' %}" style="width: 25vw; height:auto;max-width: 150px;" class="rounded-circle">
+	</div>
+</div>
+{% endblock content %}
+
+{% block scripts %}
+
+{% endblock scripts %} 

@@ -1,0 +1,40 @@
+<!-- to list out the friend profiles -->
+<div class="friend-list-display-section fade-in">	
+	<!-- to display number of friends  -->
+	<div class="friend-list-display-header">
+	  <strong class="p-1">[[friendsList.length]] friends</strong>  
+	</div>  
+	<!-- to search from the friend list -->
+	<div class="search-bar" >  
+	  <input type="text" class="nullInput" name="search-content" placeholder="Whom are you looking for ?" ng-model="search.friendName" ng-Keyup="searchProfileFriend()">
+
+	  <button type="button" class="bttn" ng-click="searchFriend(friend)">
+	  	<i class="icomoon i-search" aria-hidden="true"></i>
+	  </button>
+	</div>
+	<!-- rendering friend info -->
+	<div class="hCenter" ng-repeat="friend in friendsList">
+
+	    <div class="friend-info-display fade-in-left">     
+		    <div class="friend-info-pic">
+		    <!-- user profile image -->
+		    <load-profile-pic username="[[friend.username]]"></load-profile-pic>    
+
+		    </div>
+
+	    <div class="friend-info-details">
+	    	<a class="text-anchor" href="#/profile/[[friend.username]]" style="color:blue;">[[friend.username]]</a>
+	    	<p>[[friend.friendCount]] friends | [[friend.idyaCount]] idyas</p>
+
+	    	<div class="buttonBar" ng-if="activeProfile.username != Profile.username">	    	
+	      		<button type="button" class="nullBtn ripple followBtn">Follow</button>
+	    	</div>
+
+	    </div> 
+
+	    </div>
+
+	</div>
+
+
+</div>

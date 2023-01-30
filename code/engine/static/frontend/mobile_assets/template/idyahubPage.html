@@ -1,0 +1,149 @@
+<!-- idyahub page -->
+<div class="holder">
+  <nav class="container-fluid navbarContainer topFixed">
+  
+  <div class="row justify-content-center">
+  <div class="col-md-10 col-lg-8 navbar" style="justify-content: start!important;">
+  <!-- navigation buttons -->
+  <!-- visible only in small screen -->
+  <button type="button" class="nullBtn ripple navText" ng-click="emitCloseIdyahubSignal()"><i class="icomoon i-close" style="font-size: 18px"></i></button>
+
+  <div class="dropdown vCenter" ng-if="activeProfile.username != 'Anonymous'">
+ <!--  for displaying the profile with the name -->
+  <div class="hubButton ripple" data-toggle="dropdown">
+    <div class="hubPicDisplay" style="overflow: hidden;width: 42px;height: 42px">
+      <img ng-src="[[hubInfo.hubPic]]" style="width: 44px;height: 44px;">
+    </div>
+    <div class="hubName">
+      <h5 style="padding: 8px 12px;">[[hubInfo.hubName]]</h5>
+    </div>   
+  </div>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+    <a class="dropdown-item" href="#">About</a>
+  </div>
+  </div>
+
+  <!-- navigation buttons -->
+  <div class="navBarBtns d-flex ml-auto">
+    <button type="button" class="nullBtn ripple d-sm-block d-none" ng-click="emitAddIdyaSignal(hubInfo.hubName)">
+      <span class="navText">Add idya</span>
+    </button>
+    <button type="button" class="nullBtn ripple d-sm-block d-none">
+      <span class="navText">Notifications</span>
+    </button>    
+    <button type="button" class="nullBtn ripple d-sm-block d-none">
+      <span class="navText">info</span>
+    </button> 
+    <button type="button" class="nullBtn ripple d-sm-none" ng-click="toggleHubDashboardSidenav()"><i class="icomoon i-menu" style="font-size: 20px"></i></button>
+  </div>
+  
+  </div>
+  </div>
+</nav>
+
+<!-- idyahub dashboard sidebar -->
+<div class="wrapScreen bg-blur" ng-if="showHubDashboardSideNav">  
+
+<div class="sideBar rightFixed d-flex flex-column text-center" ng-class="{'page-slide-left': showHubDashboardSideNav == true}">
+  <button type="button" class="nullBtn ripple" ng-click="toggleHubDashboardSidenav()">
+    <i class="icomoon i-close" style="font-size: 18px"></i>
+  </button>
+  <div class="vCenter">
+    <div class="hubPicDisplay" style="overflow: hidden;width:100px;height: 100px;border-radius: 50px!important;">
+      <img ng-src="[[hubInfo.hubPic]]" style="width: 104px;height: 104px;">
+    </div>
+    <h5 style="padding: 8px 12px;">[[hubInfo.hubName]]</h5>
+    
+  </div>
+  <hr>
+  <ul>
+    <li>info</li>
+  </ul>
+</div>
+</div>
+
+<!-- hub dashboard bottom navigation -->
+<div class="bottomNavHolder container-fluid p-0 bottomFixed">
+
+<nav class="bottomNav container-fluid hCenter d-sm-none">
+  <!-- navigation buttons -->
+  <div class="navBottomBarBtns d-flex justify-content-center">
+      <button type="button" class="nullBtn ripple" ng-click="">
+        <i class="icomoon i-dashboard"></i>
+      </button>
+      <button type="button" class="nullBtn ripple" ng-click="">
+        <!-- <i class="icomoon i-idya-hub" style="font-size: 30px"></i> -->active users
+      </button>      
+
+      <button type="button" class="nullBtn ripple" ng-click="emitAddIdyaSignal(hubInfo.hubName)">
+        <i class="icomoon i-plus" aria-hidden="true" style="font-size: 38px"></i>
+      </button>       
+
+      <button type="button" class="nullBtn ripple" ng-click="">
+        <!-- <i class="icomoon i-notifis" ></i> -->updates
+      </button>
+
+      <button type="button" class="nullBtn ripple" ng-click="">
+        <!-- <i class="icomoon i-user" ></i> -->info
+      </button>
+  </div>
+</nav>
+
+</div>
+
+<div class="fitContainer">
+<div class="row justify-content-center" style="margin-top: 100px;margin-bottom: 100px;">         
+  
+<div class="col-md-6 col-sm-8 col-12 p-0 p-sm-4">
+
+      <div class="questionSection">
+        <div class="preLoader" style="width: 60px;height: 60px">
+          <img src="[[activeProfile.image]]" style="width: 64px;height: 64px">
+        </div>
+        <div class="questionBox">
+          <p style="font-size: 18px;">Anything In Your Mind To Ask?</p>                   
+        </div>       
+        
+      </div>
+
+      <fetch-hub-idyas hubname="[[hubInfo.hubName]]"></fetch-hub-idyas>      
+
+
+</div>
+
+<div class="col-md-4 col-sm-4 p-sm-0 p-md-0 d-none d-sm-block">
+
+  <!-- display hub details -->
+  <div class="iCard">
+    <div class="hubPicDisplaySection">
+      <img ng-src="[[hubInfo.hubPic]]">
+    </div>
+    <div class="body">
+      <h5>[[hubInfo.hubName]]</h5>
+      <p>[[hubInfo.description]]</p>
+      <div class="d-flex justify-content-end">
+        <span>[[hubInfo.idyaCount]] idyas</span>
+        <span>| [[hubInfo.memberCount]] members</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- display active users in the hub -->
+  <div class="iCard">
+    <div class="header">
+      <h6>Active Users</h6>
+      <h6 class="ml-auto">26</h6>
+    </div>
+    <div class="body">
+      
+    </div>
+  </div>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+

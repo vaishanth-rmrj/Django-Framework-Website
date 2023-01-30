@@ -1,0 +1,55 @@
+<div class="question-detail-view-section">
+	<div class="question-info-section">
+		<div class="d-flex">
+			<div class="question-box-profile-pic">
+			<!-- user profile image -->
+			<load-profile-pic username="[[question_detail.user]]"></load-profile-pic>
+			</div>
+
+			<div>
+			<h6 style="font-size: 20px;">[[question_detail.user]]</h6>
+			<small>asked on [[question_detail.created_at | date]]</small>
+			</div>
+		</div>
+
+	<div class="question-box-content">
+		<p>[[question_detail.question]]</p>
+	</div>
+	</div>
+
+	<div class="answer-info-section">
+		<p class="ml-auto">[[question_detail.answer_count]] Answers</p>
+		<hr>
+		<div class="answer-section-action-bar h-center">
+			<button type="button" class="bttn ripple">Add Answer</button>
+			<button type="button" class="bttn ripple">Link idya</button>
+		</div>
+		
+	</div>
+	<div class="answer-result-display" ng-repeat="answer in answers">
+			<div class="answer-box" >
+				<div class="answer-box-header">
+					<div class="answer-profile-pic">
+						<!-- user profile image -->
+						<load-profile-pic username="[[answer.user]]"></load-profile-pic>
+					</div>
+					<div class="answer-info">
+						<h6 style="font-size: 20px;">[[answer.user]]</h6>
+						<small>answered on [[answer.created_at | date]]</small>
+					</div>
+				</div>
+
+				<div class="answer-content">
+					<p ng-if="answer.answer != ''">[[answer.answer]]</p>
+				</div>
+
+				<div class="answer-box-footer">
+					<small ng-if="answer.likes_count != 0">[[answer.likes_count]] user found it to be useful</small>
+					<div class="ml-auto">
+						<small>Useful?</small>
+						<button type="button" class="bttn ripple">Yes</button>
+					</div>
+				</div>
+			</div>
+	</div>
+</div>

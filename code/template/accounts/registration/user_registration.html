@@ -1,0 +1,462 @@
+{% extends "core.html" %}
+{% load staticfiles %} 
+{% block title %}{% endblock title %} 
+{% block style %}
+<style>
+	body{
+		margin: 0;
+		padding: 0;
+		font-family: 'Montserrat', sans-serif;
+	}
+	input , select, textarea{
+		border: none!important;
+		border-radius: 0!important;
+		border-bottom: 2px solid rgb(232,17,35)!important;
+	}
+	input:hover , select:hover, textarea:hover {
+		border-bottom: 2px solid blue; 
+	}
+	input:focus , select:focus, textarea:focus {
+		border-bottom: 2px solid green; 
+	}
+	.fixed-canvas
+	{
+		position: fixed;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		background-color:#FAFAFA;
+		overflow-y:scroll;
+	}
+	.context
+	{
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		align-items:center;
+		overflow-y: scroll;
+	}
+	input{
+		border: none!important;
+		border-radius: 0!important;
+		border-bottom: 2px solid rgb(232,17,35)!important;
+	}
+	input:hover {
+		border-bottom: 2px solid blue; 
+	}
+	input:focus {
+		border-bottom: 2px solid green; 
+	}
+	#brand-logo-text
+	{
+		font-size:70px;
+	}
+
+	#brand-logo-caption
+	{
+		font-size:12px;
+	}
+	.signup-context
+	{
+		max-width: 800px;		
+		display: flex;
+		justify-content: center;
+		border-radius: 4px;
+		margin:4px;
+	}
+	.register-form
+	{
+		padding: 20px;
+		box-shadow: 0 0 10px 5px rgba(0,0,0,0.125);
+		background-color:#FFFF;
+		border-radius: 4px;
+	}
+	
+	.signup_context .btn{
+		border-radius: 20px; 
+		background-color: rgba(232,17,35 ,0.9);
+		color: rgb(250,250,250);
+	}
+
+
+.progressbar {
+  counter-reset: step;
+}
+.progressbar-container ul
+{
+  margin-bottom: 0;
+}
+.progressbar li {
+  list-style: none;
+  display: inline-block;
+  width: 30.33%;
+  position: relative;
+  text-align: center;
+  cursor: pointer;
+}
+.progressbar li:before {
+  content: counter(step);
+  counter-increment: step;
+  width: 40px;
+  height: 40px;
+  line-height : 20px;
+  border: 3px solid #DDD;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  text-align: center;
+  margin: 0 auto 0 auto;
+  background-color: #DDD;
+}
+.progressbar li:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background-color: #ddd;
+  top: 20px;
+  left: -50%;
+  z-index : -1;
+}
+.progressbar li:first-child:after {
+  content: #00E676;
+}
+.progressbar li.active {
+  color: #00E676;
+}
+.progressbar li.active:before {
+  border-color: #00E676;
+} 
+.progressbar li.active + li:after {
+  background-color: #00E676;
+}
+.centering
+{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.stage-text
+{
+	text-align: center;
+
+}
+.stage-text h3
+{
+	font-size: 24px;
+	font-weight: 400;
+}
+.profile-setup
+{
+	width: 100vw;
+	max-width: 400px;
+	position: relative;
+	margin:10px 4px;
+
+}
+.dp-holder
+{
+	width: 200px;
+	height: 200px;
+	background-color:#F2F2F2;
+	border-radius: 50%;
+	border:1.5px solid #FFFF;
+	box-shadow: 0 0 5px 3px rgba(0,0,0,0.125);
+	position: absolute;
+	left:25%;
+
+}
+.profile-setup-form
+{
+	background-color:#FFFF;
+	padding:10px;
+	padding-top:100px;
+	margin-top:100px;
+	box-shadow: 0 0 5px 3px rgba(0,0,0,0.125);	
+	border-radius: 4px;
+}
+.category-pills
+{
+	display: inline-block;
+}
+.category-pills button
+{
+    border: 1px solid #F13030;
+    border-radius: 20px;
+    color: #F13030;
+    background-color:  #F2F2F2;
+    padding: 8px 12px;
+    margin: 4px;
+    cursor: pointer;
+    transition-duration: 300ms ;
+    transition-property: background-color;  
+}
+.selected
+{
+	color: #FFFF!important;
+    background-color:  #F13030!important;
+}
+.profile-creation-success-box
+{
+	background-color:#FFFF;
+	padding:10px;
+	margin:4px;
+}
+
+.category-box
+{
+    width: 100vw;
+    max-width: 400px;
+    margin-top:20px;
+
+}
+
+
+	/* Medium devices (landscape tablets, 768px and up) */
+	@media screen and (max-width: 768px) {
+	
+	#brand-logo-text
+	{
+		font-size:50px;
+	}
+
+	#brand-logo-caption
+	{
+		font-size:8px;
+	}
+	.signup_context{
+	}
+	.wrapper
+	{
+		padding: 3px;
+	}
+	}
+
+</style>
+{% endblock style %} 
+{% block content %}
+<div ng-app="regApp">
+
+<script type="text/ng-template" id="profile-registration-form.html">
+		<div class="signup-context">
+<div class="row">
+	<div class="col-md-7 d-flex flex-column justify-content-center" style="color: rgb(250,250,250);background-color:rgba(232,17,35,0.8); ">
+
+		<div class="d-flex flex-column align-items-center">
+		<h1 id="brand-logo-text">idyaWEB</h1>
+		<small id="brand-logo-caption">BUILT FOR PEPOPLE | CONNECTING INNOVATIVE MINDS</small>
+		</div>
+
+		<div class="text-center d-md-block d-none mt-4">
+		<p>A network of people who share their ideas from different corners of the world.<strong> Are you kind of the same? What are you waiting for?</strong></p>
+		<strong style="font-size:18px;">Come join the web and explore the unknown.</strong>
+		</div>
+	</div>
+	<div class="col-md-5 register-form" ng-controller="RegFormController">
+	<form>
+	<div class="d-flex">
+		<div class="form-group w-50 mr-3">
+			<label for="first_name">First Name</label>
+			<input type="text" class="form-control" name="first_name" ng-model="RegData.first_name">
+			
+		</div>
+		<div class="form-group w-50">
+			<label for="last_name">Last Name</label>
+			<input type="text" class="form-control" name="last_name" ng-model="RegData.last_name">
+			
+		</div>
+	</div>
+		<div class="form-group">
+			<label for="username">Username</label>
+			
+			<div class=" d-flex align-items-center">
+			<input type="text" class="form-control" name="username" ng-model="RegData.username" ng-keyup="checkUsernameExist()">
+			</div>
+			<small class="form-text text-muted" id="emailHelp">*username will be visible to public</small>
+			
+			<small class="form-text text-danger p-1 " ng-if="UsernameExist">Username already exist</small>
+		</div>
+		<div class="form-group">
+			<label for="password">Password</label>
+			<input type="password" class="form-control" name="password" ng-model="RegData.password">		
+			
+		</div>
+		<div class="form-group">
+			<label for="confirmPassword">Confirm Password</label>
+			<input type="password" class="form-control" name="confirmPassword" ng-model="confirmedPassword" ng-keyup="confirmPassword(confirmedPassword)">	
+			<small class="form-text text-danger p-1" ng-if="passwordMatch == false">Password not matching</small>
+			
+		</div>
+		<div class="form-group">
+			<label for="email">Email</label>
+			<input type="text" class="form-control" name="email" ng-model="RegData.email">
+			
+		</div>
+		<div class="mb-4">
+		<small>Already a User?<a href="{% url 'accounts:login' %}"> Log-in</a></small>
+		</div>
+
+		<div class="d-flex  justify-content-center">
+			<button type="button" class="btn" ng-click="SubmitRegForm()">Connect</button>
+		</div>
+		
+		
+	</form>
+
+	<div class="loadingbox">
+	<div class="background-blur" ng-if="showLoaderDialog">
+
+	<div class="profile-creation-success-box" ng-class="{'slide-up-bounce': commentDialogBoxStatus == true }">
+
+		<div class="d-flex align-items-center" ng-if="showLoader">
+			<img src="https://cdn-images-1.medium.com/max/1600/0*cWpsf9D3g346Va20.gif" width="60px" height="60px">
+			<strong>Creating Profile...</strong>
+		</div>
+		
+		<div class="d-flex flex-column" ng-if="showLoaderSuccess">
+			<strong style="font-size: 18px">Profile created successfully</strong>
+			<button type="button" class="btn" ng-click="nextBtn()">Next ></button>
+		</div>
+	</div>
+
+	</div>
+</div>
+
+	</div>
+</div>
+</div>
+</script>
+
+<script type="text/ng-template" id="profile-setup-form.html">
+	<div class="container-fluid centering" ng-controller="profileSetupController">
+<div class="profile-setup">
+
+	<div class="dp-holder">
+		
+	</div>
+
+<div>
+	  <form class="profile-setup-form">
+    <p class="text-center">Tell us more about yourself</p>
+
+    <div class="form-group">
+    <textarea type="text" class="form-control bio-text" placeholder="Bio" ng-model="Profile.bio"></textarea>
+    </div>
+  
+    <div class="form-group">
+    <input type="text" class="form-control" name="dob" ng-model="Profile.dob" placeholder="Birth date">
+    </div>
+
+    <div class="form-group">
+    <label for="career.id_for_label">Select your career</label><br>
+    <select class="form-control" ng-model="Profile.career" ng-options="option.value as option.display for option in careerOptions">
+    </select>
+    </div>
+
+    <div class="form-group" ng-if="[[Profile.career]] == 'Studying'">
+      <label for="{{ form.institution.id_for_label }}">Where do you study?</label><br>
+      <input type="text" class="form-control" name="institution" ng-model="Profile.institution" placeholder="Institution">
+      
+    </div>
+
+    <div class="form-group" ng-if="[[Profile.career]] == 'Working'">
+      <label for="company.id_for_label">Where do you work?</label><br>
+      <div class="d-flex align-items-center">
+        <input type="text" class="form-control" name="company" ng-model="Profile.company" placeholder="Company">
+      <small>as</small>
+      <input type="text" class="form-control" name="job" ng-model="Profile.job" placeholder="job">
+      </div>
+            
+    </div>
+
+    <div class="form-group" ng-if="[[Profile.career]] == 'Business'">
+      <label for="company.id_for_label">What business do you run?</label><br>
+      <input type="text" class="form-control" name="company" ng-model="Profile.company" placeholder="Business">
+      
+    </div>
+
+    <div class="form-group" ng-if="[[Profile.career]] == 'Entrepreneur'">
+      <label for="company.id_for_label">Company your are running?</label><br>
+      <input type="text" class="form-control" name="company" ng-model="Profile.company" placeholder="Company">
+      
+    </div>
+
+    <div class="form-group">
+      <label for="location.id_for_label">Where do you live?</label><br>
+      <input type="text" class="form-control" name="location" ng-model="Profile.location" placeholder="location">
+      
+    </div>
+
+    <div class="horizontal-centering align-items-center">
+ 
+      <button type="button" class="simple-btn ml-auto" ng-click="submitProfileDetails()">Done<i class="icomoon i-go-button p-2"></i></button>
+
+    </div>
+  </form>
+</div>
+
+	
+</div>
+</div>
+</script>
+
+<script type="text/ng-template" id="profile-personalise-form.html">
+	<div class="container-fluid centering" ng-controller="personalizationController">
+    <div class="category-box ">
+
+    <div class="category-pills" ng-repeat="category in listCategories">
+		<button type="button" id="[[category]]-btn" ng-click="selectCategories(category)">[[category]]</button>
+    
+    </div>
+            
+  </div>
+</div>
+</script>
+
+<div class="fixed-canvas" ng-controller="MainController">
+	<div class="progressbar-container mt-3">
+  <ul class="progressbar">
+    <li class="active ">Step 1</li>
+    <li ng-class="{'active': ShowStep2 == true}">Step 2</li>
+    <li ng-class="{'active': ShowStep3 == true}">Step 3</li>
+  </ul>
+  <div class="stage-text">
+
+		<h3 ng-if="ShowStep1">Registration</h3>
+
+		<h3 ng-if="ShowStep2">Upload your photo</h3>
+		<p ng-if="ShowStep2">Let the world know you better</p>
+
+		<h3 ng-if="ShowStep3">Personalization</h3>
+		<p ng-if="ShowStep3">Select the categories you are intrested in</p>
+
+	</div>
+</div>
+
+<div class="context">
+
+	<div ui-view>
+		
+	</div>
+
+</div>
+
+
+
+</div>
+</div>
+
+{% endblock content %}
+
+{% block scripts %}
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.20/angular-ui-router.min.js"></script>
+<script type="text/javascript" src="{% static 'js/userRegistration.js' %}"></script>
+<script type="text/javascript">
+RegApp.config(['$httpProvider', function($httpProvider) {
+        $httpProvider.defaults.headers.common['X-CSRFToken'] = '{{ csrf_token|escapejs}}';
+}]);
+</script>
+
+{% endblock scripts %} 

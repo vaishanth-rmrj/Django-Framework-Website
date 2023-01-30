@@ -1,0 +1,22 @@
+<section ng-repeat="channelInfo in channelInfoList">
+<div class="expanding-search-bar ml-auto">
+
+<input type="text" name="search" placeholder="Search for channel ..." ng-model="searchInput" ng-keyup="searchForChannel()">
+<button type="button" class="nullBtn ml-auto nav-section-btn ripple" ng-click="toggleSearchPanel()" ng-class="{'active-btn': showSearchPanel == true}">
+<i class="icomoon i-search nav-section-i"></i>
+</button>
+<button type="button" class="nullBtn ml-auto nav-section-btn ripple">
+  <i class="icomoon i-close nav-section-i"></i>
+</button>
+
+</div>
+<div class="channel-search-result-display">
+	<div class="channel-pic">
+		
+	</div>
+	<div class="channel-info">
+		<h6>[[channelInfo.name]]</h6>
+		<p>[[channelInfo.subscribers]]</p>
+	</div>
+</div>
+</section>

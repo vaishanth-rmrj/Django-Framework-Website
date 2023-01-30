@@ -1,0 +1,84 @@
+<div class="holder" ng-controller="topNavController">
+
+<nav class="container-fluid navbarContainer topFixed" ng-if="showDashboardNavbar">
+  
+  <div class="row justify-content-center">
+  <div class="col-md-10 col-lg-8 navbar">
+  <!-- navigation buttons -->
+  <!-- visible only in small screen -->
+  <button type="button" class="d-sm-none nullBtn ripple" ng-click="toggleSearchModal()"><i class="icomoon i-search" style="font-size: 18px"></i></button>
+
+  <div class="dropdown vCenter" ng-if="activeProfile.username != 'Anonymous'">
+ <!--  for displaying the profile with the name -->
+  <div class="profileButton ripple" data-toggle="dropdown">
+    <div class="profilePicDisplay" style="overflow: hidden;">
+      <img ng-src="[[activeProfile.image]]" style="width: 44px;height: 44px;">
+    </div>
+    <div class="profileName">
+      <h2>[[activeProfile.username]]'s idyaweb</h2>
+    </div>   
+  </div>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+    <a class="dropdown-item" href="#/profile/[[activeProfile.username]]">My Profile</a>
+    <hr>
+    <a class="dropdown-item" href="{% url 'logout' %}">Log-Out</a>
+  </div>
+  </div>
+
+    <div class="hCenter" ng-if="activeProfile.username == 'Anonymous'">    
+      <a class="btn text-white ripple" style="border:2px solid rgb(250,250,250);border-radius:20px;background-color:inherit;padding: 4px 12px;font-size: 16px" href="{% url 'login' %}">Connect</a>
+    </div>
+  <!-- navigation buttons -->
+  <div class="navBarBtns d-flex">
+    <button type="button" class="nullBtn ripple d-sm-block d-none"><i class="icomoon i-idya-hub" style="font-size: 26px"></i></button>
+    <button type="button" class="nullBtn ripple d-sm-block d-none"><i class="icomoon i-notifis" style="font-size: 20px"></i></button>
+    <button type="button" class="nullBtn ripple" ng-click="toggleSideBar()"><i class="icomoon i-menu-bars" style="font-size: 20px"></i></button>
+  </div>
+  
+  </div>
+  </div>
+</nav>
+
+<!-- hub navigation section -->
+<div class="container-fluid hubNavBar topFixed" ng-if="showIdyahubNavbar">
+    <button type="button" class="nullBtn navBtn">MyHub</button>
+    <button type="button" class="nullBtn navBtn">Trending</button>
+    
+    <div class=" ml-auto" >
+    <button type="button" class="nullBtn dropdown" data-toggle="dropdown"><i class="icomoon i-menu text-white"></i></button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+        <a class="dropdown-item" href="">Create Hub</a>
+  </div>
+</div>
+</div>
+
+<nav class="container-fluid navbarContainer topFixed" ng-if="showProfileNavbar">
+  
+  <div class="row justify-content-center">
+  <div class="col-md-10 col-lg-8 navbar">
+  <!-- navigation buttons -->
+  <!-- visible only in small screen -->
+  <button type="button" class="d-sm-none nullBtn ripple" ng-click="toggleSearchModal()"><i class="icomoon i-search" style="font-size: 18px"></i></button>
+  <div class="dropdown vCenter">
+ <!--  for displaying the profile with the name -->
+  <div class="profileButton ripple" data-toggle="dropdown">
+    <div class="profileName p-1 text-center" style="min-width: 150px;">
+      <h2>Profile</h2>
+    </div>   
+  </div>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+    <a class="dropdown-item text-center" href="{% url 'logout' %}">Log-Out</a>
+  </div>
+  </div>
+  
+  
+  <!-- navigation buttons -->
+  <div class="navBarBtns d-flex">
+    <button type="button" class="nullBtn ripple" ng-click="toggleSideBar()"><i class="icomoon i-menu-bars" style="font-size: 20px"></i></button>
+  </div>
+  
+  </div>
+  </div>
+</nav>
+
+</div>

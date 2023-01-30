@@ -1,0 +1,47 @@
+<div class="container-fluid profile-info" >
+  <div class="row justify-content-center">
+  <div class="col-md-4 profileImageSection vCenter" style="max-width: 200px">
+    
+  <!--USER PROFILE IMAGE-->
+  <div class="preLoader" style="width: 100%!important;height: 100%!important;max-width: 160px!important;max-height: 160px!important;">
+    <img  ng-src="[[details.image]]" class="fitContainer">
+  </div>
+
+ </div>
+<hr style="width: 80%">
+    <div class="container-fluid">
+      <div class="d-flex align-items-center">
+        <p style="font-size: 22px;padding-right: 10px">[[details.username]]<p>
+        <a href="#" class="ml-auto" ng-if="[[activeProfile.username]] == [[details.username]]">Edit</a>
+      </div>      
+      <div style="padding-left: 20px;">
+
+      <p style="font-size: 18px;">[[details.friendCount]] friends | [[details.idyaCount]] idyas</p>    
+      <p>lives in <strong>[[details.location]]</strong> <i class="icomoon i-location" aria-hidden="true" style="font-weight:800;"></i></p>
+
+      <p ng-if="[[details.career]] == 'Studying'">is studying in <strong>[[details.institution]]</strong></p>
+
+      <p ng-if="[[details.career]] == 'Working'">is working as [[details.job]] in <strong>[[details.company]]</strong></p>
+
+      <p ng-if="[[details.career]] == 'Business'">is a business person running <strong>[[details.company]]</strong></p>
+
+      <p ng-if="[[details.career]] == 'Entrepreneur'">is as entrepreneur running <strong>[[details.company]]</strong></p>
+
+    <div class="detailsBioSection" ng-if="details.bio != '' " style="margin-top: 10px;">
+      <strong>About Myself</strong>
+      <p style="font-size:14px;">[[details.bio]]</p>
+    </div>
+    </div>
+    <div class="profile-action-bar" ng-if="activeProfile.username != details.username">
+      <button type="button" class="simple-btn">Follow</button>
+      <button type="button" class="simple-btn">Report</button>
+      <button type="button" class="simple-btn">Block</button>
+    </div>
+
+    </div>  
+
+    
+  </div>
+</div>
+
+     

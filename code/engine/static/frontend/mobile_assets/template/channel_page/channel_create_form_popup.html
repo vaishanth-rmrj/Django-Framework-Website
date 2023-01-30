@@ -1,0 +1,26 @@
+<!-- channel creation form popup -->
+<div class="container modal-box ">
+	<div class="header">
+		<h1 class="header-text">Create</h1>
+		<button type="button" class="nullBtn ripple close-btn ml-auto" ng-click="closeCreateForm()">
+			<i class="icomoon i-close"></i>
+		</button>
+	</div>
+	<div ng-if="showStep1">
+		<h2 class="mt-2">channelName ?</h2>
+		<input type="text" name="channel name" class="simple-input input-round-border mb-2" ng-model="newChannel.name">
+		<div class="hCenter"> 
+			<button type="button" class="nullBtn ripple iBtn mb-4" ng-click="stageTransition(2)">Yep!</button>
+		</div>		
+	</div>
+	<div ng-if="showStep2">
+		<h2 class="mt-2">description</h2>
+		<textarea class="textarea-round-border" style="height: 100px;" ng-model="newChannel.description"></textarea>
+		<div class="hCenter"> 
+			<button type="button" class="nullBtn ripple iBtn mb-4" ng-click="stageTransition(1)">
+				<i class="icomoon i-back-btn"></i>
+			</button>
+			<button type="button" class="nullBtn ripple iBtn mb-4" ng-click="createChannel()">+ create</button>
+		</div>
+	</div>
+</div>

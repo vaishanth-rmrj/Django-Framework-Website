@@ -1,0 +1,110 @@
+<!-- comment modal popup -->
+<div class="commentModal">
+
+<div class="header">
+  
+  <!-- close button -->
+  <button type="button" class="nullBtn" ng-click="toggleCommentModal()">
+    <i class="icomoon i-close headerText" aria-hidden="true"></i>
+  </button>
+  
+  <!-- header text -->
+  <span class="headerText ml-auto"> [[comments.length]]</span>
+  <span class="dot-black"></span>
+  <span class="headerText">Comments</span>
+ 
+
+</div>
+
+<div style="overflow-x: hidden;">
+  
+  <!--  textbox for user commenting -->
+  <textarea type="text" class="textBox" placeholder="Add your comments" ng-model="userComment"></textarea>
+
+  <div class="d-flex justify-content-end">
+    <button type="button" class="nullBtn submitBtn" ng-click="submitComment(userComment)">
+      Submit
+    </button>
+  </div>
+</div>
+
+<!-- display recent comment submits -->
+<section ng-repeat="comment in recentComments">
+<div class="CommentSection">
+  <!--USER PROFILE IMAGE-->
+  <div class="preLoader" style="width: 40px!important;height: 40px;flex:1">
+    <user-image-loader username="[[activeProfile.username]]"></user-image-loader>
+  </div>
+
+  <!-- comment details display -->
+  <div class="details">
+    <h6 style="font-size: 20px;">[[activeProfile.username]]</h6>
+    <p style="padding-left: 20px;">[[comment]]</p>
+
+    <!-- like dislike button section -->
+    <div class="commentBtnBar">
+      <button type="button" class="nullBtn">
+        <i class="icomoon i-fist" aria-hidden="true"></i>
+      </button>  
+
+      <button type="button" class="nullBtn">
+        <i class="icomoon i-tomato" aria-hidden="true"></i>
+      </button>
+    </div>
+  </div>
+</div>
+</section>
+
+<div class="comments-list-view-div">
+<div ng-repeat="comment in comments" >
+
+  <div class="header d-flex">
+  <!--COMMENTS HEADER CONTENT-->
+
+  <!--USER PROFILE IMAGE-->
+        <div class="round-img-preloader" style="width: 100%!important;height: 100%!important;max-width: 40px!important;max-height: 40px!important;">
+          <user-image-loader username="[[comment.username]]"></user-image-loader>
+        </div>
+  <div class="user_data w-100">
+    
+    <div class="d-flex align-items-end mt-2 p-0">
+      <strong class="m-0 p-0" style="font-size: 16px"><a href="#" class="text-anchor">[[comment.username]]</a></strong>
+      <span class="dot">.</span>
+      <small style="font-size:10px;">[[comment.timestamp | date]]</small>
+
+      </div>
+
+      <div>
+
+      <p class="mt-2 mb-2" style="font-size:14px;">[[comment.comment]]</p>
+
+      <div class="d-flex justify-content-end">
+      
+      <div class="comment-block-buttons">
+          <button id="like-btn" type="button"><i class="icomoon i-fist" aria-hidden="true"></i></button>
+          <small>[[comment.likes.length]]</small>
+          </div>
+
+      <div class="comment-block-buttons">
+          <button type="button" id="share-button"><i class="icomoon i-tomato" aria-hidden="true"></i></button>
+          <small>[[comment.dislikes.length]]</small>
+          </div>
+
+
+      </div>
+      </div>
+    
+    </div>
+  
+</div>
+
+<!--  SEPARATION LINE -->
+<hr>
+
+</div>
+</div>
+
+</div>
+
+
+

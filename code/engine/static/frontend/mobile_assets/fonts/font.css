@@ -1,0 +1,184 @@
+@font-face {
+  font-family: 'idyaWeb-icons';
+  src:  url('fonts/idyaWeb-icons.eot?cbm4o8');
+  src:  url('fonts/idyaWeb-icons.eot?cbm4o8#iefix') format('embedded-opentype'),
+    url('fonts/idyaWeb-icons.ttf?cbm4o8') format('truetype'),
+    url('fonts/idyaWeb-icons.woff?cbm4o8') format('woff'),
+    url('fonts/idyaWeb-icons.svg?cbm4o8#idyaWeb-icons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="i-"], [class*=" i-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'idyaWeb-icons' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.i-star:before {
+  content: "\e908";
+}
+.i-arrow-up:before {
+  content: "\e900";
+}
+.i-bookmark:before {
+  content: "\e901";
+}
+.i-channel:before {
+  content: "\e902";
+}
+.i-close:before {
+  content: "\e906";
+}
+.i-edit:before {
+  content: "\e90a";
+}
+.i-facebook1:before {
+  content: "\e90b";
+  color: #475993;
+}
+.i-filter:before {
+  content: "\e90d";
+}
+.i-instagram1:before {
+  content: "\e90e";
+}
+.i-left-arrow:before {
+  content: "\e90f";
+}
+.i-menu--bars:before {
+  content: "\e910";
+}
+.i-menu-dots:before {
+  content: "\e912";
+}
+.i-menu-horizontal-dots:before {
+  content: "\e916";
+}
+.i-notification:before {
+  content: "\e917";
+}
+.i-plus:before {
+  content: "\e919";
+}
+.i-right-arrow:before {
+  content: "\e91a";
+}
+.i-search:before {
+  content: "\e91c";
+}
+.i-share:before {
+  content: "\e91d";
+}
+.i-tomato:before {
+  content: "\e91e";
+}
+.i-user:before {
+  content: "\e91f";
+}
+.i-user-group:before {
+  content: "\e920";
+}
+.i-whatsapp1 .path1:before {
+  content: "\e921";
+  color: rgb(229, 229, 229);
+}
+.i-whatsapp1 .path2:before {
+  content: "\e922";
+  margin-left: -1em;
+  color: rgb(100, 177, 97);
+}
+.i-whatsapp1 .path3:before {
+  content: "\e923";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.i-whatsapp1 .path4:before {
+  content: "\e924";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.i-dislike:before {
+  content: "\e903";
+}
+.i-like:before {
+  content: "\e904";
+}
+.i-heart:before {
+  content: "\e905";
+}
+.i-fist:before {
+  content: "\e907";
+}
+.i-views:before {
+  content: "\e909";
+}
+.i-notifis:before {
+  content: "\e90c";
+}
+.i-dashboard:before {
+  content: "\e911";
+}
+.i-idya-hub:before {
+  content: "\e913";
+}
+.i-exit:before {
+  content: "\e914";
+}
+.i-menu:before {
+  content: "\e915";
+}
+.i-update:before {
+  content: "\e918";
+}
+.i-images:before {
+  content: "\e91b";
+}
+.i-file-picture:before {
+  content: "\e927";
+}
+.i-file-video:before {
+  content: "\e92a";
+}
+.i-location:before {
+  content: "\e947";
+}
+.i-chat:before {
+  content: "\e96d";
+}
+.i-spinner:before {
+  content: "\e982";
+}
+.i-enlarge:before {
+  content: "\e989";
+}
+.i-menu-select:before {
+  content: "\e9be";
+}
+.i-google:before {
+  content: "\ea8a";
+}
+.i-facebook:before {
+  content: "\ea91";
+}
+.i-instagram:before {
+  content: "\ea92";
+}
+.i-whatsapp:before {
+  content: "\ea93";
+}
+.i-twitter:before {
+  content: "\ea96";
+}
+.i-youtube:before {
+  content: "\ea9d";
+}

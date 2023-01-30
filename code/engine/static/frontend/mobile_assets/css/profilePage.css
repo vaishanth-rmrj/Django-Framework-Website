@@ -1,0 +1,234 @@
+body
+{
+	background-color:rgb(255,255,255);
+}
+
+.content
+{
+	min-height: 500px;
+}
+.nav-link
+{
+	padding: 5px;
+	padding-left:10px; 
+	color: rgb(0,0,0);
+}
+
+.fix-to-top {
+    position: fixed;
+    top: 0;
+}
+
+.profile .info-display
+{
+	padding: 10px;
+  background-color: #FFFF;
+  border: 1px solid rgba(0,0,0,0.125);
+  border-radius: 4px;
+
+}
+.profile .info-display .section1
+{
+	margin-bottom: 5px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+  
+}
+.profile .info-display .section2
+{
+	padding-left: 10px;
+  
+}
+.profile-img-holder
+{
+  position: relative;
+  width: 160px;
+  margin: auto 0;
+}
+.profile-img-holder .profile-img
+{
+  width: 150px;
+  height: 150px;
+  border: 2px solid #FFFF;
+  border-radius: 75px;
+  box-shadow: 0 4px 5px 2px rgba(0,0,0,0.125);
+  position: relative; 
+  overflow: hidden;
+}
+.profile-img-holder .profile-img img
+{
+	width: 155px;
+	height: 155px;
+}
+.profile-img-float-btn
+{
+  position: absolute;
+  bottom: -2px;
+  right: -2px;
+}
+/*.profileImageSection
+{
+	padding: 8px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}*/
+
+
+
+.profile-action-bar
+{
+	width: 100%;
+	height: 60px;
+	display: flex;
+	align-items: center;
+	border-top: 1px solid rgba(0,0,0,0.125);
+}
+
+.profile-action-bar button
+{
+	border-radius: 4px;
+	padding:8px;
+	color: #fff;
+    background-color: #0069d9;
+    border-color: #0062cc;
+
+	margin:5px;
+}
+.profile-content-section
+{
+  
+
+}
+.profile-content-section .content-nav
+{
+  padding: 5px 0px;
+  border-bottom: 1px solid rgba(0,0,0,0.125);
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+.profile-content-section .content-nav-btn
+{
+  margin: 5px;
+  padding: 4px 12px;
+  background-color: #FFFF;
+  border: 1px solid rgba(0,0,0,0.125);
+  border-radius: 18px;
+  box-shadow: 2px 2px 0 0 rgba(0,0,0,0.125);
+}
+
+.friend-list-display-section, .profile-search-results-section
+{
+	padding: 10px;
+}
+.friend-list-display-header
+{
+	padding: 10px;
+	border-bottom: 1px solid rgba(0,0,0,0.125);
+}
+.friend-info-display, .profile-result-info-display
+{	
+	width: 100%;
+	border-bottom: 1px solid rgba(0,0,0,0.125);
+	padding:10px 0;
+	display: flex;
+}
+.friendBox .followBtn
+{
+	border-radius: 18px;
+	background-color: blue;
+	color: #FFFF;
+	padding:4px 12px;
+}
+.friend-info-pic, .profile-result-info-pic
+{
+	width: 60px;
+	height: 60px;
+	border: 2px solid #FFFF;
+	border-radius: 30px;
+	box-shadow: 0 4px 5px 2px rgba(0,0,0,0.125);
+	overflow: hidden;
+	
+}
+.friend-info-pic img, .profile-result-info-pic img
+{
+	width: 65px;
+	height: 65px;
+
+}
+.friend-info-details, .profile-result-info-details
+{
+	flex-grow: 1;
+	padding: 10px;
+}
+.bookmark-list-display-section
+{
+	padding:10px;
+}
+.profileDetails .buttonBar
+{
+	padding: 5px;
+	display: flex;
+	justify-content: end;
+	align-items: center;	
+}
+
+.profile-setup-form 
+{	
+	width: 100%;
+	max-width: 500px;
+	padding:10px;
+	border-radius: 4px;
+	border:1px solid rgba(0,0,0,0.125);
+	background-color:rgb(255,255,255);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.profile-setup-form  .profile-image-section
+{
+	width: 200px;
+	height: 200px;
+	border-radius: 100px;
+	border: 2px solid #FFFF;
+	overflow: hidden;
+	position: relative;
+}
+.profile-setup-form  .profile-image-section img
+{
+	width: 205px;
+	height: 205px;
+}
+
+.profile-setup-form  .profile-image-section .edit-btn
+{
+	position: absolute;
+	bottom: 10px;
+	right: 10px;
+}
+.profile-setup-form button
+{
+	padding:10px;
+	border-radius: 4px;
+	background-color: #0069d9;
+	color: rgb(255,255,255);
+}
+
+.profile-setup-form input, .profile-setup-form select
+{
+	margin: 2px;
+	margin-top:10px;
+}
+label
+{
+	margin: 0;
+}
+.profile-setup-form .form-group
+{
+	margin:5px;
+	width: 100%;
+}

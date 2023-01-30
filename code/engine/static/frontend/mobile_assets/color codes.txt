@@ -1,0 +1,4 @@
+pure-white	:	#ffffff;
+strong-gray	:	#f2f2f2;
+i-red	:	#F13030;
+i-red-dark-shade	:	#E12940;

@@ -1,0 +1,15 @@
+<div class="hubListBody">
+    
+    <div ng-repeat="hub in HubList">
+    <div class="hub-info-box" ng-click="toggleHubDashboard(hub)">
+        <div class="preLoader sizeTwo">
+            <img src="[[hub.hubPic]]" width="44px" height="44px">
+        </div>
+        <div class="info">
+            <strong>[[hub.hubName]]</strong>
+            <p>[[hub.memberCount]] <i class="icomoon i-user-group"></i> | 0 idyas</p>
+        </div>
+    </div>
+  </div>
+
+</div>

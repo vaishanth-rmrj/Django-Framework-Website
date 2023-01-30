@@ -1,0 +1,45 @@
+<div class="i-blog-editor stretch-to-fit">
+	<div class="stretch-to-fit" ng-hide="showStage2 || showStage3">
+	<!-- trumbywyg editor for creating the idya -->
+	<div id="iEditor" placeholder="Get started with your idya !!!" ></div>
+	</div>
+
+	<!-- section for selecting idya title -->
+	<div class="i-blog-title-select" ng-if="showStage2">
+		<h6 style="font-size: 40px;">idya is READY!!!</h6>
+		<input type="text" name="idya.title" class="nullInput form-control ripple" placeholder="give an appropriate title.." ng-model="idyaData.title">
+		
+	</div>	
+
+	<!-- section for selecting the idya category -->
+	<div class="i-blog-category-select" ng-if="showStage3">
+		<h6 style="font-size: 32px;">Choose a category</h6>
+		<div class="category-pills">
+			<button type="button" class="bttn ripple">science</button>
+			<button type="button" class="bttn ripple">technology</button>
+			<button type="button" class="bttn ripple">social</button>
+			<button type="button" class="bttn ripple">historysssssss</button>
+			<button type="button" class="bttn ripple">medicine</button>
+			<button type="button" class="bttn ripple">anatomy</button>
+			<button type="button" class="bttn ripple">history</button>
+			<button type="button" class="bttn ripple">medicine</button>
+			<button type="button" class="bttn ripple">anatomy</button>
+			
+			
+		</div>
+		<div class="category-search-section">
+			<div class="search-bar">
+				<input type="text" name="category.search" class="nullInput ripple" placeholder="other category.." ng-model="idyaData.category">
+				<button type="button" class="bttn ripple">
+					<i class="icomoon i-search"></i>
+				</button>
+			</div>
+		</div>
+		<div>
+			<button type="button" ng-click="createDataModel()">Print</button>
+		</div>
+	</div>
+</div>
+
+
+

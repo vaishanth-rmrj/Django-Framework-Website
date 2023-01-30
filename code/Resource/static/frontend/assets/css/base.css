@@ -1,0 +1,476 @@
+*{
+    /*border: 2px solid black;*/
+}
+body 
+{
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    box-sizing: border-box;
+    margin-bottom:12vh;
+
+}
+
+h6
+{
+    padding: 0 5px;
+}
+/* CUSTOM BUILT HTML COMPONENTS*/
+
+.i-btn
+{   
+    border: 0;
+    background-color:rgb(243, 74, 87);
+    color: rgb(255,250,250);
+    border-radius: 18px;
+    transition-duration: 300ms;
+    transition-property :transform,box-shadow,background-color;
+
+
+}
+
+.i-btn:hover
+{
+    background-color:rgb(232, 17, 33);
+    box-shadow: 5px 3px 9px 0 rgba(0, 0, 0,0.4);
+    color: rgb(255,250,250);
+    transform: scale(1.01, 1.01);
+
+}
+
+.i-btn-2
+{
+    background-color:rgba(0,0,0,0);
+    color: rgba(224,224,224 ,0.5);
+    border:none;
+    transition-duration: 300ms;
+    transition-property :transform,box-shadow,background-color;
+
+
+}
+
+.i-btn-2:hover
+{
+    background-color:rgb(232, 17, 33);
+    color: rgb(255,250,250);
+    transform: scale(1.02, 1.02);
+
+
+}
+
+/*navbar custom css*/
+
+.idyaweb-navbar 
+{   
+    margin-bottom: 10px;
+    background-color: rgba(232,17,35 ,0.9);
+    border-bottom:2px solid #757575;
+    box-shadow: 0 2px 20px 0px #757575;
+
+}
+
+.idyaweb-navbar .navbar-username,.idyaweb-navbar .navbar-non-user a
+{
+    color: #FFFFFF;
+    font-size: 1.5rem;
+    
+}
+.idyaweb-navbar .navbar-username:hover
+{
+    text-shadow: 5px 3px 10px rgba(0, 0, 0,1);
+    font-size: 1.51rem;
+    transition-duration: 300ms;
+    transition-property :font-size,text-shadow;
+}
+.navbar-non-user a
+{
+    color: rgb(255,250,250);
+    font-size: 1.5rem;
+}
+
+.idyaweb-navbar .nav-link
+{   
+    padding: 4px;
+    margin: 0 3px;
+    color: rgb(255,250,250);
+    transition-duration: 500ms;
+    transition-property: transform,box-shadow,background-color; 
+    border-radius: 18px;
+}
+.idyaweb-navbar .nav-link:hover
+{
+    
+    background-color:rgb(255,250,250);
+    box-shadow: 5px 3px 10px 0 rgba(0, 0, 0,0.4);
+    color: rgb(232, 17, 33);
+    transform: scale(1.1, 1.1);
+   
+    
+
+    
+}
+
+.idyaweb-navbar-category-collapse
+{
+            background-color: #424242;
+            color: white;
+            font-size: 1rem;
+}
+
+
+.idyaweb-navbar-category-collapse .collapse-blocks ul
+{
+            margin: 10px;
+            padding: 5px;
+            border-left: 2px solid white;
+}
+.idyaweb-navbar-category-collapse .collapse-blocks li:hover
+{
+            color: #4FC3F7;
+            border-bottom: 1px solid #4FC3F7; 
+}
+
+.sidebar-nav
+{
+    position: fixed;
+    left: 70vw;
+    width: 30vw;
+    height: 100vh;
+    background-color:rgba(99, 201, 191,.95);
+    z-index: 2;
+    box-shadow: -2px 0 20px 1px rgba(0, 0, 0,0.4);
+
+}
+.sidebar-nav .sidebar-nav-items li
+{   
+    color: black;
+    list-style: none;
+    transition-duration:400ms;
+    transition-property:border-bottom,text-shadow;
+}
+.sidebar-nav .sidebar-nav-items li:hover
+{   
+    list-style: none;
+    text-decoration:none;
+    color: rgba(232,17,35 ,0.9);
+    border-bottom: 1px solid rgb(244, 67, 54);
+    text-shadow: 5px 4px 6px  rgba(0, 0, 0,0.5);
+}
+
+
+.sidebar-nav-items
+{   
+    border: black 2px solid
+    list-style: none; 
+    color: white;
+    padding: 5px;
+
+}
+.sidebar-nav-items li
+{
+    padding:10px;
+    text-align: center;
+}
+.idyaweb-bottom-nav 
+{       
+        font-size: 1.5em;
+        background-color: #FFEBEE;
+        padding: 2px;
+        margin: 0 auto;
+}
+.idyaweb-bottom-btn p ,i
+{
+    padding: 0;
+    margin: 0;
+}
+.idyaweb-bottom-btn 
+{       
+
+    width: 15vw;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2px;
+    margin: 0 5px;
+    transition-duration: 300ms;
+    transition-property: border-top,box-shadow;
+}
+.idyaweb-bottom-btn:hover 
+{
+    border-top:2px solid blue;
+    box-shadow: 0 0 10px -2px #aaa;
+    
+}
+.idyaweb-bottom-nav p
+{
+    font-size: 14px;
+    text-align: center;
+}
+
+.idyaweb-bottom-nav a 
+{
+    padding: 0 0;
+    text-decoration: none;
+    color: #424242;
+    
+}
+
+/*idyablock custom css*/
+.idya-block-header
+{
+    display: flex;
+    overflow: hidden;
+    background-color: rgb(232, 17, 33);
+}
+
+.idya-block-header .section-1
+{
+    display: flex;
+    background-color: inherit;
+    
+}
+.idya-block-header .section-2
+{   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35%;
+    padding: 7px;
+    margin-left: auto;
+    background-color: rgb(174, 53, 62);
+    color: rgb(255,250,250);
+    text-align: end;
+    position: relative;
+    z-index: 4;
+
+}
+.idya-block-header .section-2::before
+{   
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    content: '';
+    width: 105%;
+    height: 100%;
+    transform: skewx(-50deg);
+    z-index: -1;
+    box-shadow:0 4px 5px 1px rgba(0,0,0,0.5);
+    background-color: inherit;
+    
+    
+}
+.idya-block-header .section-2::after
+{   
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    content: '';
+    width: 105%;
+    height: 100%;
+    transform: skewx(50deg);
+    z-index: -1;
+    box-shadow:0 4px 5px 1px rgba(0,0,0,0.5);
+    background-color: inherit;
+}
+
+.idya-block-header .section-2 a{
+    padding: 2px;
+    text-decoration: none;
+    color: rgb(255,250,250);
+    transition-duration: 200ms;
+    transition-property: padding-right,color;
+}
+
+.idya-block-content-area{
+    
+}
+
+
+.idya-block-content-area .context {
+    position:relative;
+    overflow:hidden;
+
+}
+
+.idya-block-content-area .context p{
+    position:relative;
+    overflow:hidden;
+    text-align: justify;
+
+}
+/*.idya-block-content-area .context :after {
+    content:"";
+    position:absolute;
+    top:10.5rem;
+    left:0;
+    height:40px;
+    width:100%;
+    background: linear-gradient(rgba(0,0,0,0), #FAFAFA);
+
+}
+*/
+.idya-block-buttons{
+    transition-duration: 1s;
+    transition-property: font-size,color;
+} 
+
+.idya-block-buttons .bttn {
+    background-color: rgba(0, 0, 0, 0);
+    color: rgba(144,164,174 ,1);
+    border: none;
+    transition-duration: 300ms;
+    transition-property: background-colorcolor;
+}
+.idya-block-buttons .bttn :hover{
+    
+    background-color:rgba(255,61,0 ,1);
+    color: rgba(251,233,231 ,1);
+    transition-duration: 400ms;
+    transition-property: font-size,color;
+}
+
+
+.popup-message
+{   
+    width: auto;
+    height: auto;
+    text-align:end;
+    position: fixed;
+    top: 84vh;
+    left: 79vw;
+    z-index: 3;
+    
+}
+.search-bar
+{
+    display: flex;
+}
+
+.search-bar button
+{
+    margin-left: auto;
+    margin-left: 4px;
+}
+
+.search-bar input[type='text']
+{   
+    border-radius: 18px;
+    transition-duration: 300ms;
+    transition-property:border-radius;
+}
+.search-bar input[type='text']:focus
+{
+    border-radius: 0;
+}
+.search-filter-blocks .filter-blocks-btn
+{
+    border-radius: 18px;
+    margin: 0 5px;
+}
+.background-blur
+{   
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.8);
+    z-index: 5;
+}
+
+.related-content .card-header
+{
+    background-color: rgb(232, 17, 33);
+}
+.related-content .card-body
+{
+    background-color: rgba(224,224,224 ,0.5);
+    color: black;
+}
+.custm-comment-modal
+{   
+    width: 60vw;
+    height: 200px;
+    position: absolute;
+    top: 10vh;
+    left: 20vw;
+    right: 20vw;
+    z-index: 6
+}
+
+/*RESPONSIVE LAYOUTS*/
+
+
+/* Extra small devices (phones, 600px and down) 
+@media only screen and (max-width: 600px) {
+
+} 
+*/
+
+
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media screen and (max-width: 768px) {
+    .resp-text {
+        font-size: 1rem;
+
+    }
+    .resp-header {
+        font-size: 1.5rem;
+    }
+    .resp-title-header {
+        font-size: 1.2rem;
+    }
+    .idya-block-nav {
+    font-size: 1rem; 
+    }
+    .idyaweb-navbar .idyaweb-navbar-brand {
+        margin: 0 auto;
+    }
+    .idyaweb-navbar .navbar-username:hover,.navbar-non-user a:hover{
+        font-size: 1.55rem;
+    }
+    
+} 
+/* Small devices (portrait tablets and large phones, 600px and up)*/ 
+@media screen and (max-width: 600px) {
+    .resp-text {
+        font-size: 0.8rem;
+
+    }
+    .resp-header {
+        font-size: 1.3rem;
+    }
+    .resp-title-header {
+        font-size: 0.8rem;
+    }
+    .idya-block-nav {
+    font-size: 0.8rem; 
+    right: -1.3rem;
+    }
+}
+/* Large devices (laptops/desktops, 992px and up) */
+@media screen and (min-width: 992px) {
+    .resp-text {
+        font-size: 1rem;
+
+    }
+    .resp-header {
+        font-size: 1.8rem;
+    }
+    .resp-title-header {
+        font-size: 1.5rem;
+    }
+} 
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+
+}

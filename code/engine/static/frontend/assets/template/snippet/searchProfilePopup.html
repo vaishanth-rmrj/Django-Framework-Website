@@ -1,0 +1,37 @@
+<!-- search modal -->
+
+<div class="searchProfileModalBox">
+
+<div class="d-flex justify-content-center" style="padding: 10px">
+<button type="button" Class="nullBtn mr-auto" ng-click="toggleSearchProfileModal()">
+<i class="icomoon i-close" style="font-size: 18px"></i>
+</button>
+
+<strong style="font-size: 22px">Search For Profile</strong>
+
+</div>  
+<hr>
+
+<div class="showcaseText" style="width: 100%;padding: 10px;">
+	<h6 style="font-size: 36px;font-weight: bold;">Whom Are You</h6>
+	<h6 style="font-size: 30px;font-weight: bold;">Searching For ?</h6>
+</div>
+
+<div class="searchBar">
+  
+  <input type="text" class="nullInput" name="search-content" placeholder="What are your intrested in ?" ng-model="searchContent" ng-Keyup="search(searchContent)">
+  <button type="button" class="nullBtn ml-auto"><i class="icomoon i-search" aria-hidden="true"></i></button>
+</div>
+
+<div ng-if="showPopupSearchResult" class="popupSearchResultList">
+    <ul ng-repeat="result in searchResults" >
+      <li>[[result.title]]</li>
+    </ul>
+  </div>
+
+<
+
+
+
+
+

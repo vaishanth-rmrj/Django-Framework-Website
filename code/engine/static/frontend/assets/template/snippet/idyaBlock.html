@@ -1,0 +1,315 @@
+<div class="holder vCenter">
+<div class="dashboardInfoSection">
+  <p style="font-size: 18px;" class="punchedText">[[idyas.length]] idyas have been fetched</p>
+  <!-- <button type="button" class="nullBtn ml-auto">Fetch More</button>   -->        
+</div>
+<hr style="width: 100%">
+<div ng-repeat="idya in idyas">
+  
+  <div ng-switch="idya.idyatype">
+    <div ng-switch-when="iLog">
+<!-- iLOG -->
+  <!--Users ilog BLOCK FORMAT -->    
+  <div class="idyaBlock idya-block-slide-up" >
+    <div class="d-flex top-bar">
+
+      <div class="user-viewed-circles"  style="color: rgba(0,0,0,0.5)">
+        <div class="postion-relative">
+          <div class="circle"></div>
+        </div>
+
+        <div class="postion-relative">
+          <div class="circle"></div>
+        </div>
+
+        <div class="postion-relative">
+          <div class="circle"></div>
+        </div>
+        
+        <small  class="color-gray">+7 more viewed</small>
+        
+
+      </div>
+      
+      <div class="ml-auto" >
+
+      <button type="button" class="nullBtn bookmark-btn" id="[[idya.id]]-bookmark-btn" ng-click="bookmark(idya.id)">
+        <i class="icomoon i-bookmark" aria-hidden="true"></i>
+      </button>
+
+      <button type="button" class="nullBtn share-btn" id="share-btn" ng-click="">
+        <i class="icomoon i-share" aria-hidden="true"></i>
+      </button>
+
+      <button type="button" class="nullBtn" id="menu-btn" ng-click="toggleMenuModal()">
+        <i class="icomoon i-menu" aria-hidden="true"></i>
+      </button>
+
+      </div>
+
+    </div>
+    
+    <hr>
+
+    <div class="container">      
+      <div class="header">
+        <div>
+          <!--USER PROFILE IMAGE-->
+          <div class="preLoader sizeThree">
+            <user-image-loader username="[[idya.profile]]"></user-image-loader>
+          </div>
+        </div>
+        <div>
+          <div class="d-flex align-items-end mt-2 p-0"  >
+            <h6 class="m-0 color-unfocus" style="font-size: 16px;color: rgba(0,0,0,0.7)"><a href="#" class="text-anchor">[[idya.profile]]</a></h6>
+            <span class="dot-black"></span>
+            <small style="font-size:10px;color: rgba(0,0,0,0.7)">
+              [[idya.created_at | date]]
+            </small>
+            
+            </div>
+
+            <div style="color: rgba(0,0,0,0.7)">
+
+            <strong class="mt-2 mb-2" style="font-size:16px;text-align: justify;">[[idya.title]]</strong>
+
+            </div>
+
+        </div>
+      </div>
+    </div>
+
+
+        <div class="idyaContentSection">
+
+          <div class="context" style="overflow: hidden;" >
+
+          <div class="d-flex align-items-center" style="color: rgba(0,0,0,0.2)">
+
+            <small style="font-size:14px">
+              <a href="#" class="text-anchor">[[idya.from_hub]]</a>
+            </small> 
+
+            <strong style="font-size:14px;padding: 4px;"> > </strong> 
+
+            <small style="font-size:14px">
+              <a href="#" class="text-anchor">[[idya.category]]</a>
+            </small>
+
+            </div>
+            [[idya.post]]
+            
+            </div>
+
+            <div class="hCenter">
+              <button type="button" class="nullBtn" id="read-more" ng-click="fetchIdyaDetails(idya.slug)">Read More</button>
+            </div>
+                  
+
+        </div>
+
+          <div class="btn-bar">
+              
+              <div class="idya-block-buttons">
+                <button class="nullBtn" type="button" ng-click="liked(idya)" id="[[idya.id]]-like-btn">
+                  <i  class="icomoon i-fist" aria-hidden="true" style="font-weight:800;"></i>
+                </button>
+                <small>[[idya.likeCount]]</small>
+                </div>
+
+              <div class="idya-block-buttons">
+                <button type="button" class="nullBtn" id="comment-button" ng-click="trigCommentDialogBox(idya.id)">
+                  <i class="icomoon i-chat" aria-hidden="true"></i>
+                </button>
+                </div>  
+
+              <div class="idya-block-buttons">
+                <button type="button" class="nullBtn"  ng-click="disliked(idya)" id="[[idya.id]]-dislike-btn">
+                  <i class="icomoon i-tomato" aria-hidden="true" style="font-weight:800;"></i>
+                </button>
+                <small>[[idya.dislikeCount]]</small>
+                </div>
+            </div>
+  </div>
+      </div>
+
+    <div ng-switch-when="iMage" class="hCenter">
+<!-- iMage -->
+<!--Users iMage BLOCK FORMAT -->    
+  <div class="idyaBlock idya-block-slide-up">
+
+    <div class="iMage-holder">
+    <!--idya BASIC INFO :LIKES DISLIKES...-->
+    <div class="d-flex top-bar">
+      <div class="d-flex justify-content-start"  style="color: rgba(0,0,0,0.5)">
+        <div class="circle bg-gray" style="width: 20px;height: 20px"></div>
+        <div class="circle bg-gray" style="width: 20px;height: 20px"></div>
+        <small  class="color-gray">+7 more viewed</small>
+        
+
+      </div>
+      
+      <div class="ml-auto" >
+      <button type="button" class="nullBtn" id="[[idya.id]]-bookmark-btn" ng-click="bookmark(idya.id)"><i class="icomoon i-bookmark" aria-hidden="true"></i></button>
+      <button type="button" class="nullBtn" id="[[idya.id]]-share-btn" ng-click=""><i class="icomoon i-share" aria-hidden="true"></i></button>
+      <button type="button" class="nullBtn" id="menu-btn" ng-click="menuModalTrig()"><i class="icomoon i-menu" aria-hidden="true"></i></button>
+      </div>
+
+    </div>
+
+      <img ng-src="[[idya.image]]" style="max-width: 100%;max-height: 100%">
+    </div>
+
+    <div class="header">
+    <div class="user-info d-flex">
+      <!--idya BLOCK HEADER CONTENT-->
+      
+       <!--USER PROFILE IMAGE-->
+        <div class="preLoader sizeTwo">
+          <user-image-loader username="[[idya.profile]]"></user-image-loader>
+        </div>
+
+        <div class="user-data">
+          
+          <div class="d-flex align-items-center mt-2 p-0">
+            <strong class="m-0 p-0" style="font-size: 16px"><a href="#" class="text-anchor">[[idya.profile]]</a></strong>
+            <small class="ml-1" style="font-size: 10px">[[idya.created_at | date]]1234</small>
+            
+            </div>
+
+            <div>
+
+            <div class="d-flex justify-content-start align-items-center ">
+
+            <small style="font-size:14px"><a href="#" class="text-anchor">[[idya.from_hub]]</a></small> 
+            <strong style="font-size:12px;padding: 5px;">></strong> 
+            <small style="font-size:14px"><a href="#" class="text-anchor">[[idya.category]]</a></small>
+
+            </div>
+
+            <p class="pr-2" style="font-size:14px;">[[idya.abstract]]</p>
+            
+            <div class="d-flex justify-content-center">
+              <a class="text-anchor btn-v2" id="read-more" href="/idyaweb/post-details/[[idya.id]]/"><strong>Read More</strong></a>
+              </div>
+            
+            </div>
+          
+          </div>
+        
+      </div>
+
+            <div class="btn-bar">
+              
+              <div class="idya-block-buttons">
+                <button class="nullBtn" type="button" ng-click="liked(idya.id)"><i id="[[idya.id]]-like-btn" class="icomoon i-fist" aria-hidden="true" style="font-weight:800;"></i></button>
+                <small>[[idya.likeCount]]</small>
+                </div>
+
+              <div class="idya-block-buttons">
+                <button type="button" class="nullBtn" id="comment-button" ng-click="trigCommentDialogBox(idya.id)"><i class="icomoon i-chat" aria-hidden="true"></i></button>
+                </div>  
+
+              <div class="idya-block-buttons">
+                <button type="button" class="nullBtn"  ng-click="disliked(idya.id)"><i id="[[idya.id]]-dislike-btn" class="icomoon i-tomato" aria-hidden="true" style="font-weight:800;"></i></button>
+                <small>[[idya.dislikeCount]]</small>
+                </div>
+            </div>
+    </div>
+  </div>
+
+
+      </div>
+
+    <div ng-switch-when="iVideo" class="horizontal-centering">
+
+<!-- iVideo -->
+<div class="idya-block idya-block-slide-up">
+
+    <div class="iVideo-holder">
+    <!--idya BASIC INFO :LIKES DISLIKES...-->
+    <div class="d-flex top-bar">
+      <div class="d-flex justify-content-start"  style="color: rgba(0,0,0,0.5)">
+        <div class="circle bg-gray" style="width: 20px;height: 20px"></div>
+        <div class="circle bg-gray" style="width: 20px;height: 20px"></div>
+        <small  class="color-gray">+7 more viewed</small>
+        
+
+      </div>
+      
+      <div class="ml-auto" >
+      <button type="button" class="nullBtn" id="[[idya.id]]-bookmark-btn" ng-click="bookmark(idya.id)"><i class="icomoon i-bookmark" aria-hidden="true"></i></button>
+      <button type="button" class="nullBtn" id="[[idya.id]]-share-btn" ng-click=""><i class="icomoon i-share" aria-hidden="true"></i></button>
+      <button type="button" class="nullBtn" id="menu-btn" ng-click="menuModalTrig()"><i class="icomoon i-menu" aria-hidden="true"></i></button>
+      </div>
+
+    </div>
+    <div class="embed-responsive embed-responsive-16by9">
+
+      <anguvideo ng-model="idya.videoUrl" width="560" height="315"></anguvideo>
+      </div>
+    </div>
+      
+
+    <div class="header">
+    <div class="user-info d-flex">
+      <!--idya BLOCK HEADER CONTENT-->
+      
+        <!--USER PROFILE IMAGE-->
+        <div class="preLoader sizeTwo">
+          <user-image-loader username="[[idya.profile]]"></user-image-loader>
+        </div>
+
+        <div class="user-data">
+          
+          <div class="d-flex align-items-center mt-2 p-0">
+            <strong class="m-0 p-0" style="font-size: 16px"><a href="#" class="text-anchor">[[idya.profile]]</a></strong>
+            <small class="ml-1" style="font-size: 10px">[[idya.timestamp | date]]</small>
+            
+            </div>
+
+            <div>
+
+            <div class="d-flex justify-content-start align-items-center ">
+
+            <small style="font-size:14px"><a href="#" class="text-anchor">[[idya.idyahub_name]]</a></small> 
+            <strong style="font-size:12px;padding: 5px;">></strong> 
+            <small style="font-size:14px"><a href="#" class="text-anchor">[[idya.category]]</a></small>
+
+            </div>
+
+            <p class="pr-2" style="font-size:14px;">[[idya.abstract]]</p>
+            
+            <div class="d-flex justify-content-center">
+              <a class="text-anchor btn-v2" id="read-more" href="/idyaweb/post-details/[[idya.id]]/"><strong>Read More</strong></a>
+              </div>
+            
+            </div>
+          
+          </div>
+        
+      </div>
+
+            <div class="btn-bar">
+              
+              <div class="idya-block-buttons">
+                <button class="nullBtn" type="button" ng-click="liked(idya.id)"><i id="[[idya.id]]-like-btn" class="icomoon i-fist" aria-hidden="true" style="font-weight:800;"></i></button>
+                <small>[[idya.likeCount]]</small>
+                </div>
+
+              <div class="idya-block-buttons">
+                <button type="button" class="nullBtn" id="comment-button" ng-click="trigCommentDialogBox(idya.id)"><i class="icomoon i-chat" aria-hidden="true"></i></button>
+                </div> 
+
+              <div class="idya-block-buttons">
+                <button type="button" class="nullBtn"  ng-click="disliked(idya.id)"><i id="[[idya.id]]-dislike-btn" class="icomoon i-tomato" aria-hidden="true" style="font-weight:800;"></i></button>
+                <small>[[idya.dislikeCount]]</small>
+                </div>
+            </div>
+    </div>
+  </div>
+
+    </div>
+    </div>
+</div>
+</div>

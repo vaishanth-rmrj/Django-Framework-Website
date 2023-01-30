@@ -1,0 +1,112 @@
+<div class="holder profile fade-in">
+<nav class="container-fluid nav-section">
+  
+  <div class="row justify-content-center w-100">
+  <div class="col-md-10 col-lg-8 p-0">
+  <div class="navbar" ng-hide="showProfileEditPanel">
+  <!-- navigation buttons -->
+  
+  <div class="dropdown vCenter nav-section-btn" ng-hide="showProfileSearchPanel">
+ <!--  for displaying the profile with the name -->
+  <div class="profileBtn ripple" data-toggle="dropdown">
+    <div class="profileName p-1 text-center">
+      <h6 class="text-header">My Profile</h6>
+    </div>   
+  </div>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+    <a class="dropdown-item text-center" href="{% url 'logout' %}">Log-Out</a>
+  </div>
+  </div>
+  
+  
+  <!-- navigation buttons -->
+  <div class="navBarBtns d-flex align-items-center">
+    <button type="button" class="bttn ripple p-0 m-0" ng-click="goBack()" ng-show="showProfileSearchPanel">
+      <i class="icomoon i-back-button nav-section-i" style="font-size: 24px;"></i>
+    </button>
+
+    <button type="button" class="nullBtn ripple nav-section-btn" ng-click="toggleProfileSearchPanel()" ng-hide="showProfileSearchPanel">
+      <i class="icomoon i-search nav-section-i"></i>
+    </button>
+  </div>
+
+    <!-- to search for profile -->
+    <div class="search-bar" ng-show="showProfileSearchPanel" style="flex-grow: 1;">  
+      <input type="text" class="nullInput "  name="search-content" placeholder="Whom are you looking for ?" ng-model="search.profile" ng-Keyup="searchForProfile()">
+
+      <button type="button" class="bttn" ng-click="searchFriend(friend)">
+        <i class="icomoon i-search" aria-hidden="true"></i>
+      </button>
+    </div>
+    </div>
+
+
+    <!-- nav for edit panel -->
+    <div class="navbar" ng-show="showProfileEditPanel">
+      <button type="button" class="bttn ripple p-0 m-0 d-flex align-items-center justify-content-center" ng-click="goBack()">
+        <i class="icomoon i-back-button nav-section-i" style="font-size: 24px;"></i>
+      </button>
+
+    <h2 class="ml-auto nav-section-i" style="font-size:18px;">Edit Profile</h2>
+
+    </div>
+  
+  </div>
+  </div>
+</nav>
+
+<!-- profile side navigation -->
+<div class="bg-blur fitContainer" style="position: absolute;z-index: 5;" ng-if="showProfilePageSideNav">  
+
+<!-- <div class="sideBar text-center page-slide-left" style="position: absolute;top: 0;bottom: 0;right: 0">
+
+<div class="d-flex flex-column align-items-center">
+   
+  <div class="preLoader" style="width: 100%!important;height: 100%!important;max-width: 100px!important;max-height: 100px!important;">
+    <img  ng-src="[[Profile.image]]" class="fitContainer">
+  </div>
+  <h6>[[Profile.username]]</h6>
+
+</div>
+  <hr>
+  <ul>
+    <li ng-if="activeProfile.username == Profile.username">Edit Profile</li>
+  </ul>
+</div> -->
+</div>
+
+<div class="bodyHolder">
+<div ng-hide="showProfileEditPanel || showProfileSearchPanel">
+<!--profile info display-->
+<profile-info-display></profile-info-display>
+
+
+<div class="container-fluid profile-content-section p-0 fade-in">
+
+  <div class="content-nav" set-class-when-at-top="fix-to-top">
+    <button type="button" class="nullBtn ripple content-nav-btn" ng-click="fetchProfileFriendsList()">friends</button>
+    <button type="button" class="nullBtn ripple content-nav-btn" ng-click="fetchProfileBookmarksList()" ng-if="blackBox.activeProfile.username == details.username">bookmark</button>
+    
+  </div>
+
+<!-- template directive for displaying friend list info -->
+<div class="container-fluid p-0 m-0" id="show-friends-list" ng-if="ShowFriendList">
+<display-friends-list></display-friends-list>
+</div>
+
+<!-- template directive for displaying profile idyas -->
+<div class="container-fluid p-0 m-0" ng-if="ShowBookmarkedIdyas">
+<display-bookmark-idya-list></display-bookmark-idya-list>
+</div>
+
+
+
+</div>
+</div>
+
+<load-profile-edit-panel ng-if="showProfileEditPanel"></load-profile-edit-panel>
+
+<load-profile-search-panel ng-if="showProfileSearchPanel"></load-profile-search-panel>
+</div>
+
+</div>

@@ -1,0 +1,269 @@
+<!--WEB CONTENT-->
+<div class="container-fluid">
+  <div class="container-fluid m-2 hCenter">
+  <button type="button" class="nullBtn iBtn"  ng-click="closeIdyaDetails()" style="width: 200px">
+    Close
+  </button>
+</div>
+    <div class="row">
+        <div class="col-md-8 w-100">
+          <div class="card ilog-title">
+
+            <div class="d-flex">
+                <h4>[[ idyaDetails.title ]]</h4>
+            </div>
+            <div class="d-flex justify-content-end pr-2" style="border-bottom: 1px solid rgba(0,0,0,0.125)">
+              <small class="pl-2">[[idyaDetails.created_at | date]] <i class="icomoon i-update"></i></small>
+              <small class="pl-2"> comments</small>
+            </div>
+            
+          </div>
+            <div class="btn-bar" style="border: 0">
+              
+              <div class="idya-block-buttons">
+                <button class="nullBtn" type="button" ng-click="liked(idya.slug)"><i id="[[idya.slug]]-like-btn" class="icomoon i-fist" aria-hidden="true" style="font-weight:800;"></i></button>
+                <small>[[ idyaDetails.likeCount ]]</small>
+                </div>
+
+
+              <div class="idya-block-buttons">
+                <button type="button" class="nullBtn"  ng-click="disliked(idya.slug)"><i id="[[idya.slug]]-dislike-btn" class="icomoon i-tomato" aria-hidden="true" style="font-weight:800;"></i></button>
+                <small>[[ idyaDetails.dislikeCount ]]</small>
+                </div>
+
+
+              <div class="idya-block-buttons">
+                <button type="button" class="nullBtn" id="menu-button" ng-click=""><i class="icomoon i-menu" aria-hidden="true"></i></button>
+                </div>  
+            </div>
+
+          <div class="card  idya-content">
+            [[ idyaDetails.post ]]
+                      
+          </div>
+
+
+<!-- {% if user_content.idyatype == "iMage" %}
+          <div class="card  idya-content">
+            <img src="/{{ user_content.image }}" style="max-width: 100%;max-height: 100%">
+            {{ user_content.abstract | safe }}
+                      
+          </div>
+{% endif %} -->
+
+<!-- {% if user_content.idyatype == "iVideo" %}
+          <div class="card  idya-content">
+            <div class="embed-responsive embed-responsive-16by9">
+
+              <iframe class="embed-responsive-item" src="{{ user_content.videoUrl | safe }}" width="560" height="315" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+              </div>
+            {{ user_content.abstract | safe }}
+                      
+          </div>
+{% endif %} -->
+          
+          <div class="container comments-section">
+            <h6>{{ comments.count }} Comments</h6>
+            <hr>
+            <div class="active-user-comment d-flex">
+                  <div>
+
+                    <img src="{% static 'cynosure/images/userprofico.png' %}" width="50px" height="50px" class="mr-3 rounded-circle">
+
+                    </div>
+
+                    <div class="comment-form">
+
+                      <textarea type="text" class="form-control">
+                        Add your comments on this idya...
+                      </textarea>
+
+                      <button type="submit" class="nullBtn float-right">add</button>
+                    </div>
+
+                </div>           
+                
+                <hr>
+                <hr>
+                <div class="active-user-comments-content"></div>
+
+                {% for cmmnt in comments %}
+
+                <div class="user-comments">
+
+                  <div class="d-flex p-1 m-1">
+                    <img src="{% static 'cynosure/images/userprofico.png' %}" width="50px" height="50px" class="mr-3 rounded-circle">
+                    <div style="width: 100%">
+                      <div class="user-info">
+                      <p style="font-size: 18px" class="p-0 m-0">{{ cmmnt.user.username }}</p> 
+                      <div class="d-flex justify-content-end" style="border-top: 1px solid rgba(0,0,0,0.125)">
+                      <small class="p-0 m-0">{{ cmmnt.timestamp  }} ago</small>
+                      </div>
+                      </div>
+                    
+                      <p style="font-size: 14px" class="p-0 m-0">{{ cmmnt.comment }}</p>
+                    
+              <div class="btn-bar d-flex justify-content-end" style="border: 0">
+              
+              <div class="idya-block-buttons">
+                <button class="nullBtn" type="button" ng-click="liked(idya.slug)"><i id="[[idya.slug]]-like-btn" class="icomoon i-fist" aria-hidden="true" style="font-weight:800;"></i></button>
+                <small>{{ user_content.likes.count }}</small>
+                </div>
+
+
+              <div class="idya-block-buttons">
+                <button type="button" class="nullBtn"  ng-click="disliked(idya.slug)"><i id="[[idya.slug]]-dislike-btn" class="icomoon i-tomato" aria-hidden="true" style="font-weight:800;"></i></button>
+                <small>{{ user_content.dislikes.count }}</small>
+                </div>
+
+                <button type="button" class="nullBtn">Relply</button>
+
+            </div>
+
+                    </div>
+                  </div>
+                    
+
+
+
+                </div>
+                {% endfor %}
+                <div class="d-flex justify-content-center">
+                <button type="button" class="btn comment-section-btn w-50" style="margin-top:6px;border-radius: 20px;">Show More</button>
+                </div>
+              </div>
+          </div>
+          
+
+
+
+        
+        <div class="col-md-4 ">
+            <div class="profile-card">
+              <div class="author-data">
+                      <div class="p-2">
+                        <img ng-src="[[ Author.image ]]" width="60px" height="60px" class="float-left rounded-circle m-2" style="box-shadow: 3px 5px 3px 0 rgba(0,0,0,0.4)">
+                        <h5 class="card-title m-0">[[ Author.username ]]</h5>
+                        <div class="d-flex justify-content-end" style="border-top:1px solid rgba(0,0,0,0.125) ">
+                        <p class="m-0">[[ Author.friendCount ]] friends</p>
+                        </div>
+                        <div>
+                          <h6 style="font-size:18px;">Bio</h6>
+                        </div>
+                         
+                         <p class="m-0 p-2" style="font-size:14px;">[[ Author.bio ]]</p>
+                      </div>
+                      <div class="d-flex justify-content-center mb-2">
+                        <button class="btn i-btn">Follow + </button>
+                      </div>
+                    </div>
+                    
+            </div>
+
+       <!--Recently searched tool bar-->
+        <div class="related-content text-white">
+
+        <h6 class="header">Similar idya</h6>
+
+        <div class="similar-idya-pills d-flex flex-wrap p-2">
+        <a href="#">category</a>
+        <a href="#">something else</a>
+        <a href="#">bionics</a>
+        <a href="#">tecnology</a>
+        <a href="#">social</a>
+        <a href="#">hystv sugib sbi</a>
+        <a href="#">category</a>
+        </div>
+                
+      </div>
+    <!--End of Recently searched tool bar--> 
+          <div class="similar-idya">
+           
+              <h6 class="header">Trending idya</h6>
+          
+            <div class="scroll-content">
+
+            <div class="idya-boxes">
+
+              <div class="idya-user-info d-flex">
+                
+                <div class="profile-img">
+                  <img src="" width="35px" height="35px" class=" rounded-circle">
+                </div>
+                <h6>Username</h6>
+
+              </div>
+              <hr>
+              <div class="idya-data">
+
+                  <p class="idya-title" >something is something to say about anything that is not good</p>
+                  
+              <div class="d-flex justify-content-center">
+                <i class="icomoon i-views p-1" aria-hidden="true" style="font-size: 15px;"> 2.5k</i>
+
+                <i class="icomoon i-fist p-1" aria-hidden="true" style="font-size: 15px;"> 2.5k</i>
+                <i class="icomoon i-tomato p-1" aria-hidden="true" style="font-size: 15px"> 2k</i>
+                </div>
+               
+                </div>
+                
+              </div>
+          
+            <div class="idya-boxes">
+
+              <div class="idya-user-info d-flex">
+                
+                <div class="profile-img">
+                  <img src="" width="35px" height="35px" class=" rounded-circle">
+                </div>
+                <h6>Username</h6>
+
+              </div>
+              <hr>
+              <div class="idya-data">
+
+                  <p class="idya-title" >something is something to say about anything that is not good</p>
+                  
+              <div class="d-flex justify-content-center">
+                <i class="icomoon i-views p-1" aria-hidden="true" style="font-size: 15px;"> 2.5k</i>
+
+                <i class="icomoon i-views p-1" aria-hidden="true" style="font-size: 15px;"> 2.5k</i>
+                <i class="icomoon i-tomato p-1" aria-hidden="true" style="font-size: 15px"> 2k</i>
+                </div>
+               
+                </div>
+                
+              </div>
+
+            <div class="idya-boxes">
+
+              <div class="idya-user-info d-flex">
+                
+                <div class="profile-img">
+                  <img src="" width="35px" height="35px" class=" rounded-circle">
+                </div>
+                <h6>Username</h6>
+
+              </div>
+              <hr>
+              <div class="idya-data">
+
+                  <p class="idya-title" >something is something to say about anything that is not good</p>
+                  
+              <div class="d-flex justify-content-center">
+                <i class="icomoon i-views p-1" aria-hidden="true" style="font-size: 15px;"> 2.5k</i>
+
+                <i class="icomoon i-fist p-1" aria-hidden="true" style="font-size: 15px;"> 2.5k</i>
+                <i class="icomoon i-tomato p-1" aria-hidden="true" style="font-size: 15px"> 2k</i>
+                </div>
+               
+                </div>
+                
+              </div>
+
+          </div>
+          </div>
+        </div>
+    </div>
+</div>

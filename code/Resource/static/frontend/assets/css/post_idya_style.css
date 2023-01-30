@@ -1,0 +1,130 @@
+
+.canvas
+{
+  width: 100vw;
+  height: 100vh;
+}
+.form-block
+{
+  padding: 4px;
+  width: 100vw;
+  max-width: 500px;
+  height: 100vh;
+  max-height: 800px;
+  overflow:hidden;
+  position: relative;
+}
+input placeholder
+{
+  padding:20px;
+}
+.form-block input ,.form-block select
+{
+  width: 100%;
+  padding: 8px;
+  
+  color: black;
+}
+.input-grp
+{
+  margin: 15px 0;
+}
+.form-btn
+{
+  width: 30%;
+  border: 1px solid rgb(232,17,32);
+  border-radius: 20px;
+  background-color: rgb(231,17,32);
+  color: #FFFF;
+  padding:8px;
+  margin: 5px;
+}
+.help-text
+{
+  font-size: 12px;
+}
+.ckeditor-form
+{
+  
+}
+#cke_1_top
+{
+  
+}
+.cke_bottom
+{ 
+  border:1px solid rgba(0,0,0,0.125)!important;
+  box-shadow: 0 -2px 3px 0 rgba(0,0,0,0.125);
+}
+
+.cke_path
+{
+  display: none;
+}
+.cke_chrome 
+{
+    border: none!important;
+    border-radius: 0!important;
+}
+.edit-mode-bar
+{
+  display: none;
+}
+
+.ckeditor-form-edit-mode
+{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  animation: fade-in 0.5s linear;
+}
+
+@keyframes fade-in
+{
+    0%
+    {
+        transform:scale(0.95);
+        opacity: 0.5;
+    }
+    30%
+    {
+        transform:scale(1);
+        opacity: 1;
+    }
+}
+iframe body
+{
+  cursor: pointer!important;
+  background-color:red!important;
+  border:2px solid black;
+}
+#cke_1_contents
+{
+
+}
+.ckeditor-form-edit-mode #cke_postidya
+{
+  height: 75%!important;
+}
+.ckeditor-form-edit-mode .cke_inner,.ckeditor-form-edit-mode .cke_contents
+{
+  height: 100%!important;
+  background-color:blue;
+}
+.ckeditor-form-edit-mode .edit-mode-bar
+{
+  display: block;
+  background-color:#FFFF;
+  padding: 8px;
+  border-bottom: 1px solid rgba(0,0,0,0.125);
+}
+.ckeditor-form-edit-mode .edit-mode-bar button
+{ 
+  padding: 4px 8px;
+  border-radius: 20px;
+  border:1.5px solid rgba(0,0,0,0.125);
+  background-color:#F13030;
+  color: #FFFF;
+}

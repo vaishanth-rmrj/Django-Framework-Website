@@ -1,0 +1,347 @@
+{% extends "core.html" %} 
+{% load staticfiles %} 
+{% block title %}{% endblock title %} 
+
+{% block AdittionalScripts %}
+
+
+{% endblock %}
+
+{% block style %} 
+{{ block.super }}
+<link rel="stylesheet" type="text/css" href="{% static 'UserProfile/user_profile_style.css' %}">
+{% endblock style %} 
+{% block content %}
+<!-- ################## WELCOME ###################-->
+
+<!-- BOTTOM NAVIGATION BAR
+{% include 'snippets/bottom_nav.html' %}
+-->
+<div ng-app="profile">
+
+  <script type="text/ng-template" id="user-data-display.html">
+    
+      <div class="section-1">
+        <div class="profile-section container"> 
+          <div class="row justify-content-center">
+          <div class="col-md-4 column-1 vertical-centering justify-content-start mb-4" style="max-width: 200px">
+            
+          <!--USER PROFILE IMAGE-->
+          <div class="round-img-preloader" style="width: 100%!important;height: 100%!important;max-width: 100px!important;max-height: 100px!important;">
+            <img  ng-src="[[activeProfile.image]]" style="width: 100%;height: 100%;">
+          </div>
+
+          <div class="profile-numbers d-flex">
+
+            <div  class="vertical-centering text-center m-2">
+              <h6 style="font-size: 28px;margin: 0">[[activeProfile.friends.length]]</h6>
+              <strong>Friends</strong>
+              
+            </div>
+
+            <div class="vertical-centering text-center m-2">
+              <h6 style="font-size: 28px;margin: 0">[[activeProfile.no_of_ilog]]</h6>
+              <strong>idyas</strong>
+            </div>
+
+          </div>
+            
+
+          </div>
+           
+
+
+            <div class="col-md-6">
+              <p ng-if="[[activeProfile.career]] == 'Studying'"><strong style="font-size: 24px">[[activeProfile.username]]</strong> is studying in <strong>[[activeProfile.institution]]</strong> lives in <i class="icomoon i-location" aria-hidden="true" style="font-weight:800;"></i><strong>[[activeProfile.location]]</strong></p>
+
+              <p ng-if="[[activeProfile.career]] == 'Working'"><strong style="font-size: 24px">[[activeProfile.username]]</strong> is working as [[activeProfile.job]] in <strong>[[activeProfile.company]]</strong> lives in <i class="icomoon i-location" aria-hidden="true" style="font-weight:800;"></i><strong>[[activeProfile.location]]</strong></p>
+
+              <p ng-if="[[activeProfile.career]] == 'Business'"><strong style="font-size: 24px">[[activeProfile.username]]</strong> is a business person running <strong>[[activeProfile.company]]</strong> lives in <i class="icomoon i-location" aria-hidden="true" style="font-weight:800;"></i><strong>[[activeProfile.location]]</strong></p>
+
+              <p ng-if="[[activeProfile.career]] == 'Entrepreneur'"><strong style="font-size: 24px">[[activeProfile.username]]</strong> is as entrepreneur running <strong>[[activeProfile.company]]</strong> lives in <i class="icomoon i-location" aria-hidden="true" style="font-weight:800;"></i><strong>[[activeProfile.location]]</strong></p>
+
+            
+            <strong>BIO</strong>
+            <hr>
+            <p style="font-size:14px;">[[activeProfile.bio]]</p>  
+            
+            <div class="profile-action-bar">
+              <button type="button" class="simple-btn">Follow</button>
+              <button type="button" class="simple-btn">Report</button>
+              <button type="button" class="simple-btn">Block</button>
+            </div>
+
+            </div>  
+
+            
+          </div>
+        </div>
+      </div>
+    
+ 
+  </script>
+
+<script type="text/ng-template" id="friend-box.html">
+
+<div class="friend-box vertical-centering">
+
+  <!--USER PROFILE IMAGE-->
+<div class="round-img-preloader" style="width: 100%!important;height: 100%!important;max-width: 80px!important;max-height: 80px!important;">
+  <img ng-src="[[friendProfile.image]]" style="width: 100%!important;height: 100%!important;max-width: 85px!important;max-height: 85px!important;">
+</div>
+
+<h6><a class="text-anchor" href="/idyaweb/accounts/[[frnd.Name]]/profile/" style="color:blue;">[[frnd.Name]]</a></h6>
+
+
+<div class="d-flex">
+  
+<small class="p-2">[[friendProfile.career]] </small>
+<small class="p-2"><i class="icomoon i-location" aria-hidden="true" ></i> [[friendProfile.location]] </small>
+<small class="p-2">pts: [[friendProfile.exp_points]]</small>
+
+</div>
+
+
+<div class="profile-numbers d-flex">
+
+  <div  class="vertical-centering text-center m-2">
+    <h6 style="font-size: 20px;margin: 0">[[friendProfile.friends.length]]</h6>
+    <strong>Friends</strong>
+    
+  </div>
+
+  <div class="vertical-centering text-center m-2">
+    <h6 style="font-size: 20px;margin: 0">[[friendProfile.no_of_ilog]]</h6>
+    <strong>idyas</strong>
+  </div>
+
+</div>
+<hr class="w-100">
+
+<button type="button" class="simple-btn follow-btn">+ Follow</button>
+
+</div>
+
+</script>
+
+
+
+
+<script type="text/ng-template" id="idya-block-template.html">
+  {% include 'snippets/idya-block.html' %}
+</script>
+
+
+
+<div ng-controller="profileController">
+
+  <fetch-profile username="{{username}}" id="fetchProfileUsername"></fetch-profile>
+
+  <div class="d-flex justify-content-end" style="height: 25px;width:100%;background-color:#f2f2f2;">
+  <button type="button" class="simple-btn" 
+  ng-click="editProfileDialog()"><i class="icomoon i-edit" aria-hidden="true"></i></button>
+  </div>
+ 
+<!--USER PROFILE INFORMATION-->
+
+<div class="container-fluid profile-info" >
+
+  <user-data-display></user-data-display>
+
+</div>
+<!--USER PROFILE INFORMATION ENDS-->
+
+
+<div class="content-box">
+
+  <div class="profile-nav-pills">
+
+    <div >
+      <button type="button" class="btn show-idyas-btn"  ng-click="showidyas('')">idyas</button>
+    </div>
+
+    <div>
+      <button type="button" class="btn show-idyas-btn"  ng-click="showidyas('iLog')">iLog</button>
+    </div>
+
+    <div>
+      <button type="button" class="btn show-idyas-btn" ng-click="showidyas('iVideo')">videos</button>
+    </div>
+
+    <div >
+      <button type="button" class="btn show-idyas-btn"  ng-click="showidyas('iMage')">images</button>
+    </div>
+
+    <div>
+      <button type="button" class="btn" ng-click="fetchFriendsData()" id="show-friends-btn">friends</button>
+    </div>
+
+    <div>
+      <button type="button" class="btn" id="show-bookmark" ng-click="showBookmarkedidyas()">bookmark</button>
+    </div>
+
+  </div>
+  
+
+  <div class="content mt-4" id="show-friends-list" ng-if="ShowFriendList">
+
+
+<div class="mt-4">
+  <strong>[[frnds_arry.length]] friends</strong>
+  <hr>
+</div>
+
+<!------
+        SEARCH BAR
+------->
+
+<div class="SearchBar mx-auto" style="background-color:rgb(255,255,255);width: 100%">
+  
+  <input type="text" class="form-control simple-input" name="search-content" placeholder="Whom are you looking for ?" ng-model="friend" ng-Keyup="searchFriend(friend)">
+  <button type="button" class="simple-btn" ng-click="searchFriend(friend)"><i class="icomoon i-search" aria-hidden="true"></i></button>
+</div>
+
+<!------
+        SEARCH BAR ---end
+-------->
+<div class="row">
+
+<div ng-repeat="frnd in frnds_arry | filter:filterFriend " class="col-md-4 col-sm-6">
+
+<div class="d-flex justify-content-center">
+  <friend-list-box username=[[frnd]]></friend-list-box>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+  <div class="content" id="show-idyas" ng-if="ShowProfileIdyas">
+
+    <div class="mt-4">
+      <strong>[[idyas.length]] idyas posted</strong>
+      <hr>
+    </div>
+  
+  <div id="idya-display-box" ng-repeat="idya in idyas | filter:{idyatype:idyaFilter}">
+      <idya-block></idya-block>
+    </div>
+
+  </div>
+
+  <div class="content" id="show-bookmarked-idyas" ng-if="ShowBookmarkedIdyas">
+
+    <div class="mt-4">
+      <strong>[[Bookmarkedidyas.length]] bookmarked idyas</strong>
+      <hr>
+    </div>
+  
+  <div id="bookmarked-idya-display-box" ng-repeat="idya in Bookmarkedidyas" >
+      <idya-block></idya-block>
+    </div>
+
+  </div>
+
+</div>
+
+<div class="d-none" ng-class="{'overide-d-none': editProfileDialogShow }">
+<div class="background-blur horizontal-centering" 
+  ng-controller="profileSetupController" >
+  <form class="profile-setup-form">
+    <div class="profile-image vertical-centering">
+      <!--USER PROFILE IMAGE-->
+      <div class="round-img-preloader" style="width: 100%!important;height: 100%!important;max-width: 100px!important;max-height: 100px!important;">
+        <img ng-src="[[editedProfile.image]]" style="width: 100px!important;height: 100px!important;">
+      </div>
+
+      <strong>Your Profile</strong>
+      
+    </div>
+    
+    <div class="d-flex form-group">
+    <input type="text" class="form-control" name="first_name" ng-model="editedProfile.first_name" placeholder="First name">
+    <input type="text" class="form-control" name="last_name" ng-model="editedProfile.last_name" placeholder="Last name">
+      
+    </div>
+
+    <div class="form-group">
+    <input type="text" class="form-control" name="username" ng-model="editedProfile.username " placeholder="Username">
+    </div>
+
+    <div class="form-group">
+    <input type="text" class="form-control" name="email" ng-model="editedProfile.email"placeholder="Email">
+    </div>
+  
+    <div class="form-group">
+    <input type="text" class="form-control" name="dob" ng-model="editedProfile.dob"placeholder="Birth date">
+    </div>
+
+    <div class="form-group">
+    <label for="career.id_for_label">Select your career</label><br>
+    <select class="form-control" ng-model="editedProfile.career" ng-options="option.value as option.display for option in careerOptions">
+    </select>
+    </div>
+
+    <div class="form-group" ng-if="[[editedProfile.career]] == 'studying'">
+      <label for="{{ form.institution.id_for_label }}">Where do you study?</label><br>
+      <input type="text" class="form-control" name="institution" ng-model="editedProfile.institution" placeholder="Institution">
+      
+    </div>
+
+    <div class="form-group" ng-if="[[editedProfile.career]] == 'working'">
+      <label for="company.id_for_label">Where do you work?</label><br>
+      <div class="d-flex align-items-center">
+        <input type="text" class="form-control" name="company" ng-model="editedProfile.company" placeholder="Company">
+      <small>as</small>
+      <input type="text" class="form-control" name="job" ng-model="editedProfile.job" placeholder="job">
+      </div>
+            
+    </div>
+
+    <div class="form-group" ng-if="[[editedProfile.career]] == 'business'">
+      <label for="company.id_for_label">What business do you run?</label><br>
+      <input type="text" class="form-control" name="company" ng-model="editedProfile.company" placeholder="Business">
+      
+    </div>
+
+    <div class="form-group" ng-if="[[editedProfile.career]] == 'entrepreneur'">
+      <label for="company.id_for_label">Company your are running?</label><br>
+      <input type="text" class="form-control" name="company" ng-model="editedProfile.company" placeholder="Company">
+      
+    </div>
+
+    <div class="form-group">
+      <label for="location.id_for_label">Where do you live?</label><br>
+      <input type="text" class="form-control" name="location" ng-model="editedProfile.location" placeholder="location">
+      
+    </div>
+
+    <div class="horizontal-centering align-items-center">
+ 
+      <button type="button" class="simple-btn ml-auto" ng-click="editedProfileSave()">Done<i class="icomoon i-go-button p-2"></i></button>
+
+    </div>
+  </form>
+
+  
+</div>
+</div>
+</div>
+</div>
+
+
+{% endblock content %}
+
+{% block scripts %}
+
+<script type="text/javascript" src="{% static 'profile.js' %}"></script>
+<script type="text/javascript">
+ProfileApp.config(['$httpProvider', function($httpProvider) {
+        $httpProvider.defaults.headers.common['X-CSRFToken'] = '{{ csrf_token|escapejs}}';
+}]);
+</script>
+
+
+{% endblock scripts %} 

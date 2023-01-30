@@ -1,0 +1,48 @@
+{% extends "core.html" %} 
+{% block title %}{% endblock title %} 
+{% block style %} {% endblock style %} 
+{% block content %}
+<!-- ################## WELCOME ###################-->
+{% include 'snippets/navbar.html' %}
+<div class="container">
+  <form method="POST" action="{% url 'accounts:profile_edit' %}">
+    {% csrf_token %}
+
+ <div class="form-group">
+      {{ form1.first_name.errors }}
+      <label for="{{ form1.first_name.id_for_label }}">First Name</label><br>
+      {{ form1.first_name }}
+      
+    </div>
+    <div class="form-group">
+      {{ form1.last_name.errors }}
+      <label for="{{ form1.last_name.id_for_label }}">Last Name</label><br>
+      {{ form1.last_name }}
+      
+    </div>
+    <div class="form-group">
+      {{ form1.username.errors }}
+      <label for="{{ form1.username.id_for_label }}">Username</label><br>
+      {{ form1.username }}
+      
+    </div>
+    <div class="form-group">
+      {{ form1.email.errors }}
+      <label for="{{ form1.email.id_for_label }}">Email</label><br>
+      {{ form1.email }}
+      
+    </div>
+    <div class="form-group">
+      {{ form2.gender.errors }}
+      <label for="{{ form2.gender.id_for_label }}">Gender</label><br>
+      {{ form2.gender }}
+      
+    
+
+    <button type="submit" class="btn btn-success">Submit</button>
+  </form>
+</div>
+
+
+
+{% endblock content %}

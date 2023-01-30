@@ -1,0 +1,59 @@
+<div class="main"  ng-app="idyaHubApp" class="page-slide-left">
+
+<!------
+        MAIN CONTENT OF THE WEBPAGE
+------->
+
+<div ng-controller="idyahubDashboardController">
+
+
+<div>
+<div class="row idya-block-section">         
+  
+<div class="col-md-8 col-12 p-0 m-0" ng-controller="dashboardIdyaBlockController">
+
+ <div class="filter-bar  d-flex align-items-center" >
+   <h6 class="m-0">loaded [[hubIdyas.length]] idyas</h6>
+
+    <div class="filter-block ml-auto">
+      <p class="m-0">Filter by</p>
+
+      <select ng-model="idyaFilter" ng-options="option.value as option.display for option in filterOptions">
+      </select>
+
+      </div>
+    </div>
+
+      <div class="question-section horizontal-centering">
+        
+        <div class="question-box">
+
+          <div class="round-img-preloader" style="width: 35px;height: 35px">
+          <img src="[[activeProfile.image]]" style="width: 35px;height: 35px">
+        </div>
+
+          <strong style="color: rgba(0,0,0,0.5);padding: 5px;">Do you have any question to ask?</strong>
+        </div>
+           
+        
+      </div>
+
+    <!------
+            IDYA BLOCKS SECTION
+    ------->
+
+
+    <div id="idya-display-box" ng-repeat="idya in hubIdyas | filter:{idyatype:idyaFilter}">
+          <idya-block></idya-block>
+        </div>
+
+
+  </div>
+
+
+        <!--End of Trending topics tool bar-->
+</div>
+    </div>
+
+</div>
+</div>

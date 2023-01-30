@@ -1,0 +1,1544 @@
+body
+{
+	padding: 0;
+	margin: 0;
+	font-family: 'Montserrat', sans-serif;
+  box-sizing: border-box;
+  background-color: #FAFAFA;
+}
+.text-header
+{
+  font-family: 'Milonga', cursive;
+  font-size: 20px;
+}
+.borderTest
+{
+  border:1px solid black;
+}
+.swiper-container {
+    overflow-y:hidden!important;
+    overflow-x:hidden!important;
+}
+.swiper-slide
+{
+  background-color: #FFFFF;
+  overflow-x:hidden!important;
+  overflow-y:hidden!important;
+  position: relative!important;
+}
+ 
+.bodyHolder {
+  background-color: #FAFAFA;
+  overflow-y: scroll;
+  position: absolute;
+  top: 70px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin-bottom: 70px;
+
+}
+.hub-list-body-holder
+{
+  background-color: #FFFF;
+  overflow-y: scroll;
+  position: absolute;
+  top: 92px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin-bottom: 70px;
+
+}
+/* Style for html elements*/
+h1, h2, h3, h4, h5, h6
+{
+	padding:0;
+	margin:0;
+}
+hr
+{
+	margin: 0;
+	padding: 0;
+}
+p
+{
+  padding: 0;
+  margin: 0;
+}
+a
+{
+  text-decoration: none;
+}
+a:hover
+{
+  text-decoration: none;
+}
+button:focus
+{
+  outline: none!important;
+}
+button:active
+{
+  outline: none!important;
+}
+input:focus
+{
+  outline: none!important;
+}
+input:active
+{
+  outline: none!important;
+}
+/* Style for classes*/
+.bg-red
+{
+    background-color:rgb(232,17,32);
+}
+.bg-gray
+{
+    background-color:rgb(224,224,224);
+}
+.bg-blur
+{
+	background-color: rgba(0,0,0,0.8);
+}
+.iBtn
+{
+  padding: 4px 12px!important;
+  margin:5px;
+  border-radius: 20px!important;
+  background-color: #F13030!important;
+  color: #FFFF;
+  font-weight: bold;
+  box-shadow:0 0 4px 2px rgba(0,0,0,0.125)!important;
+
+}
+.dot-black::before
+{
+    content: '.';
+    width: 100%;
+    height: 100%;
+    margin:0;
+    padding: 0px 2px;
+    font-size: 35px;
+    line-height: 0;
+}
+.vBar::before
+{
+  content: "|";
+  font-size: 28px;
+  font-weight: bold;
+}
+.topFixed
+{
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 3;
+}
+.bottomFixed
+{
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 3;
+}
+.rightFixed
+{
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	z-index: 4;
+}
+.wrapScreen
+{
+	width: 100vw!important;
+  height: 100vh!important;
+}
+.wrap-screen-overlay
+{
+  background-color: #FFFF;
+  width: 100vw!important;
+  height: 100vh!important;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 1000;
+}
+.wrapToFit, .stretch-to-fit
+{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+.wrapToBody
+{
+  position: absolute;
+  top: 85px;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+.fitContainer
+{
+  width: 100%;
+  height:100%;
+}
+.preLoader
+{
+	border: 1.5px solid #FFFF;
+	border-radius: 50%;
+	background-color: #bdbdbd;
+	box-shadow: 0 0 5px 2px rgba(0,0,0,0.125);
+	overflow: hidden;
+	margin:5px;
+}
+.circle
+{
+    border-radius:50%;
+    border:2px solid rgb(255,255,255);
+}
+.hCenter, .h-center
+{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.vCenter
+{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+.sizeOne
+{
+	width: 40px;
+	height: 40px;
+}
+
+.sizeTwo
+{
+	width: 50px;
+	height: 50px;
+}
+.sizeThree
+{
+	width: 60px;
+	height: 60px;
+
+}
+.nullBtn, .bttn
+{
+	padding: 5px;
+	margin: 5px;
+	background-color: transparent;
+	border-radius: 4px;
+	border:none;
+	outline: none;
+	cursor: pointer;
+}
+.btn-pill-border
+{
+  background-color: #FFFF;
+  color: #F13030;
+  border: 2px solid #F13030;
+  border-radius: 20px;
+
+  padding: 8px 12px;
+  margin: 5px
+}
+.category-pills-section
+{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+  padding: 10px;
+}
+.nullInput, .simple-input
+{
+	padding: 5px;
+	background-color: transparent;
+	border:none;
+	outline: none;
+}
+.inputRounded, .input-round-border
+{
+  width: 100%;
+  height: 40px;
+  margin: 10px 0 10px 0;
+  padding: 10px;
+  border-radius: 20px;
+  background-color: #FFFF;
+  border: 1px solid rgba(0,0,0,0.125);
+  box-shadow: 0 4px 6px 0 rgba(0,0,0,0.125);
+}
+.textareaRounded, .textarea-round-border
+{
+  width: 100%;
+  margin: 10px 0 10px 0;
+  padding: 10px;
+  border-radius: 4px;
+  background-color: #FFFF;
+  border: 1px solid #FFFF;
+  box-shadow: 0 4px 6px 0 rgba(0,0,0,0.125);
+}
+.inputUnderlined
+{
+  border: 0;
+  border-bottom: 2px solid #F13030;
+  box-shadow: 0 4px 6px 0px rgba(0,0,0,0.125);
+}
+.bold
+{
+    font-weight:bold;
+}
+.navCompensate
+{
+	
+	margin-top: 90px!important;
+	margin-bottom: 85px!important;
+}
+.watermark
+{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: rgba(0,0,0,0.4);
+  background-color: #666666;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: rgba(255,255,255,0.5) 0px 3px 3px;
+}
+.watermark i 
+{
+  font-size:72px;
+  
+}
+.watermark h6
+{
+  font-size:46px;
+}
+.pushLeft
+{
+	transform: translateX(-300px);
+}
+.punchedText
+{
+  color: rgba(0,0,0,0.4);
+  background-color: #666666;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: rgba(255,255,255,0.5) 0px 3px 3px;
+}
+
+  /*styles for icard*/
+.iCard
+{
+  margin-bottom: 20px;
+  border-radius: 4px;
+  border: none;
+  box-sizing: border-box;
+  box-shadow: 0 4px 6px 0 rgba(0,0,0,0.125);
+  overflow: hidden;
+}
+.iCard .header
+{
+  margin: 10px;
+  padding:10px;
+  border-bottom: 1px solid rgba(0,0,0,0.125);
+  font-size: 22px;
+  font-weight: bold;
+  color: rgba(0,0,0,0.5);
+
+  display: flex;
+  align-items: center;
+}
+.iCard .body
+{
+  padding:10px;
+  font-size: 18px;
+}
+.dropdown-menu
+{
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+}
+/* Ripple effect */
+.ripple {
+ position:relative;
+ overflow:hidden;
+ transform:translate3d(0,0,0)
+}
+.ripple:after {
+ content:"";
+ display:block;
+ position:absolute;
+ width:100%;
+ height:100%;
+ top:0;
+ left:0;
+ pointer-events:none;
+ background-image:radial-gradient(circle,#FFFF 10%,transparent 10.1%);
+ background-repeat:no-repeat;
+ background-position:50%;
+ transform:scale(10,10);
+ opacity:0;
+ transition:transform .5s,opacity 1s
+}
+.ripple:active:after {
+ transform:scale(0,0);
+ opacity:.6;
+ transition:0s;
+ outline: 1px solid #FFFF;
+}
+
+/* Style for navbar*/
+.topNav
+{
+  background-color: #F13030;
+  color: #FFFFFF;
+  border-bottom:3px solid #FFFF;
+  box-shadow: 0 5px 5px 0px rgba(0,0,0,0.125);  
+  height: 85px;
+}
+.topNav .navBtns i
+{
+  color: #FFFF;
+  font-size: 22px;
+}
+.navBtn
+{
+  padding: 8px 12px;
+  color: #FFFF;
+}
+.navBtn:hover
+{
+  background-color: rgba(255,255,255,0.2);
+  color: #F13030;
+  border-radius: 22px;  
+}
+.navBtn:focus
+{
+  background-color: rgba(255,255,255,1);
+  color: #F13030!important;
+  border-radius: 22px; 
+}
+.navbarContainer
+{
+	background-color: #F13030;
+	color: #FFFFFF;
+	padding:10px;
+	border-bottom:3px solid #FFFF;
+  box-shadow: 0 5px 5px 0px rgba(0,0,0,0.125);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+.navbar
+{
+	display: flex;
+	justify-content: space-between!important;
+	align-items: center;
+
+  padding: 0!important;
+}
+.navbar i
+{
+	color: #FFFF;
+}
+.profileButton, .hubButton
+{
+	display: flex;
+	align-items: center;
+
+	border: 2px solid #FFFF;
+	border-radius: 22px;
+	cursor: pointer;
+}
+.profilePicDisplay, .hubPicDisplay
+{
+  width: 40px;
+  height: 40px;
+	border-radius: 20px;
+	background-color: #bdbdbd;
+  overflow: hidden;
+}
+.profileButton h2
+{
+	font-size: 16px;
+}
+.profileName, .hubName
+{
+  padding: 4px 12px;
+}
+.navBarBtns, .navText
+{
+  font-size: 18px;
+  font-weight: bold;
+  color: #FFFF;
+}
+.navBarBtns button
+{
+  padding: 8px 12px;
+  margin:0!important;
+  transition-duration: 300ms;
+  transition-property: border;
+}
+.navBarBtns button:hover
+{
+  background-color: rgba(255,255,255,0.2);
+  border-radius: 20px;
+}
+.sideBar
+{	
+	width: 55vw;
+	max-width: 300px;
+	padding: 10px;
+	color:rgba(0,0,0,0.6);
+	background-color: #FFFF;
+
+}
+.sideBar ul
+{
+  list-style: none;
+  padding: 0;
+  margin:0;
+}
+.sideBar li
+{
+  padding: 10px;
+  font-weight:bold;
+  cursor: pointer;
+}
+.sideBar li:hover
+{
+  color: #F13030;
+}
+.navCompesation
+{
+	margin-top: 85px;
+	margin-bottom: 70px;
+}
+/* Style for bottom navbar*/
+.bottom-nav
+{
+	box-shadow: 0 -2px 8px 1px rgba(0,0,0,0.125);
+	border-top: 1px solid rgba(0,0,0,0.125);
+	background-color: #FFFF;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: fixed;
+  bottom: 0;
+  z-index: 10;
+  left:0;
+  right: 0;
+}
+.bottom-nav .dashboard-icon
+{
+  border-radius: 25px;
+  width: 50px;
+  height: 50px;
+  border: 2px solid #F13030;
+  background-color: #FFFF;
+  color: #F13030;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 22px;
+}
+.bottom-nav-btn-group
+{
+	max-width: 700px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.bottom-nav-btn-group button
+{
+	width: 18vw;
+	text-align: center;
+	transition-duration: 0.5s;
+	transition-property: color;
+}
+.bottom-nav-btn-group  i
+{
+	font-size: 20px;
+}
+
+.active-icon
+{
+  color: #F13030;
+}
+.active-icon-dashboard
+{
+  background-color: #F13030!important;
+}
+.active-icon-dashboard i
+{
+  color: #FFFF;
+}
+.utility-btn-bar
+{
+  position: fixed;
+  z-index: 10;
+  right: 10px;
+  bottom: 65px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+
+}
+.utility-btn
+{
+  background-color: #F13030;
+  color: #FFFF;
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  box-shadow: 0 4px 5px 2px rgba(0,0,0,0.125);
+}
+.filter-category-select{
+  padding: 10px;
+}
+
+/* Style for the body */
+.chassis
+{
+	min-height: 100vh;
+	overflow: hidden;
+}
+
+
+/*style for the search bar*/
+.expanding-search-bar
+{  
+  padding:0 5px;
+  background-color:#FFFF; 
+  border-radius: 25px; 
+  position: relative;
+  flex-grow: 1;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+
+}
+.expanding-search-bar input
+{
+  flex-grow: 1;
+  padding: 0px 12px;  
+  outline: none!important;
+  border: none!important;
+}
+.expanding-search-bar button
+{   
+    border-radius: 0px;
+    padding:4px 12px;
+    margin:4px 0px;
+    text-align: center;
+}
+
+.expanding-search-bar i
+{   
+  color: #333;
+  font-size: 20px;
+  line-height: 0;
+}
+.search-bar
+{   
+  margin: 2px;
+  padding: 0px 8px;
+  background-color:#FFFF;    
+  border-radius: 24px;
+  border:1px solid rgba(0,0,0,0.125);
+  overflow:hidden;
+  display: flex;
+    
+}
+.hub-list-search-bar-panel, .search-bar-panel
+{
+  padding:0 10px;
+  background-color:#F13030;
+  position: absolute;
+  top: 0;
+  bottom:0;
+  left: 0;
+  right: 0;
+
+  display: flex;
+  justify-content: end;
+  align-items:center;
+}
+.search-bar input
+{
+  flex-grow: 1;
+  outline: none!important;
+  border: none!important;
+}
+
+.search-bar button
+{   
+    border-radius: 0px;
+    padding:4px 12px;
+    margin:4px 0px;
+    text-align: center;
+}
+
+.search-bar i
+{   
+  color: #333;
+  font-size: 20px;
+}
+
+.searchResultsList 
+{
+  position: absolute;
+  z-index: 10;
+  border: 1px solid rgba(0,0,0,0.125);
+  border-radius: 2px; 
+  background-color: rgb(255,255,255);
+  margin-top: 4px;
+}
+.searchResultsList ul
+{
+  list-style: none;
+  padding:0;
+  margin: 0;
+}
+.searchResultsList li
+{
+  padding: 10px;
+}
+
+/* Style for popup modals */
+.popup
+{
+	position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 12;
+}
+
+/* styles for idya add panel*/
+.add-idya-panel
+{
+  height: auto;
+}
+.option-section
+{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.option-section .option
+{
+  text-align: center;
+}
+.option-section .circle-btn
+{
+  margin: 10px;
+  background-color: #F13030;
+  color: #FFF;
+  width: 60px;
+  height: 60px;
+  border-radius: 30px;
+  box-shadow: 0 4px 5px 2px rgba(0,0,0,0.125);
+
+  text-align: center;
+}
+.option-section .circle-btn i
+{
+  color: #FFFF;
+  font-size: 18px;
+}
+.add-idya-panel .close-btn
+{
+  border-top: 1px solid rgba(0,0,0,0.125);
+  margin: 5px 15px;
+  display: block;
+  text-align: center;
+}
+.modal-box
+{	
+	max-width: 500px;
+	background-color: #FFFF;
+	border-radius: 4px;
+	border:1px solid rgba(0,0,0,0.125);
+}
+.modal-box .close-btn i
+{
+  font-size: 18px;
+}
+.modal-box .header
+{
+  /*padding: 5px;*/
+  border-bottom: 1px solid rgba(0,0,0,0.125);
+  margin: 5px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+.modal-box .header .header-text
+{
+  padding-left: 10px;
+  font-size: 18px;
+}
+.position-bottom
+{
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 15;
+}
+.searchModalBox
+{
+	height: 600px;
+}
+.searchProfileModalBox, .searchIdyahubModalBox, .searchIdyaModalBox
+{
+  min-height: 700px;
+}
+.searchModalBox .searchBar
+{
+	border-bottom: 2px solid rgba(0,0,0,0.2);
+	margin: 0 10px;
+	display: flex;
+}
+.searchProfileModalBox .searchBar, .searchIdyahubModalBox .searchBar, .searchIdyaModalBox .searchBar
+{
+  border-bottom: 2px solid rgba(0,0,0,0.2);
+  margin: 0 10px;
+  display: flex;
+}
+.commentModal
+{
+  min-height: 600px;
+}
+.commentModal .textBox
+{
+  width: 95%;
+  margin: 10px;
+  border: none;
+  border-bottom: 2px solid #F13030;
+}
+.commentModal textarea::placeholder 
+{ /* Chrome, Firefox, Opera, Safari 10.1+ */
+  font-size: 22px;
+  font-weight: 600; /* Firefox */
+}
+
+.commentModal textarea:-ms-input-placeholder 
+{ /* Internet Explorer 10-11 */
+  font-size: 32px;
+  font-weight: 1000;
+}
+
+.commentModal textarea::-ms-input-placeholder 
+{ /* Microsoft Edge */
+  font-size: 32px;
+  font-weight: 1000;
+}
+.commentModal .submitBtn
+{
+  padding: 4px 8px;
+  color: #F13030;
+  font-size: 18px;
+
+  transition-duration: 0.3s;
+  transition-property: background-color;
+}
+.commentModal .submitBtn:hover, .commentModal .submitBtn:focus
+{
+  color: #FFFF;
+  background-color: #F13030;
+  border-radius: 20px;
+}
+.commentModal .CommentSection
+{
+  margin: 5px;
+  border-bottom: 1px solid rgba(0,0,0,0.125);
+  display: flex;
+  justify-content: start;
+}
+.commentModal .details
+{
+  flex: 11;
+  padding: 10px;
+}
+.commentModal .commentBtnBar
+{
+  padding: 5px;
+  display: flex;
+  justify-content: end;
+}
+.idya-detail-panel
+{
+  padding: 10px;
+}
+
+/*styles for dashboard page*/
+.topChartSection
+{
+  background-color: #FFFF;
+  border-radius:4px;
+  box-shadow:0 0 4px 2px rgba(0,0,0,0.125);
+}
+.topChartSection .chartHeader
+{
+  margin: 10px;
+  padding: 10px;
+  border-bottom:1px solid rgba(0,0,0,0.125);
+  text-align: left;
+}
+
+.topChartSection .chartBody
+{
+  padding: 10px;
+  max-height:400px;
+  overflow-y: scroll;
+}
+.topChartSection .profileInfos
+{
+  display: flex;
+  margin:5px;
+}
+.topChartSection .profileDetails
+{
+  flex-grow: 1;
+}
+/*styles for idya rendering*/
+/*.idya-block-section
+{
+    padding:0!important;
+    margin:0!important;
+    width: 100vw;
+}*/
+.idya-block
+{ 
+  max-width: 555px;
+  margin:8px 8px;
+  background-color: #FFFF;
+  color: rgba(0,0,0,0.8);
+  border-radius: 8px;
+  box-shadow: 0 4px 5px 2px rgba(0,0,0,0.125);
+  overflow: hidden;
+}
+.idya-block .top-bar
+{
+    margin:5px;
+    color: rgba(0,0,0,0.5);
+
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+.idya-block .top-bar-transparent
+{
+  background-color: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 5px!important;
+}
+.idya-block .top-bar-transparent .nav-btn-group, .top-bar-transparent .idya-views-section
+{
+  padding:4px 12px;
+  background-color: #FFFF;
+  border-radius: 20px;
+}
+.idya-block .top-bar-transparent .nav-btn-group button
+{
+  padding:2px 8px;
+  margin: 0;
+}
+.idya-block .top-bar-transparent .nav-btn-group i
+{
+  padding:0;
+  margin: 0;
+}
+.idyaBlock .header
+{
+	padding: 5px!important;
+  min-width: 350px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+.user-viewed-circles
+{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    max-width: 200px;
+}
+.user-viewed-circles .circle
+{
+    width: 25px;
+    height: 25px;
+    background-color:#f2f2f2;
+    border-radius: 50%;
+    border:1.5px solid rgb(255,255,255);
+}
+.idya-info-display .title-display
+{
+  padding:8px;
+}
+.idya-info-display .title-display .title-text
+{
+  font-size: 22px;
+}
+.idya-info-display .idya-detail
+{
+  padding: 5px 10px;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+.idya-info-display .idya-detail .know-more-btn
+{
+  height: 20px;
+  border:1.5px solid #F13030;
+  border-radius: 18px;
+  font-size: 12px;
+  line-height: 0;
+  color: #F13030;
+}
+.idya-info-display .channel-info-display
+{
+  display: flex;
+  justify-content: end;
+}
+
+.idya-info-bar
+{
+  
+  padding:6px;
+  color: rgb(250,250,250);
+  height: 40px;
+}
+
+.idya-info
+{ 
+
+    margin-left: 5px;
+    color: rgba(0,0,0,0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.idya-info i
+{   
+    
+    margin: 0;
+    padding:5px;
+    color: rgba(0,0,0,0.3);
+    font-size: 16px;
+
+    
+}
+
+
+
+.btn-bar, .action-bar
+{
+    margin: 5px;
+    padding:5px;
+    border-top: 1px solid rgba(0,0,0,0.125);
+    overflow: hidden;
+    display: flex;
+    justify-content: space-around;
+}
+
+.action-bar
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.idya-block-buttons, .action-bar-btn
+{
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.idya-block-buttons button , .action-bar-btn button
+{
+  padding:0;
+  margin: 0; 
+  color: rgba(0,0,0,0.5); 
+  font-size:24px;  
+  transition-duration: 300ms;
+  transition-property: transform,text-shadow;
+}
+.idya-block-buttons button:hover, .action-bar-btn button:hover
+{
+	transform: scale(1.1);
+  color: #F13030;
+}
+.idya-block-buttons i, .action-bar-btn i 
+{
+  padding:0;
+  margin: 0; 
+  color: rgba(0,0,0,0.5); 
+  font-size:24px;  
+  
+  transition-duration: 300ms;
+ 
+  transition-property: transform,text-shadow;
+}
+.idya-block-buttons small, .action-bar-btn small
+{
+    padding:1px;
+    margin:1px;
+    font-size:12px;
+    font-weight: bold;
+    color: #F13030;
+    text-align: center;
+    line-height: 0;
+    
+}
+
+.bookmark-btn, .share-btn
+{
+    transition-duration: 300ms;
+    transition-property: transform,color;
+}
+.bookmark-btn:hover, .share-btn:hover
+{
+    transform: scale(1.1);
+  color: #F13030;
+}
+.bookmark-btn:hover, 
+{
+  transform: scale(1.1);
+  color: #F13030;
+}
+
+.btn-pressed-animate {
+    animation: btn-press-animate 0.5s linear;
+}
+
+.btn-pressed-animate i{
+    color: red!important;
+}
+
+@keyframes btn-press-animate
+{
+    0%
+    {
+        transform:scale(1.2);
+    }
+    20%
+    {
+        transform:scale(1.15);
+    }
+
+    30%
+    {
+        transform:scale(1.14);
+    }
+    
+    40%
+    {
+        transform:scale(1.12);
+    }
+    50%
+    {
+        transform:scale(1);
+    }
+    75%
+    {
+        transform:scale(0.9);
+    }
+
+    100%
+    {
+        transform:scale(1);
+    }
+}
+
+.text-anchor
+{
+  color: rgba(0,0,0,0.6);
+  text-decoration: none;
+}
+.text-anchor:hover
+{
+  color: rgba(0,0,0,0.6);
+  text-decoration: none;
+}
+
+
+#menu-btn
+{
+  border:0;
+  background-color: transparent;
+  color: rgba(0,0,0,0.6);
+}
+
+.idya-block #menu-btn
+{
+  border:0;
+  background-color: transparent;
+  color: rgb(0,0,0);
+}
+
+/*hub list view style*/
+.hubListView
+{
+  min-height:100vw;
+}
+
+.hubNavBar button
+{
+  color: #FFFF;
+  border-radius: 20px;
+  padding: 8px 12px;
+  margin: 5px;
+  font-weight: bold;
+}
+.hubNavBar button:hover
+{
+  background-color: rgba(255,255,255,0.2);
+}
+.hubNavBar .active
+{
+  background-color: #FFFF!important;
+  color: #F13030;
+}
+.hubListBody
+{
+  width: 100%;
+}
+.hubListBody .searchBar
+{
+  width: 100%;
+  height: 50px;
+  padding: 10px 16px;
+  margin:5px 0 5px 0;
+  border-radius: 25px;
+  border: 1px solid rgba(0,0,0,0.125);
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+.popularHubList
+{
+  border-radius: 4px;
+  background-color: #FFFF;
+  padding: 10px;
+  box-shadow: 0 4px 6px 0 rgba(0,0,0,0.125);
+}
+.popularHubList .head
+{
+  padding: 10px;
+  border-bottom: 1px solid rgba(0,0,0,0.125);
+}
+.popularHubList .body
+{
+  height: 200px;
+}
+.infoSection
+{
+  width: 100%;
+  max-width: 400px;
+  padding: 4px;
+  margin: 5px;
+  color: rgba(0,0,0,0.4);
+  background-color: #666666;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: rgba(255,255,255,0.5) 0px 3px 3px;
+
+  display: flex;
+  align-items: center;
+}
+.hubListSearchFilterBar
+{
+  width: 100vw;
+  max-width: 500px;
+  padding: 3px 12px;
+  border-radius: 22px;
+  background-color: #FFFF;
+  box-shadow: 0 4px 6px 0 rgba(0,0,0,0.125);
+  display: flex;
+  margin: 10px;
+}
+.hubListSearchFilterBar input
+{
+  flex-grow: 1;  
+}
+.hubListSearchFilterBar button
+{
+  border-radius: 0;
+  padding-left: 10px;
+ 
+}
+.hubListSearchFilterBar i
+{
+  color: rgba(0,0,0,0.4);
+  background-color: #666666;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: rgba(255,255,255,0.5) 0px 3px 3px;
+}
+.hub-info-box
+{
+  padding: 10px;
+  margin:5px;
+  border-bottom: 1px solid rgba(0,0,0,0.125);
+
+  display: flex;
+  cursor: pointer;
+}
+.hub-info-box .info
+{
+  margin:5px;
+  width: 100%;
+}
+.hub-create-form
+{
+  padding-bottom: 30px;
+}
+#hub-title-input input[type='text']
+{
+  color: rgba(0,0,0,0.125);
+  font-size:32px;
+}
+
+.hub-create-form .inviteBox
+{
+  width: 100%;
+  height: 50px;
+  padding: 5px;
+  margin: 10px 0 10px 0;
+  border-radius: 40px;
+  box-shadow: 0 4px 6px 0 rgba(0,0,0,0.125);
+  display: flex;
+  align-items: center;
+
+}
+.hub-create-form .userProfilePicBox
+{
+  width: 45px;
+  height: 45px;
+  border-radius: 22.5px;
+  border: 2px solid #FFFF;
+}
+
+/*implemented on 17th may 2019*/
+/* common styles for all slides in mobile app*/
+.nav-section
+{
+  background-color: #F13030;
+  padding: 5px;
+  border-bottom: 1.5px solid #FFFF;
+  box-shadow: 0 4px 4px 0 rgba(0,0,0,0.125);
+  height: 70px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hub-list-nav-section
+{
+  background-color: #F13030;
+  border-bottom: 1.5px solid #FFFF;
+  box-shadow: 0 4px 4px 0 rgba(0,0,0,0.125);
+
+}
+.hub-list-nav-section-btn
+{
+  color: #FFFF;
+  padding: 8px 12px;
+  margin: 0px 5px;
+
+}
+.hub-list-nav-section .active-btn
+{
+  background-color:#FFFF;
+  color: #F13030!important;
+  border-radius: 0;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+.nav-section-header-text
+{
+  padding-left: 10px;
+  color: #FFFF;
+  font-size:22px;
+  font-weight:bold;
+}
+.nav-section-btn
+{
+  color: #FFFF;
+  border-radius: 20px;
+  padding: 8px 12px;
+  margin: 5px;
+  font-weight: bold;
+}
+.nav-section-i
+{
+  color: #FFFF;
+  padding: 5px 0px;
+  margin: 5px 2px;
+  font-size: 18px;
+}
+.nav-section-btn:hover
+{
+  background-color: rgba(255,255,255,0.2);
+}
+.nav-section .active
+{
+  background-color: #FFFF!important;
+  color: #F13030;
+}
+
+
+/*.active-btn
+{
+  background-color: #FFFF!important;
+  color: #F13030!important;
+}*/
+
+.active-btn i
+{
+  color: #F13030!important;
+}
+
+/* styles for hublist page*/
+.hub-list-nav-section
+{
+  background-color: #F13030;
+  border-bottom: 1.5px solid #FFFF;
+  box-shadow: 0 4px 4px 0 rgba(0,0,0,0.125);
+
+}
+.hub-list-nav-section-btn
+{
+  color: #FFFF;
+  padding: 8px 12px;
+  margin: 0px 5px;
+
+}
+.hub-list-nav-section .active-btn
+{
+  background-color:#FFFF;
+  color: #F13030!important;
+  border-radius: 0;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+/*media query for small devices*/
+@media only screen and (max-width: 600px){
+
+.dashboardInfoSection
+{
+  max-width: calc(100% - 12px);
+}
+.idyaBlock
+{ 
+  max-width: calc(100% - 12px);
+}
+.modalBox
+{ 
+  max-width: 600px;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.searchModalBox
+{
+  height: 95vh;
+}
+.searchProfileModalBox, .searchIdyahubModalBox, .searchIdyaModalBox
+{
+  height: 100vh;
+}
+.hubListSearchFilterBar
+{
+  max-width: 350px;
+}
+  
+}
+
+/*
+SCROLLBAR CUSTOMIZATION
+*/
+
+/* width */
+::-webkit-scrollbar {
+    width: 3px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: transparent; 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+
+.horizontal-scrolling-wrapper {
+    /* Make this scrollable when needed */
+    overflow-x: auto;
+    /* We don't want vertical scrolling */
+    overflow-y: hidden;
+    /* Make an auto-hiding scroller for the 3 people using a IE */
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    /* For WebKit implementations, provide inertia scrolling */
+    -webkit-overflow-scrolling: touch;
+    /* We don't want internal inline elements to wrap */
+    white-space: nowrap;
+    /* Remove the default scrollbar for WebKit implementations */
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}

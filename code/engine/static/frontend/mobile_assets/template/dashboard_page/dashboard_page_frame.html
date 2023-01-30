@@ -1,0 +1,93 @@
+<div class="holder dashboard fade-in">
+
+<!-- navigation section -->
+<nav class="nav-section">
+  
+  <div class="row justify-content-center w-100">
+  <div class="col-md-10 col-lg-8 navbar">
+  <!-- navigation buttons -->
+
+  <div class="dropdown vCenter" ng-if="activeProfile.username != 'Anonymous'">
+ <!--  for displaying the profile with the name -->
+  <div class="profileButton ripple" data-toggle="dropdown">
+    <div class="profilePicDisplay" style="overflow: hidden;">
+      <img ng-src="[[blackBox.activeProfile.image]]" style="width: 44px;height: 44px;">
+    </div>
+    <div class="profileName">
+      <h2 class="text-white text-header">[[blackBox.activeProfile.username]]'s idyaweb</h2>
+    </div>   
+  </div>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+    <a class="dropdown-item" href="#/profile/[[activeProfile.username]]">My Profile</a>
+    <hr>
+    <a class="dropdown-item" href="/mobile/logout/">Log-Out</a>
+  </div>
+  </div>
+
+    <div class="hCenter" ng-if="activeProfile.username == 'Anonymous'">    
+      <a class="btn nav-section-btn ripple" style="border:2px solid rgb(250,250,250);border-radius:20px;background-color:inherit;padding: 4px 12px;font-size: 16px" href="/mobile/login/">Connect</a>
+    </div>
+  <!-- navigation buttons -->
+  <div class="navBarBtns d-flex">    
+
+    <button type="button" class="nullBtn nav-section-btn ripple" ng-click="toggleDashboardPageSideNav()">
+      <i class="icomoon i-menu--bars" style="font-size: 20px"></i>
+    </button>
+  </div>
+  
+  </div>
+  </div>
+</nav>
+
+
+<div class="bodyHolder">
+
+<div class="utility-btn-bar">
+  <button type="button" class="nullBtn ripple utility-btn" ng-click="openFilterIdyaModal()">
+    <i class="icomoon i-filter"></i>
+  </button>
+  
+  <button type="button" class="nullBtn ripple utility-btn" ng-click="">
+    <i class="icomoon i-arrow-up"></i>
+  </button>
+
+  
+</div>
+
+  <!-- dashboard side navigation -->
+<div class="bg-blur fitContainer" style="position: fixed;z-index: 5;" ng-if="showDashboardSideNav">  
+
+<div class="sideBar text-center page-slide-left" style="position: absolute;top: 0;bottom: 0;right: 0">
+
+<div class="d-flex flex-column align-items-center">
+</div>
+  <strong style="font-size: 24px">idyaWeb</strong>
+  <p class="mb-3">Built for people with the sole purpose of sharing their idyas</p>
+  <hr>
+  <ul>
+    <li>Xplore</li>
+    <li>About Us</li>
+  </ul>
+</div>
+</div>
+
+<!-- load user preference idya collection -->
+<load-idya-library>
+  <a name="top"></a>
+  <div ng-repeat="idya in idyas">
+    <idya-block-template></idya-block-template>
+  </div>
+
+  <!-- idicating the competion -->
+  <div class="text-center container-fluid" ng-if="idyas">
+    <p style="color: rgba(0,0,0,0.4)">You have caught up with all the idyas</p>
+    <hr>
+    <button type="button" class="nullBtn iBtn">Fetch More idyas</button>
+  </div>
+</load-idya-library>
+
+  </div>
+
+</div>
+
+

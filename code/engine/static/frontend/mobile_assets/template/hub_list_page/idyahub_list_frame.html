@@ -1,0 +1,139 @@
+<!--idyahub user follows-->
+<div class="holder idyahub-list fade-in">
+
+<!-- hub navigation section -->
+<nav class="container-fluid hub-list-nav-section" ng-hide="hubListParams.showHubDashboard">
+    <div class="row justify-content-center" style="position: relative;">
+      <div class="col-md-10 col-lg-8 d-flex justify-content-start align-items-center">
+        <h6 class="nav-section-header-text text-header">idyaHub</h6>
+        
+        <button type="button" class="bttn nav-section-btn ripple dropdown ml-auto" ng-click="openHubCreationModal()">
+          <i class="icomoon i-plus nav-section-i"></i>
+        </button>
+        <button type="button" class="bttn nav-section-btn ripple" ng-click="toggleSearchBar()">
+          <i class="icomoon i-search nav-section-i"></i>
+        </button>
+
+      </div>
+
+      <!-- expanding search bar for hub list -->
+      <div class="hub-list-search-bar-panel" ng-show="hubListParams.showSearchBar">
+        <div class="expanding-search-bar" style="flex-grow: 1;">  
+          <input type="text" class="nullInput "  name="search-content" placeholder="Whom are you looking for ?" >
+
+          <button type="button" class="bttn" ng-click="">
+            <i class="icomoon i-search" aria-hidden="true"></i>
+          </button>
+        </div>
+        <button type="button" class="bttn" ng-click="toggleSearchBar()">
+            <i class="icomoon i-close text-white" aria-hidden="true"></i>
+        </button>
+      </div>
+
+    </div>
+
+    <div class="row justify-content-center">
+    <div class="col-md-10 col-lg-8 d-flex justify-content-start">
+    <button type="button" class="bttn hub-list-nav-section-btn ripple" ng-click="toggleMyHubSlide()" ng-class="{'active-btn':hubListParams.showMyHub == true}">MyHub</button>
+    <button type="button" class="bttn hub-list-nav-section-btn ripple" ng-click="togglePopularHubSlide()" ng-class="{'active-btn':hubListParams.showPopularHub == true}" >Popular</button>    
+
+    </div>
+    </div>
+</nav>
+
+<!-- nav for hub dashboard -->
+<nav class="container-fluid hub-list-nav-section" ng-if="hubListParams.showHubDashboard">
+  
+    <div class="row justify-content-center" style="position: relative;">
+    <div class="col-md-10 col-lg-8 d-flex justify-content-start align-items-center p-0">
+      <button type="button" class="bttn ripple nav-section-btn" ng-click="goBack()">
+        <i class="icomoon i-left-arrow" style="font-size: 18px"></i>
+      </button>
+
+     <!--  for displaying the profile with the name -->
+      <div class="d-flex align-items-center">
+        <div class="hubPicDisplay" style="overflow: hidden;width: 42px;height: 42px">
+          <img ng-src="[[hubListParams.hubDetails.hubPic]]" style="width: 44px;height: 44px;">
+        </div>
+        <h5 class="nav-section-header-text">[[hubListParams.hubDetails.name]]</h5> 
+      </div>
+
+      <button type="button" class="ml-auto bttn ripple nav-section-btn" ng-click="toggleSearchBar()">
+        <i class="icomoon i-search" style="font-size: 18px"></i>
+      </button>
+
+    </div>
+
+    <!-- expanding search bar for hub list -->
+    <div class="hub-list-search-bar-panel" ng-show="hubListParams.showSearchBar">
+      <div class="expanding-search-bar" style="flex-grow: 1;">  
+        <input type="text" class="nullInput "  name="search-content" placeholder="Whom are you looking for ?">
+
+        <button type="button" class="bttn" ng-click="">
+          <i class="icomoon i-search" aria-hidden="true"></i>
+        </button>
+      </div>
+      <button type="button" class="bttn" ng-click="toggleSearchBar()">
+          <i class="icomoon i-close text-white" aria-hidden="true"></i>
+      </button>
+    </div>
+
+  </div>
+
+  <!-- navigation buttons -->
+  <div class="row justify-content-center" ng-hide="hubListParams.showQuestionDetailView">
+  <div class="col-md-10 col-lg-8 d-flex justify-content-start">
+
+    <button type="button" class="bttn hub-list-nav-section-btn ripple" ng-click="hubDashboardContentFilter('all')" ng-class="{'active-btn': hubPageParams.hubDashboardParams.filterContentBy == 'all'}">All</button>
+
+    <button type="button" class="bttn hub-list-nav-section-btn ripple" ng-click="hubDashboardContentFilter('question')" ng-class="{'active-btn': hubPageParams.hubDashboardParams.filterContentBy == 'question'}">Questions</button>
+
+    <button type="button" class="bttn hub-list-nav-section-btn ripple" ng-click="hubDashboardContentFilter('idya')" ng-class="{'active-btn': hubPageParams.hubDashboardParams.filterContentBy == 'idya'}">idyas</button>
+
+    <button type="button" class="bttn hub-list-nav-section-btn ripple" ng-click="openHubInfo()" ng-class="{'active-btn': hubPageParams.hubDashboardParams.showHubInfo}">info</button>       
+  
+
+  </div>
+  </div> 
+
+  <!-- navigation buttons if question detail view is displayed -->
+  <div class="row justify-content-center" ng-if="hubListParams.showQuestionDetailView">
+  <div class="col-md-10 col-lg-8 d-flex justify-content-start">
+
+    <button type="button" class="bttn hub-list-nav-section-btn active-btn ripple">Answer</button>     
+
+  </div>
+  </div>
+  
+</nav>
+<!-- list hub page side navigation -->
+<!-- <div class="bg-blur fitContainer" style="position: absolute;z-index: 5;" ng-if="showHubListPageSideNav">  
+
+<div class="sideBar text-center page-slide-left" style="position: absolute;top: 0;bottom: 0;right: 0">
+
+<div class="d-flex flex-column align-items-center">
+</div>
+  <p style="font-size: 18px">[[HubList.length]] Subscribed idyahubs</p>
+  <hr>
+  <ul>
+    <li ng-click="toggleHubCreationFormSlide()">Create Hub</li>
+  </ul>
+</div>
+</div> -->
+
+<div class="hub-list-body-holder">
+
+<!-- to load popular hubs -->
+<load-my-hub-slide ng-if="hubListParams.showMyHub"></load-my-hub-slide>
+
+<!-- to load popular hubs -->
+<load-popular-hub-slide ng-if="hubListParams.showPopularHub"></load-popular-hub-slide>
+
+<!-- to load hub dashboard -->
+<load-idyahub-dashboard ng-if="hubListParams.showHubDashboard"></load-idyahub-dashboard>
+</div>
+</div>
+
+
+
+

@@ -1,0 +1,151 @@
+{% extends "mobile_base.html" %} 
+
+{% load staticfiles %}  
+
+{% block content %}
+<!-- WEBPAGE STARTS -->
+
+<div class="main"  ng-app="Master">
+<div ng-controller="masterController" >
+<!-- devlopment bar-->
+<!-- {% include 'snippets/devBar.html' %} -->
+
+
+<div ng-hide ="showIdyahub || showIdyaDetails || showIdyaEditor" >
+
+<!-- Bottom nav bar-->
+
+
+<!-- Slider main container -->
+<div class="swiper-container wrapScreen vCenter">
+    
+        
+<div class="swiper-wrapper" style="width: 100%;flex-grow: 1;">
+    <!-- user notifications page -->
+    <div class="swiper-slide">
+        <!-- watermarking the page before page load -->
+        <div class="watermark wrapToFit">
+            <i class="icomoon i-notifis"></i>
+            <h6>notifications</h6>
+        </div>
+    </div>
+<!-- idyahub list page -->
+<div class="swiper-slide">
+    <!-- watermarking the page before page load -->
+    <div class="watermark wrapToFit" ng-hide="showIdyahubListPage">
+        <i class="icomoon i-idya-hub"></i>
+        <h6>idyahub</h6>
+    </div>
+
+    <div ng-if="blackBox.pageStatus.showIdyahubListPage">
+        <load-idyahub-list-manager></load-idyahub-list-manager>
+    </div>
+</div>
+
+<!-- user dashboard page -->
+<div class="swiper-slide">
+    <!-- watermarking the page before page load -->
+    <div class="watermark wrapToFit">
+        <!-- <i class="icomoon i-notifis"></i> -->
+        <h6>Dashboard</h6>
+    </div>
+    
+    <!--  directive to load and manage dashboard page -->
+    <load-dashboard-manager></load-dashboard-manager>
+               
+</div>
+
+<!-- user channel -->
+<div class="swiper-slide">
+    <!-- watermarking the page before page load -->
+    <div class="watermark wrapToFit" ng-hide="blackBox.pageStatus.showChannelPage">
+        <!-- <i class="icomoon i-notifis"></i> -->
+        <h6>Channel</h6>
+    </div>
+    <div ng-if="blackBox.pageStatus.showChannelPage">
+        <load-channel-manager></load-channel-manager>
+    </div>
+</div>
+
+<!-- user profile -->
+<div class="swiper-slide">
+    <!-- watermarking the page before page load -->
+    <div class="watermark wrapToFit" ng-hide="showProfilePage">
+        <i class="icomoon i-user"></i>
+        <h6>profile</h6>
+    </div>
+    <!-- <div class="profileLoadingSpinner fitContainer hCenter" style="margin-top:40vh">
+        <img src="https://cdn-images-1.medium.com/max/1600/1*inYwyq37FdvRPLRphTqwBA.gif" alt="">
+    </div> -->
+        <!-- <div ng-controller="profilePageController">
+            <load-profile-page ng-if="showProfilePage" profile="[[fetchForUsername]]" active-profile="[[activeProfile]]"></load-profile-page>
+        </div -->
+    <div ng-if="blackBox.pageStatus.showProfilePage">
+        <load-profile-manager></load-profile-manager>
+    </div>          
+</div>
+
+</div>
+
+
+<!-- Bottom nav bar-->
+<load-bottom-nav-manager></load-bottom-nav-manager>
+</div>
+</div>
+
+
+<!-- popup section-->
+{% include 'popup.html' %}
+
+
+<idya-detail-view ng-if="blackBox.idyaViewer.viewIdya"></idya-detail-view>    
+
+
+<div class="container-fluid p-0" ng-if="showIdyahub" ng-hide="showIdyaEditor || showIdyaDetails">
+	<div ng-controller="hubDashboardController">
+		<load-idyahub-page hubname="[[hubName]]"></load-idyahub-page>
+	</div>	
+</div>
+
+<!-- idya add directive -->
+<idya-editor-manager ng-if="blackBox.editor.showEditorPanel"></idya-editor-manager>
+
+</div>
+</div>
+
+<link rel="stylesheet" href="{% static 'frontend/mobile_assets/plugin-js/swiper/css/swiper.min.css' %}">
+<!-- trumbowyg wsiwig editor css files -->
+<link rel="stylesheet" href="{% static 'frontend/mobile_assets/node_modules/trumbowyg/dist/ui/trumbowyg.min.css' %}">
+{% endblock content %}
+
+
+{% block scripts %}
+<script src="{% static 'frontend/mobile_assets/js/profile.js' %}"></script>
+<script src="{% static 'frontend/mobile_assets/js/idyahub.js' %}"></script>
+<script src="{% static 'frontend/mobile_assets/js/master.js' %}"></script>
+<script src="{% static 'frontend/mobile_assets/js/channel.js' %}"></script>
+
+<script src="{% static 'frontend/mobile_assets/plugin-js/swiper/js/swiper.min.js' %}"></script>
+
+<!-- trumbowyg wsiwig editor js files -->
+<script src="{% static 'frontend/mobile_assets/node_modules/trumbowyg/dist/trumbowyg.min.js' %}"></script>
+
+<script type="text/javascript">
+masterApp.config(['$httpProvider', function($httpProvider) {
+        $httpProvider.defaults.headers.common['X-CSRFToken'] = '{{ csrf_token|escapejs}}';
+}]);
+
+var mySwiper = new Swiper ('.swiper-container', {
+    // Optional parameters
+    direction: 'horizontal',
+    loop: false,
+    simulateTouch:true,
+    shortSwipes:true,
+    resistance : true,
+    resistanceRatio : 0, 
+    
+  })
+
+</script>
+
+{% endblock scripts %} 

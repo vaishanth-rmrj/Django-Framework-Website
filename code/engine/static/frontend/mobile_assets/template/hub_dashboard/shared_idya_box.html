@@ -1,0 +1,72 @@
+<div class="shared-idya-box">	
+	<div class="shared-idya-box-header">
+		<div class="d-flex">
+			<div class="shared-idya-box-profile-pic">
+			<!-- user profile image -->
+			<load-profile-pic username="[[content.shared_by]]"></load-profile-pic>
+			</div>
+
+			<div>
+			<h6 style="font-size: 20px;">[[content.shared_by]]</h6>
+			<small>shared on [[content.created_at | date]]</small>
+			</div>
+		</div>
+		<div class="ml-auto h-center">
+			<small>[[content.curiosity.length]] Curious</small>
+			<button type="button" class="bttn ripple ">
+				<i class="icomoon i-star"></i>
+			</button>
+		</div>
+	</div>
+	<div>
+		<div class="idya-preview-box">
+
+			<div class="preview-i-blog"  ng-if="idyaPreview.idyatype == 'iLog'">
+				<div class="header">
+					<div class="d-flex">
+						<div class="shared-idya-box-profile-pic">
+						<!-- user profile image -->
+						<load-profile-pic username="[[idyaPreview.shared_by]]"></load-profile-pic>
+						</div>
+
+						<div>
+						<h6 style="font-size: 16px;">[[idyaPreview.channel]]</h6>
+						<small>[[idyaPreview.created_at | date]]</small>
+						</div>
+					</div>
+				</div>
+				<div class="idya-title">
+					[[idyaPreview.title]]
+				</div>
+			</div>
+
+			<div class="preview-i-image" ng-if="idyaPreview.idyatype == 'iMage'">
+				<div class="image-preview-section">
+					<img src="[[idyaPreview.image]]" style="max-height: calc(100% + 100px);max-width: calc(100% + 50px)">
+				</div>
+				<div>
+				<div class="header">
+					<div class="d-flex">
+						<div class="shared-idya-box-profile-pic">
+						<!-- user profile image -->
+						<load-profile-pic username="[[idyaPreview.shared_by]]"></load-profile-pic>
+						</div>
+
+						<div>
+						<h6 style="font-size: 16px;">[[idyaPreview.channel]]</h6>
+						<small>[[idyaPreview.created_at | date]]</small>
+						</div>
+					</div>
+				</div>
+				<div class="idya-title">
+					[[idyaPreview.title]]
+				</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="question-box-footer">
+		<p class="ml-auto">[[content.answer_count]] Answers</p>
+	</div>
+	
+</div>

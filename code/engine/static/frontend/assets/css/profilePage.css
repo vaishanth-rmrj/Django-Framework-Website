@@ -1,0 +1,149 @@
+body
+{
+	background-color:rgb(255,255,255);
+}
+.content-box
+{
+	padding:5px;
+}
+.content
+{
+	min-height: 500px;
+}
+.nav-link
+{
+	padding: 5px;
+	padding-left:10px; 
+	color: rgb(0,0,0);
+}
+
+.profile-info
+{	
+	background-color:#f2f2f2;
+}
+.profileImageSection
+{
+	padding: 8px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+
+
+.profile-action-bar
+{
+	width: 100%;
+	height: 60px;
+	display: flex;
+	align-items: center;
+	border-top: 1px solid rgba(0,0,0,0.125);
+}
+
+.profile-action-bar button
+{
+	border-radius: 4px;
+	padding:8px;
+	color: #fff;
+    background-color: #0069d9;
+    border-color: #0062cc;
+
+	margin:5px;
+}
+
+.profile-nav-pills
+{
+	white-space: nowrap;
+	border-radius: 4px;
+	border: 1px solid rgba(0,0,0,0.2);
+}
+
+.profile-nav-pills div
+{	
+	display: inline-block;
+	font-size:16px;
+	padding: 8px;
+	margin: 2px;
+	border-radius: 4px;
+}
+
+.profile-nav-pills ul
+{
+	list-style: none;
+	padding: 2px;
+}
+.profile-nav-pills li button
+{	
+	display: inline-block;
+	font-size:16px;
+	padding: 4px 8px;
+	margin: 6px 4px 0px 4px;
+	background-color: #f2f2f2;
+	border-radius: 2px;
+}
+.friendBox
+{	
+	width: 100%;
+	max-width: 450px;
+	margin: 10px;
+	padding:10px;
+	border-bottom: 1px solid rgba(0,0,0,0.125);
+	display: flex;
+}
+.profileDetails
+{
+	flex-grow: 1;
+	padding: 10px;
+}
+.profileDetails .buttonBar
+{
+	widows: 100%;
+	padding: 5px;
+	display: flex;
+	justify-content: end;
+	align-items: center;	
+}
+.profileDetails .buttonBar button
+{
+	color: blue;
+}
+
+.profileDetails .buttonBar button:hover
+{
+	color: green;
+}
+
+
+
+.profile-setup-form 
+{	
+	width: 100%;
+	max-width: 500px;
+	padding:10px;
+	border-radius: 4px;
+	border:1px solid rgba(0,0,0,0.125);
+	background-color:rgb(255,255,255);
+}
+
+.profile-setup-form button
+{
+	padding:10px;
+	border-radius: 4px;
+	background-color: #0069d9;
+	color: rgb(255,255,255);
+}
+
+.profile-setup-form input, .profile-setup-form select
+{
+	margin: 2px;
+	margin-top:10px;
+}
+label
+{
+	margin: 0;
+}
+.profile-setup-form .form-group
+{
+	margin:5px;
+}

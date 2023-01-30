@@ -1,0 +1,124 @@
+{% extends "base.html" %} 
+
+{% load staticfiles %}  
+
+{% block content %}
+<!-- WEBPAGE STARTS -->
+
+<div class="main"  ng-app="Master">
+<div ng-controller="masterController" >
+<!-- devlopment bar-->
+<!-- {% include 'snippets/devBar.html' %} -->
+
+
+<div ng-hide ="showIdyahub || showIdyaDetails || showIdyaEditor" >
+
+<!-- Top nav bar-->
+{% include 'snippets/navbar.html' %}
+
+<!-- Bottom nav bar-->
+
+
+<!-- Slider main container -->
+<div class="swiper-container">
+
+    <div class="swiper-wrapper">
+
+        <div class="swiper-slide">
+            <div ng-controller="dashboardPageController" class="fitContainer" >
+                <load-dashboard-page></load-dashboard-page>
+            </div>            
+        </div>
+        <div class="swiper-slide">
+            <!-- watermarking the page before page load -->
+            <div class="watermark" ng-hide="showIdyahubListPage">
+                <i class="icomoon i-idya-hub"></i>
+                <h6>idyahub</h6>
+            </div>
+            <div class="fitContainer" ng-if="showIdyahubListPage">
+                <div ng-controller="idyahubListPageController">
+                    <load-idyahub-list-page></load-idyahub-list-page>
+                </div>                
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <!-- watermarking the page before page load -->
+            <div class="watermark">
+                <i class="icomoon i-notifis"></i>
+                <h6>notifications</h6>
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <!-- watermarking the page before page load -->
+            <div class="watermark" ng-hide="showProfilePage">
+                <i class="icomoon i-user"></i>
+                <h6>profile</h6>
+            </div>
+            <!-- <div class="profileLoadingSpinner fitContainer hCenter" style="margin-top:40vh">
+                <img src="https://cdn-images-1.medium.com/max/1600/1*inYwyq37FdvRPLRphTqwBA.gif" alt="">
+            </div> -->
+            <div class="fitContainer" ng-if="showProfilePage">
+                <div ng-controller="profilePageController">
+                    <load-profile-page></load-profile-page>
+                </div>                
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+
+<!-- popup section-->
+{% include 'popup.html' %}
+
+<div ng-controller="idyaDetailViewController" ng-if="showIdyaDetails">
+    <idya-detail-view for-idya="[[detailsForTheIdya]]"></idya-detail-view>    
+</div>
+
+<div class="container-fluid p-0" ng-if="showIdyahub" ng-hide="showIdyaEditor || showIdyaDetails">
+	<div ng-controller="hubDashboardController">
+		<load-idyahub-page hubname="[[hubName]]"></load-idyahub-page>
+	</div>	
+</div>
+
+<!-- idya add directive -->
+<idya-editor-section ng-if="showIdyaEditor" idya-type="[[iEditor.params.idyaType]]"></idya-editor-section>
+
+</div>
+</div>
+
+<link rel="stylesheet" href="{% static 'frontend/assets/plugin-js/swiper/css/swiper.min.css' %}">
+<!-- trumbowyg wsiwig editor css files -->
+<link rel="stylesheet" href="{% static 'frontend/assets/node_modules/trumbowyg/dist/ui/trumbowyg.min.css' %}">
+{% endblock content %}
+
+
+{% block scripts %}
+<script src="{% static 'frontend/assets/js/profile.js' %}"></script>
+<script src="{% static 'frontend/assets/js/idyahub.js' %}"></script>
+<script src="{% static 'frontend/assets/js/master.js' %}"></script>
+
+<script src="{% static 'frontend/assets/plugin-js/swiper/js/swiper.min.js' %}"></script>
+
+<!-- trumbowyg wsiwig editor js files -->
+<script src="{% static 'frontend/assets/node_modules/trumbowyg/dist/trumbowyg.min.js' %}"></script>
+
+<script type="text/javascript">
+masterApp.config(['$httpProvider', function($httpProvider) {
+        $httpProvider.defaults.headers.common['X-CSRFToken'] = '{{ csrf_token|escapejs}}';
+}]);
+
+var mySwiper = new Swiper ('.swiper-container', {
+    // Optional parameters
+    direction: 'horizontal',
+    loop: false,
+    simulateTouch:true,
+    shortSwipes:false,
+
+  
+    
+  })
+
+</script>
+
+{% endblock scripts %} 

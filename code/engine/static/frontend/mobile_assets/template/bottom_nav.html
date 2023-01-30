@@ -1,0 +1,30 @@
+<nav class="container-fluid bottom-nav slide-in-bottom" ng-class="{'slide-out-bottom d-none':blackBox.idyaViewer.viewIdya}">
+  <!-- navigation buttons -->
+  <div class="bottom-nav-btn-group">
+
+    <button type="button" class="nullBtn ripple" ng-click="goState('notification')">
+      <i class="icomoon i-notifis" ng-class="{'active-icon':notificationIconActive }"></i>
+    </button>
+
+    <button type="button" class="nullBtn ripple" ng-click="goState('idyahub')">
+      <i class="icomoon i-idya-hub" style="font-size: 28px" ng-class="{'active-icon':idyahubIconActive }"></i>
+    </button>
+
+    <button type="button" class="nullBtn ripple dashboard-icon" ng-click="goState('dashboard')" ng-class="{'active-icon-dashboard':dashboardIconActive }">
+      <i class="icomoon i-dashboard"></i>
+    </button>
+
+          
+
+    <button type="button" class="nullBtn ripple" ng-click="goState('channel')">
+      <i class="icomoon i-channel" ng-class="{'active-icon':channelIconActive }"></i>
+    </button>       
+
+
+
+    <button type="button" class="nullBtn ripple" ng-click="goState('profile')">
+      <i class="icomoon i-user" ng-class="{'active-icon':profileIconActive }"></i>
+    </button>
+
+  </div>
+</nav>

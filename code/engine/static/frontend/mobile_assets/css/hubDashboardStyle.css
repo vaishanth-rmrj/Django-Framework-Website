@@ -1,0 +1,140 @@
+/*styles for the question asking section*/
+.hub-guide-section
+{	
+	width: 100%;
+	padding:10px;
+	border-radius: 8px;
+	border: 1px solid rgba(0,0,0,0.125);
+	box-shadow: 0 4px 5px 2px rgba(0,0,0,0.125);
+
+	display: flex;
+	justify-content: start;
+	align-items: center;	
+}
+
+.hub-guide-section .profile-pic-section
+{	
+	width: 40px;
+	height: 40px;
+	border: 2px solid #FFFF;
+	border-radius: 20px;
+	overflow: hidden;
+}
+.ask-question-fake-input
+{
+	flex-grow: 1;
+	padding: 8px 12px;
+	margin: 0 5px;
+	border: 1px solid rgba(0,0,0,0.125);
+	border-radius: 20px;
+}
+.ask-ques-panel
+{
+	
+}
+.question-box, .shared-idya-box
+{	
+	width: 90%;
+	padding:5px;
+	margin:10px 0;
+	border-radius: 8px;
+	box-shadow: 0 4px 5px 2px rgba(0,0,0,0.125);
+}
+.question-box-header, .shared-idya-box-header
+{
+	display: flex;
+	justify-content: start;
+	align-items: center;
+}
+.question-box-profile-pic, .shared-idya-box-profile-pic{
+	margin:5px;
+	width: 40px;
+	height: 40px;
+	border-radius: 20px;
+	border: 2px solid #FFFF;
+	overflow: hidden;
+}
+.question-box-content, .shared-idya-box-content
+{
+	padding: 0 5px;
+}
+.question-box-content p, .shared-idya-box-content p
+{
+	font-size: 28px;
+}
+.question-box-footer, .shared-idya-box-footer
+{
+	margin: 5px;
+	padding:5px;
+	display: flex;
+	justify-content: end;
+	align-items: center;
+	border-top: 1px solid rgba(0,0,0,0.125);
+}
+.idya-preview-box
+{
+	margin: 10px;
+	padding: 0;
+	border-radius: 8px;
+	box-shadow: 0 0 5px 2px rgba(0,0,0,0.125);
+	overflow: hidden;
+}
+.preview-i-image
+{
+	display: flex;
+	justify-content: start;
+}
+
+.preview-i-image .image-preview-section
+{
+	width: 200px;
+	overflow: hidden;
+}
+
+/* styles for question detail view*/
+
+.question-info-section
+{
+	padding: 10px;
+}
+.answer-info-section
+{
+	padding: 10px;
+}
+.answer-section-action-bar button
+{
+	flex-grow: 1;
+	padding: 10px 20px;
+	margin: 10px;
+	background-color: rgba(0,0,0,0.125);
+	box-shadow: 0 4px 5px 2px rgba(0,0,0,0.125);
+
+}
+.answer-box
+{
+	padding: 10px;
+	margin: 10px;
+	border-bottom: 1px solid rgba(0,0,0,0.125);
+}
+.answer-profile-pic
+{
+	margin:5px;
+	width: 50px;
+	height: 50px;
+	border-radius: 25px;
+	border: 2px solid #FFFF;
+	overflow: hidden;
+}
+.answer-box-header
+{
+	display: flex;
+	justify-content: start;
+	align-items: center;
+}
+.answer-box-footer
+{
+	display: flex;
+	justify-content: start;
+	align-items: center;
+}
+

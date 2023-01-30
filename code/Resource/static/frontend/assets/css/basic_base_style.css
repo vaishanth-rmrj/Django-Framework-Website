@@ -1,0 +1,176 @@
+*{
+    /*border: 2px solid black;*/
+}
+body 
+{
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    box-sizing: border-box;
+    margin-bottom:12vh;
+
+}
+
+h6
+{
+    padding: 0 5px;
+}
+/* CUSTOM BUILT HTML COMPONENTS*/
+
+.i-btn
+{   
+    border: 0;
+    background-color:rgb(243, 74, 87);
+    color: rgb(255,250,250);
+    border-radius: 18px;
+    transition-duration: 300ms;
+    transition-property :transform,box-shadow,background-color;
+
+
+}
+
+.i-btn:hover
+{
+    background-color:rgb(232, 17, 33);
+    box-shadow: 5px 3px 9px 0 rgba(0, 0, 0,0.4);
+    color: rgb(255,250,250);
+    transform: scale(1.01, 1.01);
+
+}
+
+.i-btn-2
+{
+    background-color:rgba(0,0,0,0);
+    color: rgba(224,224,224 ,0.5);
+    border:none;
+    transition-duration: 300ms;
+    transition-property :transform,box-shadow,background-color;
+
+
+}
+
+.i-btn-2:hover
+{
+    background-color:rgb(232, 17, 33);
+    color: rgb(255,250,250);
+    transform: scale(1.02, 1.02);
+
+
+}
+
+
+.popup-message
+{   
+    width: auto;
+    height: auto;
+    text-align:end;
+    position: fixed;
+    top: 84vh;
+    left: 79vw;
+    z-index: 3;
+    
+}
+.search-bar
+{
+    display: flex;
+}
+
+.search-bar button
+{
+    margin-left: auto;
+    margin-left: 4px;
+}
+
+.search-bar input[type='text']
+{   
+    border-radius: 18px;
+    transition-duration: 300ms;
+    transition-property:border-radius;
+}
+.search-bar input[type='text']:focus
+{
+    border-radius: 0;
+}
+
+
+
+.related-content .card-header
+{
+    background-color: rgb(232, 17, 33);
+}
+.related-content .card-body
+{
+    background-color: rgba(224,224,224 ,0.5);
+    color: black;
+}
+
+
+/*RESPONSIVE LAYOUTS*/
+
+
+/* Extra small devices (phones, 600px and down) 
+@media only screen and (max-width: 600px) {
+
+} 
+*/
+
+
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media screen and (max-width: 768px) {
+    .resp-text {
+        font-size: 1rem;
+
+    }
+    .resp-header {
+        font-size: 1.5rem;
+    }
+    .resp-title-header {
+        font-size: 1.2rem;
+    }
+    .idya-block-nav {
+    font-size: 1rem; 
+    }
+    .idyaweb-navbar .idyaweb-navbar-brand {
+        margin: 0 auto;
+    }
+    .idyaweb-navbar .navbar-username:hover,.navbar-non-user a:hover{
+        font-size: 1.55rem;
+    }
+    
+} 
+/* Small devices (portrait tablets and large phones, 600px and up)*/ 
+@media screen and (max-width: 600px) {
+    .resp-text {
+        font-size: 0.8rem;
+
+    }
+    .resp-header {
+        font-size: 1.3rem;
+    }
+    .resp-title-header {
+        font-size: 0.8rem;
+    }
+    .idya-block-nav {
+    font-size: 0.8rem; 
+    right: -1.3rem;
+    }
+}
+/* Large devices (laptops/desktops, 992px and up) */
+@media screen and (min-width: 992px) {
+    .resp-text {
+        font-size: 1rem;
+
+    }
+    .resp-header {
+        font-size: 1.8rem;
+    }
+    .resp-title-header {
+        font-size: 1.5rem;
+    }
+} 
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+
+}

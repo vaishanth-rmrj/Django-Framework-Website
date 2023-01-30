@@ -1,0 +1,17 @@
+	<!-- section to display user content -->
+	<div class="channel-content-section slide-in-bottom">
+		<div class="content-nav">
+			<button type="button" class="nullBtn ripple content-nav-btn" ng-click="filterBy('all')">All</button>
+			<button type="button" class="nullBtn ripple content-nav-btn" ng-click="filterBy('blog')">iBlog</button>
+			<button type="button" class="nullBtn ripple content-nav-btn" ng-click="filterBy('video')">iVideo</button>
+			<button type="button" class="nullBtn ripple content-nav-btn" ng-click="filterBy('image')">iMage</button>
+		</div>
+		<div class="channel-content">
+			<div ng-repeat="idya in idyas">
+		    	<idya-block-template></idya-block-template>
+		  	</div>
+			<div class="fade-in" ng-if="idyas.length == 0" style="padding: 30px 20px;text-align: center;">
+				<h6 ng-if="result.videoIdyasEmpty" style="font-size: 22px;">No iVideos posted yet</h6>
+			</div>
+		</div>
+	</div>

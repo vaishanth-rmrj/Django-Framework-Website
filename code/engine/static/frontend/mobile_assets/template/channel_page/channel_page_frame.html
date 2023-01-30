@@ -1,0 +1,81 @@
+<!--page frame-->
+<div class="holder fade-in">
+
+<!-- navigation section -->
+<nav class="container-fluid nav-section">
+    <div class="row justify-content-center" style="position: relative;width: 100%">
+    <div class="col-md-10 col-lg-8 p-0">
+
+    <div class="channel-main-nav" ng-hide="showMyChannelDisplay">
+    <button type="button" class="nullBtn nav-section-btn ripple text-header" ng-click="" ng-hide="showSearchPanel">Channel</button>
+    
+    <button type="button" class="ml-auto bttn ripple" ng-click="toggleSearchPanel()">
+      <i class="icomoon i-search" aria-hidden="true"></i>
+    </button>
+      
+
+    <!-- expanding search bar for hub list -->
+    <div class="search-bar-panel" ng-show="showSearchPanel">
+      <div class="expanding-search-bar" style="flex-grow: 1;">  
+        <input type="text" class="nullInput "  name="search-content" placeholder="Whom are you looking for ?" ng-model="" ng-Keyup="">
+
+        <button type="button" class="bttn" ng-click="">
+          <i class="icomoon i-search" aria-hidden="true"></i>
+        </button>
+      </div>
+      <button type="button" class="bttn" ng-click="toggleSearchBar()">
+          <i class="icomoon i-close text-white" aria-hidden="true"></i>
+      </button>
+    </div>
+    </div>
+
+    <div class="my-channel-nav" ng-if="showMyChannelDisplay">
+      <button type="button" class="nullBtn nav-section-btn ripple" ng-click="goBack()">
+          <i class="icomoon i-back-button nav-section-i"></i>
+      </button>
+
+      <h6 class="nav-section-i ml-auto">My Channel</h6>
+
+    </div>
+
+    </div>
+    </div>
+</nav>
+
+<!-- page side name -->
+<!-- <div class="bg-blur fitContainer" style="position: absolute;z-index: 5;" ng-if="showHubListPageSideNav">  
+
+<div class="sideBar text-center page-slide-left" style="position: absolute;top: 0;bottom: 0;right: 0">
+
+<div class="d-flex flex-column align-items-center">
+</div>
+  <p style="font-size: 18px">[[HubList.length]] Subscribed idyahubs</p>
+  <hr>
+  <ul>
+    <li ng-click="toggleHubCreationFormSlide()">Create Hub</li>
+  </ul>
+</div>
+</div> -->
+
+<!-- page body -->
+<div class="bodyHolder">
+
+<!-- <div class="container-fluid text-center" style="border: 1.5px solid rgba(0,0,0,0.125)">
+  <h6>Developer bar</h6>
+  <div class="d-flex justify-content-start">
+    <button type="button" class="nullBtn iBtn ripple"> create</button>
+    <button type="button" class="nullBtn iBtn ripple" ng-click="toggleChannelDisplay()"> display</button>
+  </div>
+  
+</div> -->
+<load-channel-list ng-if="showChannelList"></load-channel-list>
+
+
+<my-channel-display ng-if="showMyChannelDisplay" ng-hide="showSearchPanel || showCreatePanel"></my-channel-display>
+
+<!-- directive to handle search process -->
+<channel-search-manager ng-if="showSearchPanel" ng-hide="showChannelDisplay || showCreatePanel"></channel-search-manager>
+
+
+</div>
+</div>

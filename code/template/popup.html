@@ -1,0 +1,19 @@
+<div class="popup wrapScreen bg-blur" ng-if="blackBox.popup.popupStatus">
+	<div class="modal-box slide-in-bottom position-bottom">
+
+		<!-- idya menu popup -->
+		<menu-modal ng-if="blackBox.popup.showMenuModal"></menu-modal>		
+
+		
+		<add-idya-modal ng-if="blackBox.popup.showAddIdyaPanel"></add-idya-modal>	
+			
+		<filter-idya-modal ng-if="blackBox.popup.showFilterIdyaModal"></filter-idya-modal>
+
+		<create-channel-modal ng-if="blackBox.popup.showChannelCreationForm"></create-channel-modal>
+
+		<create-idyahub-modal ng-if="blackBox.popup.showIdyahubCreationForm"></create-idyahub-modal>
+
+		<ask-question-modal ng-if="blackBox.popup.showAskQuestionModal"></ask-question-modal>
+
+	</div>
+</div>

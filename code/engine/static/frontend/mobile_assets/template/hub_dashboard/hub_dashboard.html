@@ -1,0 +1,46 @@
+<!-- idyahub dashboard page -->
+<div>
+<div class="container" ng-hide="showQuestionDetailView">
+<div class="row justify-content-center">         
+  
+<div class="col-md-10" style="margin-top: 10px;">
+
+
+  <load-hub-content ng-hide="hubPageParams.hubDashboardParams.showHubInfo">
+
+    <div class="hub-guide-section">
+      <div class="profile-pic-section">
+        <!-- user profile image -->
+        <load-profile-pic username="[[blackBox.activeProfile.username]]"></load-profile-pic>
+      </div>
+      <div class="ask-question-fake-input" ng-click="openAskQuestionModal()">
+        <p>Ask your question!!</p>
+      </div>
+      <button type="button" class="bttn ripple iBtn">link</button>
+      <!-- <h6 class="hub-guide-section-header">What's on your mind ?</h6>
+      <div class="d-flex justify-content-start align-items-center">
+        <button type="button" class="bttn iBtn ripple" ng-click="openAskQuestionModal()">Question</button>
+        <button type="button" class="bttn iBtn ripple" ng-click="" >Share idya</button>
+      </div>      
+       -->
+    </div>
+  
+  	<div ng-repeat="content in contents">
+  		<load-question-box ng-if="content.question"></load-question-box>  
+      <load-shared-idya-box ng-if="content.idya" idya-id="[[content.idya]]"></load-shared-idya-box>		
+  	</div>
+  	
+  </load-hub-content>
+
+  <load-hub-info ng-if="hubPageParams.hubDashboardParams.showHubInfo"></load-hub-info>
+
+</div>
+</div>
+</div>
+
+<load-question-detail-view ng-if="showQuestionDetailView"></load-question-detail-view>
+
+</div>
+
+
+

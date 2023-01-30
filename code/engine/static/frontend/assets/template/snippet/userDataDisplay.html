@@ -1,0 +1,55 @@
+<div class="container-fluid profile-info" >
+  <div class="row justify-content-center">
+  <div class="col-md-4 profileImageSection vCenter" style="max-width: 200px">
+    
+  <!--USER PROFILE IMAGE-->
+  <div class="preLoader" style="width: 100%!important;height: 100%!important;max-width: 160px!important;max-height: 160px!important;">
+    <img  ng-src="[[Profile.image]]" class="fitContainer">
+  </div>
+
+ </div>
+<hr style="width: 80%" class="d-md-none">
+    <div class="col-md-6 vCenter">
+      <strong style="font-size: 22px">[[Profile.username]]<strong>
+      <div style="padding-left: 20px;">
+      <p>lives in <i class="icomoon i-location" aria-hidden="true" style="font-weight:800;"></i><strong>[[Profile.location]]</strong></p>
+
+      <p ng-if="[[Profile.career]] == 'Studying'">Is studying in <strong>[[Profile.institution]]</strong></p>
+
+      <p ng-if="[[Profile.career]] == 'Working'">Is working as [[Profile.job]] in <strong>[[Profile.company]]</strong></p>
+
+      <p ng-if="[[Profile.career]] == 'Business'">Is a business person running <strong>[[Profile.company]]</strong></p>
+
+      <p ng-if="[[Profile.career]] == 'Entrepreneur'">Is as entrepreneur running <strong>[[Profile.company]]</strong></p>
+
+    <div class="profileBioSection" ng-if="Profile.bio != '' ">
+      <strong>About Myself</strong>
+      <p style="font-size:14px;">[[Profile.bio]]</p>
+    </div>
+     <div class="profile-numbers d-flex">
+
+    <div  class="vCenter m-2">
+      <h6 style="font-size: 28px;margin: 0;font-family: 'Orbitron', sans-serif;font-weight:bold;">[[Profile.friendCount]]</h6>
+      <strong>Friends</strong>      
+    </div>
+
+    <div class="vCenter m-2">
+      <h6 style="font-size: 28px;margin: 0;font-family: 'Orbitron', sans-serif;font-weight:bold;">[[Profile.idyaCount]]</h6>
+      <strong>idyas</strong>
+    </div>
+
+  </div>
+    </div>
+    <div class="profile-action-bar" ng-if="activeProfile.username != Profile.username">
+      <button type="button" class="simple-btn">Follow</button>
+      <button type="button" class="simple-btn">Report</button>
+      <button type="button" class="simple-btn">Block</button>
+    </div>
+
+    </div>  
+
+    
+  </div>
+</div>
+
+     

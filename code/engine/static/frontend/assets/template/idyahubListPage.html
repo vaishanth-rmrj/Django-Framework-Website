@@ -1,0 +1,98 @@
+<!--idyahub user follows-->
+<div class="holder">
+
+<!-- hub navigation section -->
+<div class="container-fluid hubNavBar">
+    <div class="row justify-content-center"  style="width: 100%">
+    <div class="col-md-10 col-lg-8 d-flex justify-content-start p-0">
+    <button type="button" class="nullBtn active">MyHub</button>
+    <button type="button" class="nullBtn d-md-none">Trending</button>    
+
+    <div class="ml-auto">
+    <button type="button" class="nullBtn ml-auto d-md-block d-none">Create Hub</button>
+    <button type="button" class="nullBtn dropdown d-md-none" ng-click="toggleHubListPageSideNav()">
+        <i class="icomoon i-menu text-white"></i>
+    </button>
+    </div>
+    </div>
+    </div>
+</div>
+
+<!-- list hub page side navigation -->
+<div class="bg-blur fitContainer d-md-none" style="position: absolute;z-index: 5;" ng-if="showHubListPageSideNav">  
+
+<div class="sideBar text-center page-slide-left" style="position: absolute;top: 0;bottom: 0;right: 0">
+
+<div class="d-flex flex-column align-items-center">
+</div>
+  <hr>
+  <ul>
+    <li>Create Hub</li>
+  </ul>
+</div>
+</div>
+
+<div class="bodyHolder hubListView">
+
+<div class="container-fluid" style="margin-top: 20px">
+    <div class="row justify-content-center">
+
+        <div class="col-md-6 col-12 hCenter" style="align-items: start">
+
+<!-- list of subscribedhubs -->
+<div class="vCenter hubListBody">
+
+    <div style="min-width: 300px;">
+
+        <div class="infoSection" ng-hide="showHubSearchFilterBar">
+        <p style="font-size: 18px">[[HubList.length]] Subscribed idyahubs</p>
+        <button type="button" class="nullBtn ml-auto p-0" ng-click="lookUpIdyahubOpen()"><i class="icomoon i-search" style="font-size: 24px"></i></button>
+        </div>
+
+        <div class="hubListSearchFilterBar" ng-if="showHubSearchFilterBar">
+        <input type="text" name="hubSearch" class="nullInput" value="look for idyahub's...." style="flex: 1;">
+        <button type="button" class="nullBtn" ng-click="lookUpIdyahubClose()"><i class="icomoon i-go-button" style="font-size: 20px;flex: 1;"></i></button>
+        </div>
+    </div>
+
+    <hr class="mb-2" style="width: 100%;">
+
+    <div ng-repeat="hub in HubList">
+    <div class="hubInfoBox" ng-click="displayIdyahub(hub.hubName)">
+        <div class="preLoader sizeTwo">
+            <img src="[[hub.hubPic]]" width="44px" height="44px">
+        </div>
+        <div class="info">
+            <strong>[[hub.hubName]]</strong>
+            <p>[[hub.memberCount]] members 0 idyas</p>
+        </div>
+    </div>
+  </div>
+
+</div>
+
+
+        </div>
+
+<div class="col-md-4 d-md-block d-none">
+    <div class="popularHubList">
+        <div class="head">
+            <h6 class="punchedText">Popular Hubs</h6>
+        </div>
+        <div class="body">
+            <p>something</p>
+        </div>
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+
+</div>
+</div>
+
+
+
+

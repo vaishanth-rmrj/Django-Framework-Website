@@ -1,0 +1,46 @@
+<!-- SUBMIT idya MENU  POPUP -->
+
+<div class="addIdyaModal">
+  
+  <div class="header">
+    <button type="button" Class="nullBtn" ng-click="toggleAddIdyaModal()">
+      <i class="icomoon i-close" style="font-size: 18px"></i>
+    </button>
+
+    <h6 class="headerText ml-auto">Post idya</h6>
+  </div>
+
+<div class="container ">
+    <div class="p-2 m-2" style="background-color: green" ng-click="emitDisplayIdyaEditorSignal('iMage')">
+      <a href="" class="text-anchor text-white">
+      <div class="box-1" id="image">
+        <h6>Image</h6>
+        <small class="text-centre">upload or link an image</small>
+        </div>
+      </a>
+        
+    </div>
+
+    <div class="p-2 m-2" style="background-color: red" ng-click="emitDisplayIdyaEditorSignal('iLog')">
+      <a href="" class="text-anchor text-white">
+        <div class="box-2" id="ilog">
+          <h6>Idya</h6>
+        <small class="text-centre">describe your idya as text or link it to another Blog</small>         
+        </div>
+      </a>
+          
+    </div>
+
+    <div class="p-2 m-2" style="background-color: blue" ng-click="emitDisplayIdyaEditorSignal('iVideo')">
+      <a href="" class="text-anchor text-white">
+        <div class="box-3"  id="iVideo">
+         <h6>Video</h6>
+        <small class="text-centre">link a video from another source</small>
+        </div></a>
+            
+    </div>
+ 
+  
+</div>
+
+</div>

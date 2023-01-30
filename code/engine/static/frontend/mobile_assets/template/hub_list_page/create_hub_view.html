@@ -1,0 +1,63 @@
+<div class="hub-create-form">
+
+<div class="header">
+	<h6 class="header-text">Create idyaHub</h6>
+	<button type="button" class="nullBtn ml-auto" ng-click="closeHubCreationModal()">
+		<i class="icomoon i-close headerText"></i>
+	</button>
+</div>
+
+<div class="container-fluid stage1" ng-if="showStage1">
+	<h6 style="font-size: 32px;">hub name</h6>
+	<input type="text" name="hub-title" id="hub-title-input" class="nullInput inputRounded" placeholder="Title" ng-model="creationForm.Title">
+	<div class="hCenter" style="width: 100%;">
+		<button type="button" class="nullBtn iBtn mx-auto" ng-click="progress(2)">next</button>
+	</div>
+	
+</div>
+
+<div class="container-fluid stage2" ng-if="showStage2">
+	<textarea type="text" name="hub-description" class="textarea-round-border" placeholder="Whats your hub description?" ng-model="creationForm.Description"></textarea>
+	<div class="hCenter" style="width: 100%;">
+		<button type="button" class="nullBtn iBtn mx-auto" ng-click="progress(1)">Back</button>
+		<button type="button" class="nullBtn iBtn mx-auto" ng-click="progress(3)">next</button>
+	</div>
+	<button type="button" class="nullBtn iBtn mx-auto" ng-click="showForm()">Show Form</button>
+	
+</div>
+
+<div class="container-fluid stage3" ng-if="showStage3">
+	<div class="text-center p-2">
+		<p>Invite atleast 5 friends</p>
+	</div>
+	<div class="inviteBox">
+		<div class="userProfilePicBox">
+			
+		</div>
+		<h6>Username</h6>
+		<button type="button" class="nullBtn iBtn ml-auto">invite</button>
+	</div>
+	<!-- showcase models -->
+	<div class="inviteBox">
+		<div class="userProfilePicBox">
+			
+		</div>
+		<h6>Username</h6>
+		<button type="button" class="nullBtn iBtn ml-auto">invite</button>
+	</div>
+	<div class="inviteBox">
+		<div class="userProfilePicBox">
+			
+		</div>
+		<h6>Username</h6>
+		<button type="button" class="nullBtn iBtn ml-auto">invite</button>
+	</div>
+	<div class="inviteBox">
+		<div class="userProfilePicBox">
+			
+		</div>
+		<h6>Username</h6>
+		<button type="button" class="nullBtn iBtn ml-auto">invite</button>
+	</div>
+</div>
+</div>
